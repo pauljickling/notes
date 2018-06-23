@@ -8,7 +8,7 @@ Ownership is what sets Rust apart from other programming languages. The way Rust
 2. There can only be one owner at a time
 3. When the owner goes out of scope, the value will be dropped.
 
-### Demonstrations of concept
+### Demonstration
 
 ```
 let s1 = "hello";
