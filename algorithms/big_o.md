@@ -14,8 +14,9 @@ The syntax for Big O notation consists of the letter O, and then the expression 
 
 From fastest performance to slowest:
 
+* O(1) - constant, no growth
 * O(log n) - log growth
 * O(n) - linear growth
-* O(n * log n)
-* O(n<super>2</super>) - exponential growth
-* O(n!)
+* O(n * log n) - polylogarithmic growth
+* O(n<sup>2</sup>) - quadratic growth
+* O(n!) - exponential growth
