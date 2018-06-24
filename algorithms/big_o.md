@@ -12,7 +12,7 @@ The syntax for Big O notation consists of the letter O, and then the expression 
 
 ### Frequent Big O Expressions
 
-From fastest performance to slowest:
+From slowest rate of growth to most rapid:
 
 * O(1) - constant, no growth
 * O(log n) - log growth
