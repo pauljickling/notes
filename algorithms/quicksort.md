@@ -8,4 +8,4 @@ Quicksort is a sorting method that utilizes the divide & conquer technique. The 
 
 3. Use the quicksort method on the sub-arrays.
 
-The quicksort method has an efficiency of O(n log n) for the average case scenario, and an efficiency of O(n<sup>2</sup>) for the worst case scenario. The efficiency of the quicksort method comes down to the pivot that is selected. Since this is an unsorted list, without knowing the contents of the list it is impossible to know what is the best pivot to select. Therefore the pivot should be selected randomly.
+The quicksort method has an efficiency of O(n log n) for the average case scenario, and an efficiency of O(n<sup>2</sup>) for the worst case scenario. The efficiency of the quicksort method comes down to the pivot that is selected. Since this is an unsorted list, without knowing the contents of the list it is impossible to know what is the best pivot to select. Therefore, at a minimum, pivot selection should be random. One could  also improve pivot selection by selecting three values randomly, and selecting the middle value.
