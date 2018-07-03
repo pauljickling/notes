@@ -53,6 +53,12 @@ For your HTML tags use the phrase `className` instead of `class` since `class` i
 
 Also JSX is more strict than HTML about requiring closed tags so make sure single tags like an img end with `/>`.
 
+Similarly, when leaving comments in your code, it is best to include them this way:
+
+`{/* this is a comment in a JSX file */}`
+
+Otherwise your linter is likely to complain.
+
 ### Props
 
 When a component is rendered, it can access its props using `this.props`. Prop values can be defined as a parameter in the ReactDOM.render method.
