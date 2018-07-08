@@ -19,4 +19,5 @@ From slowest rate of growth to most rapid:
 * O(n) - linear growth
 * O(n * log n) - polylogarithmic growth
 * O(n<sup>2</sup>) - quadratic growth
-* O(n!) - exponential growth
+* O(2<sup>n</sup) - exponential growth
+* O(n!) - factorial growth
