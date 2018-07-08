@@ -6,7 +6,7 @@ A linked list is one where each item in the list stores the address of the next 
 
 ### Arrays
 
-The idea of arrays come from mathematics where an array is a set of numbers or objects placed along rows or columns. Implementation details of arrays differ considerably among programming languages. Does the array have a defined length? Do the items in the array consist of the same type or are they heterogeneous elements?
+The idea of arrays come from mathematics where an array is a set of numbers or objects placed along rows or columns. Implementation details of arrays differ considerably among programming languages. Does the array have a defined length? Do the items in the array consist of the same type or are they heterogeneous elements? A consistent feature of arrays across programming languages is that they are all indexed lists of items.
 
 ### Comparisons
 
