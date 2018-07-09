@@ -45,7 +45,7 @@ Props are read only. In this way, it makes the app easier to reason about becaus
 
 ### Parent Child Component Relationships
 
-When thinking about how your app is structured it is important to think about what information a component is passing from one to the other. These relationships will need to be defined.
+When thinking about how your app is structured it is important to think about what information a component is passing from one to the other. These relationships will need to be defined. This relationship gets especially tricky when trying to manage state within nested components.
 
 ### Miscellaneous Component Notes
 
@@ -58,10 +58,6 @@ Similarly, when leaving comments in your code, it is best to include them this w
 `{/* this is a comment in a JSX file */}`
 
 Otherwise your linter is likely to complain.
-
-### Props
-
-When a component is rendered, it can access its props using `this.props`. Prop values can be defined as a parameter in the ReactDOM.render method.
 
 ### Redux
 
