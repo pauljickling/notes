@@ -5,12 +5,15 @@ Python's syntax is minimal, but to achieve it's minimalism it does enforce certa
 ### Running Python
 
 Running default Python (2.7.12 on Ubuntu 16.04):
+
 `python {filename}.py`
 
 Running a particular version of Python:
+
 `python3.6 {filename}.py`
 
 Running Python on Windows:
+
 `py {filename}.py`
 
 ### Variables
