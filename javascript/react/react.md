@@ -47,6 +47,13 @@ Props are read only. In this way, it makes the app easier to reason about becaus
 
 When thinking about how your app is structured it is important to think about what information a component is passing from one to the other. These relationships will need to be defined. This relationship gets especially tricky when trying to manage state within nested components.
 
+### React Flowchart
+
+1. `ReactDOM.render()` is called to render the element that is passed as a parameter.
+2. Components are called with their declared props.
+3. Components return their elements
+4. ReactDOM updates the actual DOM.
+
 ### Miscellaneous Component Notes
 
 For your HTML tags use the phrase `className` instead of `class` since `class` is utilized for the ES6 syntax.
