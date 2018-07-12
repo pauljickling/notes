@@ -59,7 +59,17 @@ A list works approximately the same as arrays in Javascript, and other dynamic l
 
 `numbers = [1, 2, 3, 4, 5]`
 
-Dicts resemble Javascript objects, although in Javascript objects keys are always strings, whereas in Python dicts keys can be any immutable type is a valid key.
+Dicts resemble Javascript objects, although in Javascript objects keys are always strings, whereas with Python dicts any immutable type is a valid key. Since Python accepts any sort of immutable type as a key strings need to have quotation marks around them, unlike in Javascript where keys are always strings and therefore the quotation marks are assumed and implied.
+
+```
+bike = {
+    "color": "green",
+    "brand": "Schwinn",
+    True: "cool"
+}
+```
+
+Dicts use bracket notation for recalling them (dot notation is reserved for object instances defined via classes).
 
 Tuples are common in many programming languages, but they are not present in Javascript. A tuple is an immutable list. They are expressed this way:
 
