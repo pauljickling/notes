@@ -56,15 +56,11 @@ When thinking about how your app is structured it is important to think about wh
 
 ### Miscellaneous Component Notes
 
-For your HTML tags use the phrase `className` instead of `class` since `class` is utilized for the ES6 syntax.
-
-Also JSX is more strict than HTML about requiring closed tags so make sure single tags like an img end with `/>`.
-
-Similarly, when leaving comments in your code, it is best to include them this way:
+For your HTML tags use the phrase `className` instead of `class` since `class` is utilized for the ES6 syntax. Also JSX is more strict than HTML about requiring closed tags so make sure single tags like an img end with `/>`. Similarly, when leaving comments in your code, your linter is likely to complain unless you leave them this way:
 
 `{/* this is a comment in a JSX file */}`
 
-Otherwise your linter is likely to complain.
+A component must never modify its own props. Thus, it should follow the patterns associated with composing pure functions.
 
 ### Redux
 
