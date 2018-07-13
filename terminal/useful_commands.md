@@ -75,7 +75,9 @@ This one is helpful while traveling.
 **Start, Restart, or Stop MongoDB**
 
 `sudo service mongod start`
+
 `sudo service mongod restart`
+
 `sudo service mongod stop`
 
 **Enter Mongo Shell**
