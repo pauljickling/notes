@@ -1,4 +1,4 @@
-## Useful Terminal Commands
+# Useful Terminal Commands
 
 **Change Directory**
 
@@ -50,9 +50,9 @@ This one is helpful while traveling.
 
 `grep -r {phrase} {directory name}`
 
-### Useful Database Commands
+## Useful Database Commands
 
-#### PostGreSQL
+### PostGreSQL
 
 **Startup PostGreSQL**
 
@@ -70,7 +70,7 @@ This one is helpful while traveling.
 
 `\q`
 
-#### MongoDB
+### MongoDB
 
 **Start, Restart, or Stop MongoDB**
 
