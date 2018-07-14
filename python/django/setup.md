@@ -22,6 +22,12 @@ Migrating data:
 
 `python manage.py migrate`
 
+Create an admin superuser:
+
+`python manage.py createsuperuser`
+
+To get a full list of commands available for your django project you can type `python manage.py`
+
 ### settings.py
 
 When your project is created it will have a settings.py file that you should immediately open and make some adjustments to. Most importantly, if you have a project that you are adding to a public repository you should create a separate JSON file (or whatever you want to use as a config), and add that json file to your .gitignore file. Then change your settings.py file to look like this:
