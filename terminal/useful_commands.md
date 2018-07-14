@@ -14,6 +14,10 @@ To go back two directories:
 
 etc.
 
+To change to the directory you were last in:
+
+`cd -`
+
 **Make Directory**
 
 `mkdir {directory name}`
@@ -32,6 +36,26 @@ Careful not to `rm -rf /` which would delete the root directory!
 
 `xdg-open {file name}`
 
+**Convert File**
+
+`convert {file name} {new file name}`
+
+**Get Memory Size of Files/Directories in Bytes**
+
+`du -h`
+
+**Get Amount of Free Space on Each Partition**
+
+`df -h`
+
+**Show Mounted Filesystems**
+
+`mount`
+
+**Get Statistics About Disk Read/Writes**
+
+`iostat`
+
 **Reset Wifi Network Lookup**
 
 `sudo service network-manager restart`
@@ -46,7 +70,7 @@ This one is helpful while traveling.
 
 `grep {phrase} {file name}`
 
-**Recursively search a folder**
+**Recursively Search a Folder**
 
 `grep -r {phrase} {directory name}`
 
