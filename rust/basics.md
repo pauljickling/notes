@@ -4,7 +4,9 @@ After creating a project using Cargo, you will typically create a main.rs file i
 
 ```
 fn main() {
-   /* Rust code goes here */
+    // Rust code goes here
+    let name = "Paul";
+    println!("Hello, {}!", name);
 }
 ```
 
@@ -25,9 +27,9 @@ In addition to mutable variables, Rust has a concept known as *shadowing* where 
 
 ```
 let x = 5;
-let x = x + 5; /* x is 10 */
+let x = x + 5; // x is 10
 let mut four = "four";
-four = four.len(); /* This will raise an error */
+four = four.len(); // This will raise an error
 ```
 
 In addition to variables, Rust has constants, which can be declared using the `const` keyword, and cannot be declared mutable. The naming convention for constants is all uppercase, with underscores between words.
@@ -40,7 +42,7 @@ Rust is a statically-typed language, so that means that when a variable is decla
 
 `let number: u32 = 9;`
 
-In this example, the number variable has the unsigned 32-bit integer as its type.
+In this example, the number variable has the unsigned 32-bit integer as its type. Note that when declaring functions the function's parameter types must be annotated.
 
 Rust has various data types that are broadly divided into two categories: scalar, and compound.
 
@@ -103,3 +105,53 @@ Tuple elements can also be assigned and accessed via dot notation.
 Arrays must contain elements of the same type. Once an array is declared, it has a fixed length.
 
 `let arr = [1, 2, 3, 4, 5];`
+
+## Functions
+
+As mentioned earlier, function parameters must have their type annotated. Functions contain *statements* and *expressions*. A statement is an instruction that performs an action. An expression is an instruction that returns a value.
+
+```
+fn main() {
+    let x = 1;
+    let y = {
+        let x = 2;
+        x + 1;
+    }
+}
+```
+
+In this example the declaration of the x variable is a statement, and the declaration of the y variable is an expression where (within the block scope of the y declaration) x has been shadowed, and then an expressive operation returns the shadowed x + 1.
+
+When using functions to return values you use an arrow `->` to annotate the return value.
+
+```
+fn ten() -> i32 {
+    10
+}
+```
+
+## If Statements
+
+If statements in Rust must evaluate a `bool` type.
+
+## Loops
+
+Rust has several types of loops.
+
+### loop
+
+`loop` is used to repeat a set of instructions until the `break` keyword is encountered.
+
+### while
+
+Rust also has `while` loops.
+
+### for
+
+Rust uses the `for {var} in {compound type}` structure to iterate through compound types. The concise and safe nature of the for loop makes it the preferred loop method in Rust.
+
+```
+for number in (0..9) {
+    println!("{}", number);
+}
+```
