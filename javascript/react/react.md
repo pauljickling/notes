@@ -1,8 +1,8 @@
-## React Notes
+# React Notes
 
 React is an unopinionated Javascript library for building out the UI of your web app.
 
-### Startup
+## Startup
 
 The simplest way to get started using React is to install and use the create-react-app npm package.
 
@@ -10,9 +10,18 @@ The simplest way to get started using React is to install and use the create-rea
 `npm start` to build and run the app
 `npm run build` to create an optimized build of the app in the build folder
 
-### JSX
+## JSX
 
 JSX is a preprocessor that adds XML syntax to Javascript. It is not required, but typically used with React.
+
+## React Flowchart
+
+1. `ReactDOM.render()` is called to render the element that is passed as a parameter
+2. Components are called with their declared props
+3. Components return their elements
+4. ReactDOM updates the actual DOM
+
+## Components
 
 ### Component Pattern
 
@@ -52,7 +61,15 @@ Props are read only. In this way, it makes the app easier to reason about becaus
 
 When thinking about how your app is structured it is important to think about what information a component is passing from one to the other. These relationships will need to be defined. This relationship gets especially tricky when trying to manage state within nested components.
 
-### Event Handlers
+### Miscellaneous Component Notes
+
+For your HTML tags use the phrase `className` instead of `class` since `class` is utilized for the ES6 syntax. Also JSX is more strict than HTML about requiring closed tags so make sure single tags like an img end with `/>`. Similarly, when leaving comments in your code, your linter is likely to complain unless you leave them this way:
+
+`{/* this is a comment in a JSX file */}`
+
+A component must never modify its own props. Thus, it should follow the patterns associated with composing pure functions.
+
+## Event Handlers
 
 Events work similarly to events that handle DOM elements, but the syntax is slightly different. As an example, here is an example for a button component that does something when clicked:
 
@@ -79,21 +96,10 @@ function handleClick(e) {
 
 Finally, it is important to remember that in Javascript class methods are not bound by default, therefore you will need to call the `bind()` method so the provided `this` value will pass its context along.
 
-### React Flowchart
+## Conditional Rendering
 
-1. `ReactDOM.render()` is called to render the element that is passed as a parameter
-2. Components are called with their declared props
-3. Components return their elements
-4. ReactDOM updates the actual DOM
 
-### Miscellaneous Component Notes
 
-For your HTML tags use the phrase `className` instead of `class` since `class` is utilized for the ES6 syntax. Also JSX is more strict than HTML about requiring closed tags so make sure single tags like an img end with `/>`. Similarly, when leaving comments in your code, your linter is likely to complain unless you leave them this way:
-
-`{/* this is a comment in a JSX file */}`
-
-A component must never modify its own props. Thus, it should follow the patterns associated with composing pure functions.
-
-### Redux
+## Redux
 
 Redux is a tool for handling state that pairs well with React.
