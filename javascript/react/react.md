@@ -96,10 +96,6 @@ function handleClick(e) {
 
 Finally, it is important to remember that in Javascript class methods are not bound by default, therefore you will need to call the `bind()` method so the provided `this` value will pass its context along.
 
-## Conditional Rendering
-
-
-
 ## Redux
 
 Redux is a tool for handling state that pairs well with React.
