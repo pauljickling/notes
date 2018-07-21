@@ -1,6 +1,6 @@
 # Rust Basics
 
-After creating a project using Cargo, you will typically create a main.rs file in your src directory. Like in C++, Rust files always have a main function wrapper.
+After creating a project using Cargo, you will typically create a main.rs file in your src directory. Like in C++, Rust files typically have a main function wrapper.
 
 ```
 fn main() {
