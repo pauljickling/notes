@@ -44,6 +44,6 @@ SECRET_KEY = secrets['SECRET_KEY']
 
 To use data from apps you create you will need to add the following to the `INSTALLED_APPS` list:
 
-`'{app name}.apps.DataConfig'`
+`'{app name}.apps.{App Name}Config'`
 
 By default Django uses SQLite as its database. Most likely you will want to use a different database so that should be configured in the settings file as well.
