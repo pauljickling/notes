@@ -14,13 +14,21 @@ Creating app directory:
 
 `python manage.py startapp {app name}`
 
-Including new models data in a migratation:
+Including any changes or adjustments made in the models:
 
 `python manage.py makemigrations {app name}`
 
-Migrating data:
+Applying migration changes:
 
 `python manage.py migrate`
+
+Listing migrations and their status:
+
+`python manage.py showmigrations`
+
+Displaying SQL statements for a migration:
+
+`python manage.py sqlmigrate`
 
 Create an admin superuser:
 

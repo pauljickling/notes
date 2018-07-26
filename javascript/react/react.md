@@ -61,6 +61,14 @@ Props are read only. In this way, it makes the app easier to reason about becaus
 
 When thinking about how your app is structured it is important to think about what information a component is passing from one to the other. These relationships will need to be defined. This relationship gets especially tricky when trying to manage state within nested components.
 
+As a rule, you should avoid creating inheritance in your props. It is better to just create neutral props where you can declare a separate component as its value. Lets say that our card component might have a button component nested inside of it. In the Card component we would write:
+
+`<div className="button>{this.props.button}</div>"`
+
+Then, when calling an instance of the Card component, you could declare the button inside it by writing:
+
+`<Card button= { <Button /> } />`
+
 ### Miscellaneous Component Notes
 
 For your HTML tags use the phrase `className` instead of `class` since `class` is utilized for the ES6 syntax. Also JSX is more strict than HTML about requiring closed tags so make sure single tags like an img end with `/>`. Similarly, when leaving comments in your code, your linter is likely to complain unless you leave them this way:
