@@ -47,3 +47,18 @@ To use data from apps you create you will need to add the following to the `INST
 `'{app name}.apps.{App Name}Config'`
 
 By default Django uses SQLite as its database. Most likely you will want to use a different database so that should be configured in the settings file as well.
+
+You should also setup your static file directory so you can serve css, javascript, and image files. To do this, create a static directory in your root directory, and then include the following code in your settings:
+```
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
+]
+```
+
+Then, if you wanted to include a file called main.css, you would write something like this in your template file:
+
+```
+{% load static %}
+<link rel="stylesheet" href="{% static 'main.css' %}">
+```
