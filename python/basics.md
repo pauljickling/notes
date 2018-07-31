@@ -103,3 +103,17 @@ for num in range(30, 100):
     else:
         print(num)
 ```
+
+### Assertions
+
+Assertions are a useful way to debug your program using the `assert` keyword.
+
+```
+def example(x):
+    assert type(x) is int, "x is not an integer"
+    # other operations
+
+example('hi')
+```
+
+Running the following script will fail, and the interpreter will raise the assertion error.
