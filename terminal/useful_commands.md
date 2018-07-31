@@ -36,9 +36,45 @@ Careful not to `rm -rf /` which would delete the root directory!
 
 `xdg-open {file name}`
 
+**Copy File**
+
+`cp {file source} {file destination}`
+
+**Move File**
+
+`mv {file source} {file destination}`
+
+Note that if you use the same directory you can use the move command to rename a file.
+
 **Convert File**
 
 `convert {file name} {new file name}`
+
+**Create Empty File**
+
+`touch {file name}`
+
+**Read the Manual for a Command**
+
+`man {command name}`
+
+**Open Terminal Text Editor**
+
+`vi {file name}`
+
+**Concatinate Files**
+
+`cat {file1} {file2}`
+
+If you only provide one file as an argument this is a useful way to view a file as well.
+
+**Read Files**
+
+`less {file name}`
+
+**Produce Word Count of File**
+
+`wc {file name}`
 
 **Get Memory Size of Files/Directories in Bytes**
 
@@ -55,6 +91,12 @@ Careful not to `rm -rf /` which would delete the root directory!
 **Get Statistics About Disk Read/Writes**
 
 `iostat`
+
+**Redirecting Data Stream to a File**
+
+`{data stream} > {destination}`
+
+Note that the destination file will be cleared. If you want to append data, use `>>`
 
 **Reset Wifi Network Lookup**
 
@@ -80,7 +122,7 @@ This one is helpful while traveling.
 
 **Startup PostGreSQL**
 
-`sudo su -postgres`
+`sudo su postgres`
 
 **Create Database**
 
