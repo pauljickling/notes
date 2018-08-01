@@ -115,37 +115,3 @@ This one is helpful while traveling.
 **Recursively Search a Folder**
 
 `grep -r {phrase} {directory name}`
-
-## Useful Database Commands
-
-### PostGreSQL
-
-**Startup PostGreSQL**
-
-`sudo su postgres`
-
-**Create Database**
-
-`createdb {database name}`
-
-**Enter PSQL Shell**
-
-`psql`
-
-**Exit PSQL Shell**
-
-`\q`
-
-### MongoDB
-
-**Start, Restart, or Stop MongoDB**
-
-`sudo service mongod start`
-
-`sudo service mongod restart`
-
-`sudo service mongod stop`
-
-**Enter Mongo Shell**
-
-`mongo`
