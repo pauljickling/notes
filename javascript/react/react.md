@@ -77,6 +77,35 @@ For your HTML tags use the phrase `className` instead of `class` since `class` i
 
 A component must never modify its own props. Thus, it should follow the patterns associated with composing pure functions.
 
+React also doesn't like to have components with multiple sibling elements. Thus, if you need multiple siblings you will either need to wrap these elements up within a div tag, thus making them child elements of a single div element, or else you will need to break up your component into other components.
+
+Components can be functional or class based. Any component that manages state will need to be class based. I prefer writing all components as classes for the sake of consistency.
+
+## State
+
+Providing state to class based components requires several steps:
+
+1. Replacing `this.props.{property name}` with `this.state.{state name}`
+
+2. Add a class constructor that assigns the initial `this.state`:
+
+```
+constructor(props) {
+  super(props);
+  this.state = {{state name}: {state value}};
+}
+```
+
+3. Remove the props assignment from the rendering element: `<{Component} />`
+
+4. Create a `componentDidMount()` method that runs after the component output has been rendered to the DOM.
+
+5. Create a `componentWillUnmount()` method that removes a state instance from the lifecycle hook.
+
+6. Create any additional methods needed, for instance perhaps a method that is called from within the `componentDidMount()` method.
+
+Do not modify state directly, instead use `this.setState()`. Also remember that state updates may be asychronous like everything else in Javascript so code accordingly.
+
 ## Event Handlers
 
 Events work similarly to events that handle DOM elements, but the syntax is slightly different. As an example, here is an example for a button component that does something when clicked:
@@ -103,7 +132,3 @@ function handleClick(e) {
 ```
 
 Finally, it is important to remember that in Javascript class methods are not bound by default, therefore you will need to call the `bind()` method so the provided `this` value will pass its context along.
-
-## Redux
-
-Redux is a tool for handling state that pairs well with React.
