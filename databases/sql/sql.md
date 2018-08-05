@@ -1,6 +1,6 @@
 # SQL
 
-SQL stands for *Structured Query Language*, and it is the standard language used to communicate with relational databases. There are many flavors of SQL available (MySQL, PostgresSQL, SQLite, etc.) These notes will be referencing PostGresSQL.
+SQL stands for *Structured Query Language*, and it is the standard language used to communicate with relational databases. There are many flavors of SQL available (MySQL, PostgreSQL, SQLite, etc.) These notes will be referencing PostGreSQL.
 
 ## Relational Databases
 
@@ -8,7 +8,7 @@ A relational database is a database that contains database objects, the most com
 
 ## Basics
 
-Starting up SQL:
+Starting up SQL before defining a user with createdb access:
 
 `sudo su postgres`
 
@@ -58,18 +58,58 @@ In SQL, schemas are associated with the user that created them. So in a database
 
 Creating a new table:
 
-`CREATE TABLE {table name}
+```
+CREATE TABLE {table name}
 ( {field} {data type} {null or not null},
-  {etc.});`
+  {etc.});
+```
 
 Altering a table:
 
-`ALTER TABLE {table name} {params}`
+`ALTER TABLE {table name} {params};`
 
 Dropping a table:
 
-`DROP TABLE {table name} {restrict or cascade}`
+`DROP TABLE {table name} {restrict or cascade};`
 
 ## Normalization
 
 Normalization is a process that reduces redundant data in a database, and helps make the database more comprehensible to human beings. At a highest level, this involves separating the database into comprehensible tables. This comes at a performance cost as the computer has to spend extra effort looking up and joining tables to perform queries. When seeking greater database optimization, sometimes a denormalization process will be performed.
+
+## Manipulating Data
+
+Use insert operations to add a record.
+
+```
+INSERT INTO {table name}
+VALUES ('value1', 'value2', [null]);
+```
+
+Insert operations need to include every field.
+
+Use single character quotation marks for values. They are not required for integer and null values, but it is best practice to include them anyway for the sake of consistency.
+
+SELECT is the keyword for querying data. By using the SELECT and INSERT commands together it is possible to insert data from one table into another.
+
+```
+INSERT INTO {table name} {field params}
+SELECT {params}
+FROM {table name}
+{where conditions};
+```
+
+The where conditions help narrow the scope of the field queries. For example, among a last name field you might limit it to only records that contain the last name 'Chavez'.
+
+It is important to make sure the queried fields have matching data types with the insert fields.
+
+Use UPDATE to update existing entries.
+
+```
+UPDATE {table name}
+SET {field name} = {value}
+{where condition};
+```
+
+You can set multiple fields, and use commas after the values to separate them (the set keyword should only be used once, its like combining multiple variable assignment in a single line).
+
+Use DELETE to remove all the field values for a record. The syntax is identical to UPDATE.
