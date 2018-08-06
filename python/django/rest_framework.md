@@ -18,7 +18,8 @@ class {Model Name}Serializer(serializers.ModelSerializer):
 
 ### API Wrappers
 
-The REST framework provides two different API view wrappers:
+The REST framework provides several different API view wrappers:
 
 1. The `@api_view` decorator for function-based views.
 2. The `APIView` class for class-based views.
+3. The `ViewSet` class that provides CRUD operations instead of HTTP method handlers.
