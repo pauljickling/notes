@@ -113,3 +113,31 @@ SET {field name} = {value}
 You can set multiple fields, and use commas after the values to separate them (the set keyword should only be used once, its like combining multiple variable assignment in a single line).
 
 Use DELETE to remove all the field values for a record. The syntax is identical to UPDATE.
+
+## Managing Database Transactions
+
+A *transaction* is a unit of work performed on a database. In SQL these are accomplished via the INSERT, UPDATE, and DELETE operations. A transaction could be one of these operations, or it could be several of them strung together, however if one fails the entire unit fails.
+
+SQL databases feature *transaction control* operations. These are COMMIT, ROLLBACK, and SAVEPOINT. Most flavors of SQL use auto-commits by default, so to use these operations you need to run the following:
+
+`SET IMPLICIT_TRANSACTIONS ON;`
+
+Anyone familiar with git should be familiar with the COMMIT and ROLLBACK operations. COMMIT is used to store changes made to the database that until they are committed, have only been changed in a temporary buffer. ROLLBACK undoes any changes to the previous commit.
+
+A savepoint is used to create an intermediary save point before a commit. The syntax is:
+
+`SAVEPOINT {savepoint name}`
+
+Note that a savepoint name needs to be unique. Once this is created you can rollback to that savepoint:
+
+`ROLLBACK TO {savepoint name}`
+
+To remove a savepoint use the following command:
+
+`RELEASE SAVEPOINT {savepoint name}`
+
+You can also control the read/write systems of your transaction control system.
+
+`SET TRANSACTION READ WRITE;`
+
+`SET TRANSACTION READ ONLY;`
