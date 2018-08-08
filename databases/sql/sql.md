@@ -141,3 +141,15 @@ You can also control the read/write systems of your transaction control system.
 `SET TRANSACTION READ WRITE;`
 
 `SET TRANSACTION READ ONLY;`
+
+## Querying Data
+
+There are four components to querying data, each with their own set of arguments that they accept: `SELECT`, `FROM`, `WHERE`, and `ORDER BY`.
+
+`SELECT` accepts field names as its argument. Special parameters include `*` or `ALL` to include all columns, and `DISTINCT {Column name}` to not include duplicate records.
+
+`FROM` accepts a database name as its argument. Remember if it is a database from another user you need to include the username as well (see the Database Objects section from earlier).
+
+`WHERE` accepts condition/value pairs as its arguments where the condition is a field name. These can be combined using AND/OR expressions.
+
+`ORDER BY` accepts a column name (or integer in its place) and order type as its arguments. Order types are `ASC` for ascending order, and `DESC` for descending order.
