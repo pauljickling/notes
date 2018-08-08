@@ -153,3 +153,30 @@ There are four components to querying data, each with their own set of arguments
 `WHERE` accepts condition/value pairs as its arguments where the condition is a field name. These can be combined using AND/OR expressions.
 
 `ORDER BY` accepts a column name (or integer in its place) and order type as its arguments. Order types are `ASC` for ascending order, and `DESC` for descending order.
+
+## Logical Operators in SQL
+
+Logical operators are used in WHERE statements.
+
+Equal `=`
+Not Equal `!=`
+Less Than `<`
+Greater Than `>`
+Less Than or Equal `<=`
+Greater Than or Equal `>=`
+`IS NULL`
+`BETWEEN {x} AND {y}`
+`IN ({x}, {y}, {z})`
+`LIKE`
+`EXISTS`
+`UNIQUE`
+`ALL`, `SOME`, and `ANY`
+`AND`
+`OR`
+`NOT`
+
+The `LIKE` operator uses two different kinds of wildcards. `_` is used for a single character, and `%` is used to represent one, several, or no characters.
+
+Note that `NOT` can preface many logical operators, but for `IS NULL` you would use the more semantically palatable `IS NOT NULL`.
+
+SQL also accepts basic arithmetic operators, `+`, `-`, `*`, and `/`.
