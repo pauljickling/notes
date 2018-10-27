@@ -22,4 +22,4 @@ From slowest rate of growth to most rapid:
 * O(c<sup>n</sup>) - exponential growth
 * O(n!) - factorial growth
 
-In general, if the growth is greater than polylogarithmic growth you have a problem, and should reconsider your approach to solving the problem.
+In general, if the growth is greater than polylogarithmic growth you have a problem, and should reconsider your approach to solving the problem. Of course, some problems are intrinsically hard and will result in polynomial growth or worse. In those instances it is best to try and find approximate solutions.

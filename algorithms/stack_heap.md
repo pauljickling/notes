@@ -19,3 +19,7 @@ The call stack allows for functions within functions to operate. When a function
 ### Heaps
 
 Heaps are also simple data structures that contain multiple items. Heaps are used for data where the size is unknown (for example, arrays that do not have fixed-lengths). The operating system returns a pointer with the address for the heap. The pointer, being a fixed size, is located on the stack.
+
+Some heaps have a max-heap or min-heap property. For a max-heap a node must be greater than or equal to the child nodes. Heaps with a min-heap property work inversely.
+
+Heaps are useful for building a priority queue. A priority queue features operations such as the insertion of nodes, returning a max or min value, extracting the max or min value from the heap and removing it, and increasing the value associated with a particular node. To maintain such a structure there also need to be operations that can build a max or min-heap structure out of an unsorted array, and an operation that can correct any instances where there is a single violation of the heap's max or min property from a subtree's root.

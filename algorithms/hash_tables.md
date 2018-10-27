@@ -12,7 +12,7 @@ The efficiency of a properly managed hash table is O(1). However an improperly m
 
 ### Practical Implementations
 
-Most languages have built in hash tables, so there typically isn't any need to reinvent the wheel. One notable exception is Javascript. In Javascript typically one relies on object literals for a data structure that approximates hash tables, however because of Javascript's prototypal inheritance system this can lead to some unintended consequences. To implement a proper hash table you need to implement a *bare object*. A bare object is an object that lacks the prototypal inheritance of the Javascript Object.
+Most languages have built in hash tables, for example Python's dictionaries. So there typically isn't any need to reinvent the wheel. One notable exception is Javascript. In Javascript typically one relies on object literals for a data structure that approximates hash tables, however because of Javascript's prototypal inheritance system this can lead to some unintended consequences. To implement a proper hash table you need to implement a *bare object*. A bare object is an object that lacks the prototypal inheritance of the Javascript Object.
 
 `let hashMap = Object.create(null);`
 

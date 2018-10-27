@@ -1,6 +1,6 @@
 ## Recursion
 
-In computer science recursion is a way to solve a problem that relies on smaller instances of the same problem. Most programming langauges allow functions to call themselves, and by doing this it makes recursive solutions possible. Recursive solutions are often less efficient than running for or while loops to solve a problem because of the memory demands they place on the call stack, however they can be easier to reason about, so for complex pieces of code they can be desirable for that purpose.
+In computer science recursion is a way to solve a problem that relies on smaller instances of the same problem. Most programming languages allow functions to call themselves, and by doing this it makes recursive solutions possible. Recursive solutions are often less efficient than running for or while loops to solve a problem because of the memory demands they place on the call stack, however they can be easier to reason about, so for complex pieces of code they can be desirable for that purpose.
 
 ### Structure of the Recursive Function
 
