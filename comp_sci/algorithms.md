@@ -62,7 +62,7 @@ Unfortunately this doesn't necessarily result in the correct solution. The probl
 
 #### Second Attempt
 
-1. Select a middle column `(j = m/2)`
+1. Select a middle column (j = m/2)
 2. Find a global max on column j at (i, j)
 3. Compare (i, j - 1), (i, j), (i, j + 1)
 4. Select left columns if (i, j - 1) > (i, j) or right if (i, j) <= (i, j + 1)
@@ -239,8 +239,11 @@ A *priority queue* implements a set (S) of elements, and each element is associa
 The set of operations we'd like for a priority queue:
 
 **insert(S, x):** inserts element x into set S
+
 **max(S):** returns element of S with the largest key
+
 **extract_max(S):** returns element of S with the largest key, and removes it from S
+
 **increase_key(S, x, k):** increases the value of x's key to the new value k
 
 The heap is what we need to perform these operations in an official way.
@@ -258,6 +261,7 @@ It is also possible to have heaps that have neither the max-heap property, nor t
 So we have some heap operations we need to establish to have the operations for our priority queue:
 
 **build_max_heap(arr):** produces a max heap out of an unsorted array
+
 **max_heapify(arr, i):** corrects a *single* violation of the heap property in a subtree's root
 
 The precondition for max_heapify() is that the trees rooted at left(i) and right(i) are max-heaps. Because it is performing individual swaps between a parent and child node, what is the runtime complexity? It is O(log n) because of the near complete binary tree structure, and the assumption that there is only a single violation.
