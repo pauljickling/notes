@@ -246,8 +246,6 @@ The set of operations we'd like for a priority queue:
 
 **increase_key(S, x, k):** increases the value of x's key to the new value k
 
-The heap is what we need to perform these operations in an official way.
-
 A heap is an implementation of a priority queue. It is an array structure visualized as a nearly complete binary tree. Imagine an array with 10 elements, with values of random numbers. It's not a complete binary tree, which would need 15 elements. Index 1 will be the root of the tree. Index 2 and 3 are the children. Index 4, 5, 6, 7 are the children of 2 and 3. Index 8, 9, and 10 are the children of 4 and 5.
 
 The value of this structure is it has a root, which is the first element which is i= 1. The parent is i /2. The left element is 2i, and the right element is 2i+1.
