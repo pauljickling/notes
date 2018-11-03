@@ -1,10 +1,12 @@
 ## Graphs
 
-Graphs model a set of connections. These models consist of nodes and connections (connections are called *edges* in graph-theory-speak).  Nodes that are adjacent via their edges are called neighbors. Graphs can be considered directed or undirected depending on how the edges work. In a directed graph edges form a directional flow from one node to the next, whereas in an undirected graph this directional flow is not prescribed. With directed graphs you can perform a *topological sort* that makes an ordered list based off of the graph information.
+Graphs model a set of connections. These models consist of nodes (sometimes referred to as vertices) and connections (connections are called *edges* in graph-theory-speak).  Nodes that are adjacent via their edges are called neighbors. Graphs can be considered directed or undirected depending on how the edges work. In a directed graph edges form a directional flow from one node to the next, whereas in an undirected graph this directional flow is not prescribed. With directed graphs you can perform a *topological sort* that makes an ordered list based off of the graph information.
 
 Graphs can also be categorized as either weighted graphs or unweighted graphs. A breadth-first search is useful for unweighted graphs, whereas Dijkstra's algorithm is generally more useful for weighted graphs.
 
 Graphs can also have cycles. A cycle is when the edges of the graph form a ring of nodes.
+
+Common implementations of graphs are the adjacency list, and the adjacency matrix. An adjacency list is used if there isn't a density of edges to each node. Otherwise the adjacency matrix is typically implemented.
 
 ### Utility of graphs
 
