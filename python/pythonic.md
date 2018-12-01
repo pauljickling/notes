@@ -2,6 +2,10 @@
 
 "Pythonic" code, also sometimes referred to as idiomatic Python, is a particular way of writing code that is considered better form. Other Python developers will typically expect you to write code this way.
 
+# Switching Values
+
+(a, b) = (b, a)
+
 ## List Comprehensions
 
 `arr = [i for i in other_list]`
@@ -20,3 +24,7 @@ for index, element in enumerate(arr):
 ## Converting a List into a String
 
 `hello = ''.join(['h', 'e', 'l', 'l', 'o'])`
+
+## String Interpolation
+
+"Name: {}, Age: {}, Occupation: {}".format(name, age, job)
