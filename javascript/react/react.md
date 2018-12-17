@@ -23,7 +23,13 @@ JSX is a preprocessor that adds XML syntax to Javascript. It is not required, bu
 
 ## Components
 
-### Component Pattern
+### Component Patterns
+
+#### Functional Pattern:
+
+`const {component} = () => ({JSX rendering});`
+
+#### Class Based Pattern:
 
 ```
 class {Name} extends React.Component {
@@ -44,18 +50,36 @@ ReactDOM.render(<App />, document.getElementById("app"));
 
 Props is short for object properties. Think of single element objects where the key is defined, and its value is derived from a parent component.
 
-Lets say you have some card component. The card consists of an image, and then some text. The text portion might look something like this:
+Lets say you have a class based card component. The card consists of an image, and then some text. The text portion might look something like this:
 
 ```
 <p>Name: {this.props.name}</p>
 <p>Role: {this.props.role}</p>
 ```
 
+Note that for a functional component you would omit `this` during the assignment.
+
 Then when an instance of your card component pops up elsewhere in your app, you would declare the property values this way:
 
 `<Card name="Paul" role="Software Engineer" />`
 
 Props are read only. In this way, it makes the app easier to reason about because data flows in a single direction, and they help make components reusable.
+
+It can be useful to define default properties that are used if no parameters are provided when the component is invoked. For example:
+
+```
+Card.defaultProps = {
+  name: 'default name'
+};
+```
+
+React also provides a package that allows for typechecking values passed to props. This package can be used in applications with the following line: `import PropTypes from 'prop-types';`
+
+Here is how it is used:
+
+`Card.propTypes = { name: PropTypes.string }`
+
+Note that in Javascript there is a number type, not an integer. Also the PropTypes module uses `func` instead of function, and `bool` is used instead of boolean.
 
 ### Parent Child Component Relationships
 
