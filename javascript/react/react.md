@@ -103,7 +103,7 @@ A component must never modify its own props. Thus, it should follow the patterns
 
 React also doesn't like to have components with multiple sibling elements. Thus, if you need multiple siblings you will either need to wrap these elements up within a div tag, thus making them child elements of a single div element, or else you will need to break up your component into other components.
 
-Components can be functional or class based. Any component that manages state will need to be class based. I prefer writing all components as classes for the sake of consistency.
+Components can be functional or class based. Any component that manages state will need to be class based.
 
 ## State
 
@@ -116,7 +116,9 @@ Providing state to class based components requires several steps:
 ```
 constructor(props) {
   super(props);
-  this.state = {{state name}: {state value}};
+  this.state = {
+    {state name}: {state value}
+  };
 }
 ```
 
@@ -128,7 +130,7 @@ constructor(props) {
 
 6. Create any additional methods needed, for instance perhaps a method that is called from within the `componentDidMount()` method.
 
-Do not modify state directly, instead use `this.setState()`. Also remember that state updates may be asychronous like everything else in Javascript so code accordingly.
+Do not modify state directly, instead use `this.setState()`. The `setState()` method takes an anonymous object with the changed state values as its parameter. Also remember that state updates may be asynchronous like everything else in Javascript, so code accordingly.
 
 ## Event Handlers
 
@@ -156,3 +158,7 @@ function handleClick(e) {
 ```
 
 Finally, it is important to remember that in Javascript class methods are not bound by default, therefore you will need to call the `bind()` method so the provided `this` value will pass its context along.
+
+Typically the constructor function will contain a line of code like this for every component method:
+
+`this.{method name} = this.{method name}.bind(this)`
