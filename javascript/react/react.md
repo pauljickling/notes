@@ -1,6 +1,6 @@
 # React Notes
 
-React is an unopinionated Javascript library for building out the UI of your web app.
+React is an unopinionated Javascript library for building out the UI of your web app. You can learn more about React [here](https://reactjs.org/docs/getting-started.html).
 
 ## Startup
 
