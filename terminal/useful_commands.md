@@ -177,3 +177,11 @@ Note that the destination file will be cleared. If you want to append data, use 
 `sudo service network-manager restart`
 
 This one is helpful while traveling.
+
+**Print Text**
+
+`echo hello world`
+
+**Arithmetic**
+
+`echo $((365 * 24))`
