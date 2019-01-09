@@ -6,6 +6,14 @@
 
 `:wq` write quit (i.e. save and quit)
 
+## File Management
+
+`:w` write file (i.e. save)
+
+`:n` next file
+
+`:N` previous file
+
 ## Insertions
 
 `i` insert chars prior to cursor location
@@ -24,6 +32,8 @@
 
 `b` move back a word or special chars starting at first char
 
+`e` or `w` move forward a word
+
 `B` move back a word without regard to special chars
 
 `h` move cursor left
@@ -34,24 +44,38 @@
 
 `l` move cursor right
 
+`0` move cursor to beginning of line
+
 `$` move cursor to end of line
+
+`G` move cursor to last line of file
+
+`{number}G` move cursor to specified file line
 
 ## Editing
 
-`x` deletes a character
+`x` delete a character
 
 `D` delete all text on the line after cursor position
 
-`c ->` deletes a char to the right of the cursor and insert a char
+`c ->` delete a char to the right of the cursor and insert a char
 
-`cb` deletes word and inserts
+`cb` delete word and insert
 
-`C` deletes to end of line and insert
+`C` delete to end of line and insert
 
-`vc` deletes visual selection, and insert
+`vc` delete visual selection, and insert
+
+`u` undo last command
 
 ## Help
 
-`:help` opens help file
+`:help` open help file
 
-`:help {command}` opens help to info about a specific command
+`:help {command}` open help to info about a specific command
+
+## Misc
+
+`:w` write changes (i.e. save the file)
+
+`esc` return to normal mode
