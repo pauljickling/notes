@@ -68,6 +68,18 @@
 
 `u` undo last command
 
+## Windows Management
+
+`:split` creates new window
+
+`:vsplit` creates a new vertical window
+
+`:close` closes a window
+
+`ctrl + W` switches windows
+
+`:edit .` opens current file directory
+
 ## Help
 
 `:help` open help file
@@ -75,7 +87,5 @@
 `:help {command}` open help to info about a specific command
 
 ## Misc
-
-`:w` write changes (i.e. save the file)
 
 `esc` return to normal mode
