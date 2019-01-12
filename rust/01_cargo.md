@@ -6,6 +6,8 @@ This will create a cargo.toml file to manage the dependencies and other configur
 
 `cargo build` is used to compile an executable, and `cargo run` to run the executable. Use `cargo build --release` to create an optimized compilation. The trade-off is that the compiler will take longer to run.
 
+The executable will be found in the newly created `target/debug/` directory.
+
 Other useful cargo commands:
 
 `cargo update` Updates dependencies
