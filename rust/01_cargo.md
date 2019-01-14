@@ -12,3 +12,4 @@ Other useful cargo commands:
 
 `cargo update` Updates dependencies
 `cargo doc --open` Opens up documentation for dependencies
+`cargo test` Runs test functions
