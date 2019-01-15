@@ -68,6 +68,12 @@
 
 `u` undo last command
 
+`v` visual mode
+
+`y` yank selected text (i.e. copy)
+
+`p` put text (i.e. paste)
+
 ## Windows Management
 
 `:split` creates new window
