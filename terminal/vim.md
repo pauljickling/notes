@@ -32,7 +32,7 @@
 
 `b` move back a word or special chars starting at first char
 
-`e` or `w` move forward a word
+`e` or `w` move forward a word. w for beginning of word, and e for end.
 
 `B` move back a word without regard to special chars
 
@@ -55,6 +55,14 @@
 ## Editing
 
 `x` delete a character
+
+`d ->` deletes to the right of the cursor
+
+`d <-` deletes to the left of the cursor
+
+`dd` deletes entire line
+
+`vd` deletes visual selection
 
 `D` delete all text on the line after cursor position
 
