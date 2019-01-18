@@ -34,6 +34,10 @@
 
 `e` or `w` move forward a word. w for beginning of word, and e for end.
 
+`f + char` moves cursor towards next specified char
+
+`F + char` moves cursor back towards specified char
+
 `B` move back a word without regard to special chars
 
 `h` move cursor left
@@ -47,6 +51,8 @@
 `0` move cursor to beginning of line
 
 `$` move cursor to end of line
+
+`gg` moves cursor to first line of the file
 
 `G` move cursor to last line of file
 
@@ -63,6 +69,8 @@
 `dd` deletes entire line
 
 `vd` deletes visual selection
+
+`gv` selects last visual selection
 
 `D` delete all text on the line after cursor position
 
