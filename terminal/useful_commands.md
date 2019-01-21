@@ -178,6 +178,10 @@ Note that the destination file will be cleared. If you want to append data, use 
 
 This one is helpful while traveling.
 
+**DNS Lookup for Public IP Address**
+
+`host myip.opendns.com resolver1.opendns.com | grep "myip.opendns.com has" | awk '{print $4}'`
+
 **Print Text**
 
 `echo hello world`
