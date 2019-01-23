@@ -92,11 +92,13 @@
 
 ## Markers
 
+\*Test\*
+
 `m + char` set a marker to cursor position
 
-`\` + char` go to specified marker
+``  ` + char`` go to specified marker
 
-`\` + CHAR` go to specified marker in another file
+``  ` + CHAR`` go to specified marker in another file
 
 `:marks` view list of markers
 
