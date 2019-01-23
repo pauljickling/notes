@@ -90,6 +90,20 @@
 
 `p` put text (i.e. paste)
 
+## Markers
+
+`m + char` set a marker to cursor position
+
+`\` + char` go to specified marker
+
+`\` + CHAR` go to specified marker in another file
+
+`:marks` view list of markers
+
+`:delmark + char` deletes a marker
+
+`:delmarks!` deletes all markers
+
 ## Windows Management
 
 `:split` creates new window
