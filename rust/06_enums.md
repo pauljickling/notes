@@ -41,6 +41,6 @@ let loopback = IpAddr {
 }
 ```
 
-## Option
+## `Option`
 
 `Option` is a type of enum that indicates that a value can either be something or nothing.

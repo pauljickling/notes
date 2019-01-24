@@ -47,7 +47,7 @@ fn greeting_contains_name() {
 }
 ```
 
-## should_panic is an unreliable attribute
+## `should_panic` is an Unreliable Attribute
 
 In addition to the `#[test]` attribute, you can also further define behavior with the `#[should_panic]` attribute. This attribute will fail any test that should panic, but does not. However there is a nuance to this. That condition will only pass when it is from the resultant code. If you were to test a function that used a `panic!` macro, the test would fail even though a panic did take place. We can add more specificity to this type of test by including an optional `expected` parameter to the attribute.
 
@@ -81,7 +81,7 @@ mod tests {
 
 ```
 
-## Using Result<T, E> in Tests
+## Using `Result<T, E>` in Tests
 
 Instead of relying on panics, we can also use the Result enum to check test behavior.
 

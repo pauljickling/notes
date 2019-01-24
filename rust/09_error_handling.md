@@ -2,7 +2,7 @@
 
 Rust groups errors into two categories: *recoverable* and *unrecorverable*. In most programming languages errors are treated the same, and it uses exception mechanics to handle errors. Rust by contrast doesn't have exceptions. It relies on the type `Result<T, E>` for recoverable errors and `panic!` for unrecoverable errors. We saw something similar to the result type with the vector's `get` method.
 
-## panic!
+## `panic!`
 
 When the `panic!` macro executes, the program prints a failure message, cleans up the stack, and quits. It is possible to change the behavior of `panic!` so it doesn't clean up the stack memory, leaving it to the OS to sort it out. You can specify this in the `Cargo.toml` file.
 
@@ -17,7 +17,7 @@ You can also get a better understanding of an error in your program by running `
 
 Generally speaking you should be looking for something like `panic::main` for the source of the error.
 
-## Result
+## `Result`
 
 The `Result` type is an enum that has two variants, `Ok` and `Err`.
 

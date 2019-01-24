@@ -80,7 +80,7 @@ This code makes the coffee module public, but not the drinks module. Thus, any f
 
 One interesting thing to note is that with structs each field needs to be declared public, whereas with enums if you declare the enum public then all of its variants are public.
 
-## The use Keyword
+## The `use` Keyword
 
 Typing out the full path for whatever things you are using from a module is tedious, but the `use` keyword lets you abbreviate what you are trying to do. This concept should be familiar to anyone that has worked in C++.
 
@@ -116,7 +116,7 @@ You can also rename things you import from modules.
 
 `use std::io::Result as IoResult;`
 
-### use and Public scope
+### `use` and Public scope
 
 When you use a name in the current scope, the available name becomes private, so if you want to make it available elsewhere you need to use the `pub` keyword for that as well.
 

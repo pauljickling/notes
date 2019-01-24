@@ -130,7 +130,7 @@ fn ten() -> i32 {
 }
 ```
 
-## If Statements
+## `if` Statements
 
 If statements in Rust must evaluate a `bool` type.
 
@@ -142,11 +142,11 @@ Rust has several types of loops.
 
 `loop` is used to repeat a set of instructions until the `break` keyword is encountered.
 
-### while
+### `while`
 
 Rust also has `while` loops.
 
-### for
+### `for`
 
 Rust uses the `for {var} in {compound type}` structure to iterate through compound types. The concise and safe nature of the for loop makes it the preferred loop method in Rust.
 
