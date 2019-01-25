@@ -98,6 +98,8 @@
 
 `N` move back to last instance of expression
 
+`:noh` remove search highlighting until next search
+
 ## Markers
 
 \*Test\*
