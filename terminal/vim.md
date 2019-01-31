@@ -88,7 +88,9 @@
 
 `y` yank selected text (i.e. copy)
 
-`p` put text (i.e. paste)
+`p` put text (i.e. paste) below or to the right of cursor
+
+`P` put text above or to the left of cursor
 
 ## Search
 
@@ -101,8 +103,6 @@
 `:noh` remove search highlighting until next search
 
 ## Markers
-
-\*Test\*
 
 `m + char` set a marker to cursor position
 
