@@ -92,6 +92,10 @@
 
 `P` put text above or to the left of cursor
 
+`r + {char}` replace a single char at cursor
+
+`R` enters replace mode. Replace mode is a write-over editing style.
+
 ## Search
 
 `/{expression}` search for expression
@@ -115,6 +119,12 @@
 `:delmark + char` deletes a marker
 
 `:delmarks!` deletes all markers
+
+## Macros
+
+`q + {num/char}` begin/end macro to a specified register
+
+`@ + {num/char}` execute macro from specified register
 
 ## Windows Management
 
