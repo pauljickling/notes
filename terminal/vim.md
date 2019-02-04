@@ -28,6 +28,8 @@
 
 `O` newline above cursor position
 
+`Ctrl + p` keyword completion
+
 ## Cursor movement
 
 `b` move back a word or special chars starting at first char
@@ -79,6 +81,8 @@
 `cb` delete word and insert
 
 `C` delete to end of line and insert
+
+`S` delete an entire line and insert
 
 `vc` delete visual selection, and insert
 
