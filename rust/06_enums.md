@@ -85,7 +85,7 @@ A useful feature of `match` is that you can bind the parts of the values that ma
 This gets us to the earlier question of what to do about the inner value of a `Some` case. A `match` expression is an excellent way to unpack a value.
 
 ```
-fn plus\_one(x: Option<i32>) -> Option<i32> {
+fn plus_one(x: Option<i32>) -> Option<i32> {
     match x {
         None => None,
         Some(i) => Some(i + 1),
@@ -93,8 +93,8 @@ fn plus\_one(x: Option<i32>) -> Option<i32> {
 }
 
 let five = Some(5);
-let six = plus\_one(five);
-let none = plus\_one(None);
+let six = plus_one(five);
+let none = plus_one(None);
 ```
 
 ### Matches Are Exhaustive
@@ -112,8 +112,8 @@ Like an `if` statement, the order of `match` arms matters. After a pattern is ma
 Another way to handle `Some` values is with the `if let` pattern, which is more succinct than the `match` expression.
 
 ```
-let some\_u8\_value = Some(0u8);
-if let Some(3) = some\_u8\_value {
+let some_u8_value = Some(0u8);
+if let Some(3) = some_u8_value {
     println!("three");
 }
 ```
