@@ -161,8 +161,8 @@ struct Point {
 fn main() {
    let p = Point { x: 0, y: 7 };
    let Point {x: a, y: b } = p;
-   assert\_eq!(0, a);
-   assert\_eq(7, b);
+   assert_eq!(0, a);
+   assert_eq(7, b);
 }
 ```
 

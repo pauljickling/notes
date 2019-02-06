@@ -292,11 +292,11 @@ A trait bound on `?Sized` is the opposite of a trait bound on `Sized`. It commun
 In addition to passing closures to functions, regular functions can be passed to functions. This is useful when you want to pass an already defined function rather than defining a new closure. Using function pointers to do this will allow the use of functions as arguments to other functions. Functions coerce to the `fn` type (not to be confused with the `Fn` trait). The `fn` type is a function pointer.
 
 ```
-fn add\_one(x: i32) -> i32 {
+fn add_one(x: i32) -> i32 {
     x + 1
 }
 
-fn do\_twice(f: fn(i32) -> i32, arg: i32) -> i32 {
+fn do_twice(f: fn(i32) -> i32, arg: i32) -> i32 {
     f(arg) + f(arg)
 }
 
@@ -321,7 +321,7 @@ Some people prefer this style of passing function to using closures. Either is c
 Since closures are represented by traits that can't be returned directly. In instances where you would like to return a trait, you can use a concrete type that implements that trait as the return value of the function. However closures don't have a concrete type that is returnable. The solution is to use a trait object.
 
 ```
-fn return\_closure() -> Box<dyn Fn(i32) -> i32> {
+fn return_closure() -> Box<dyn Fn(i32) -> i32> {
     Box::new(|x| x + 1)
 }
 ```
