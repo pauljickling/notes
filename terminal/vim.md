@@ -88,6 +88,8 @@
 
 `u` undo last command
 
+`ctrl + r` redo last undo
+
 `v` visual mode
 
 `y` yank selected text (i.e. copy)
@@ -99,6 +101,8 @@
 `r + {char}` replace a single char at cursor
 
 `R` enters replace mode. Replace mode is a write-over editing style.
+
+`:s/{find_text}/{replacement_text}/g` Replace found text with replacement text globally in a file
 
 ## Search
 
