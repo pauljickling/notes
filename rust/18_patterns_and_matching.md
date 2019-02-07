@@ -118,7 +118,7 @@ match x {
 
 ### Matching Named Variables
 
-Named variables are *irrefutable* patterns that match any value. One complication of named variables is that variables declared as part of a mattern inside the `match` expression will shadow those with the same name outside the `match` construct. This can result in some behavior that is difficult to parse out. To create a `match` expression that compares outer named variables instead of shadowed variables requires using a *match guard conditional* instead.
+Named variables are *irrefutable* patterns that match any value. One complication of named variables is that variables declared as part of a pattern inside the `match` expression will shadow those with the same name outside the `match` construct. This can result in some behavior that is difficult to parse out. To create a `match` expression that compares outer named variables instead of shadowed variables requires using a *match guard conditional* instead.
 
 ### Multiple Patterns
 
