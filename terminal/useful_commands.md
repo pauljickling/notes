@@ -58,9 +58,13 @@ Note that if you use the same directory you can use the move command to rename a
 
 `touch {file name}`
 
-**Open Terminal Text Editor**
+**Open Vi Text Editor**
 
 `vi {file name}`
+
+**Open Nano Text Editor**
+
+`nano {file name}`
 
 **Concatinate Files**
 
