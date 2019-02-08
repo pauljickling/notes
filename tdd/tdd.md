@@ -17,3 +17,8 @@ TDD follows this process:
 5. Test behavior, not implementation
 6. Always think about edge cases
 
+# Functional Tests
+
+Functional tests also go by the name *acceptance tests* or *end-to-end tests*. The purpose is to examine how an application functions, from the outside. For example, tests for a web app will pay attention to the sort of details that will be revealed to the user when they go to the site with their web browser.
+
+`assert 'Shiny New Web Site' in browser.title`
