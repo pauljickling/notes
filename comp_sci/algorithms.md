@@ -304,11 +304,11 @@ Here are possible (flawed) data structure implementations:
 
 - A sorted array. Lookups can use binary search so that will be O(log n). So that's good. However an insertion operation means every element after the inserted element has to shift to the right. Worst case that is O(n).
 
--A sorted linked list with pointers fixes the insertion issue facing the sorted array, but it comes at the cost of traversing the list is O(n). In other words, as is always the case with linked lists and arrays, they suffer from the inverse problem.
+- A sorted linked list with pointers fixes the insertion issue facing the sorted array, but it comes at the cost of traversing the list is O(n). In other words, as is always the case with linked lists and arrays, they suffer from the inverse problem.
 
 - A min or max-heap structure. The problem with these structures is they have a weak invariant. If you're looking for a k-element check there is no easy method for traversal, and they will take O(n) elements.
 
--Dicts/hash tables suffer from the same problem as the heap.
+- Dicts/hash tables suffer from the same problem as the heap.
 
 ## Binary Search Tree to the Rescue
 
