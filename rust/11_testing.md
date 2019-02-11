@@ -115,7 +115,7 @@ The Rust community tends to group tests into two categories: *unit tests* and *i
 
 ### Unit Tests
 
-Unit tests test a unit of code in insolation to quickly identify if a particular function is behaving as intended. Conventionally these are placed in a module named tests and the module is annotated with `[cfg(test)]`.
+Unit tests test a unit of code in isolation to quickly identify if a particular function is behaving as intended. Conventionally these are placed in a module named tests and the module is annotated with `[cfg(test)]`.
 
 ### Integration Tests
 
