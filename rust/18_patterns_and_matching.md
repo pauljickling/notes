@@ -228,7 +228,7 @@ The Rust compiler complains about unused variables because that could be a bug. 
 
 The difference between the `_` on its own and as a prefix is important. On its own it doesn't bind any values which is why it can act as a wildcard. As a prefix however the assignment is bound to a value.
 
-For a large program with lots of unused variables it can be tedious to add the `_` prefix to every single variable. Luckily there are two ways to quickly handle this. 
+For a large program with lots of unused variables it can be tedious to add the `_` prefix to every single variable. Luckily there are two ways to quickly handle this.
 
 One way is to run `cargo fix` which is a command that will apply every suggestion from the compiler to fix a code base.
 
