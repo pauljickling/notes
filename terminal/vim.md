@@ -152,6 +152,10 @@
 
 `:edit .` opens current file directory
 
+`:resize {num}` resize window
+
+`:vertical resize {num}` resize window vertically
+
 ## Help
 
 `:help` open help file
