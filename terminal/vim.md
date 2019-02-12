@@ -88,6 +88,8 @@
 
 `u` undo last command
 
+`U` undo all changes on a line
+
 `ctrl + r` redo last undo
 
 `v` visual mode
@@ -103,6 +105,10 @@
 `R` enters replace mode. Replace mode is a write-over editing style.
 
 `:s/{find_text}/{replacement_text}/g` Replace found text with replacement text globally in a file
+
+`>` while in visual mode ident block
+
+`<` while in visual mode remove indent from block
 
 ## Search
 
