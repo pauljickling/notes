@@ -6,6 +6,8 @@
 
 `:wq` write quit (i.e. save and quit)
 
+`:wqa` write quit all
+
 ## File Management
 
 `:w` write file (i.e. save)
@@ -149,6 +151,8 @@
 `:close` closes a window
 
 `ctrl + W` switches windows
+
+`ctrl + W` + `{r/R}` moves current window down/left or up/right
 
 `:edit .` opens current file directory
 
