@@ -16,6 +16,12 @@
 
 **Careful not to `rm -rf /` which would delete the root directory!**
 
+## Tab Management
+
+`ctrl + shift + t` create new tab
+
+`alt + {number}` switch to tab number
+
 ## File Manipulation
 
 `xdg-open {file name}` open file
@@ -87,6 +93,10 @@
 `sudo shutdown -h now` shutdown system now (instead of default minute delay)
 
 ## Misc
+
+`ctrl + alt + t` open new terminal
+
+`exit` exit terminal
 
 `man {command name}` read the manual for a command
 
