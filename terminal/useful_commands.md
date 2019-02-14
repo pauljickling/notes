@@ -2,194 +2,106 @@
 
 ## Directory Traversal
 
-**Change Directory**
+`cd` change directory
 
-`cd`
+`cd ..` go back one directory
 
-To go back a directory:
+`cd ../..` go back two directories, etc.
 
-`cd..`
+`cd -` return to last visited directory
 
-To go back two directories:
+`mkdir {directory name}` make directory
 
-`cd../..`
+`rm -rf {directory name}` remove directory
 
-etc.
-
-To change to the directory you were last in:
-
-`cd -`
-
-**Make Directory**
-
-`mkdir {directory name}`
-
-**Remove Directory**
-
-`rm -rf {directory name}`
-
-Careful not to `rm -rf /` which would delete the root directory!
+**Careful not to `rm -rf /` which would delete the root directory!**
 
 ## File Manipulation
 
-**Open File**
+`xdg-open {file name}` open file
 
-`xdg-open {file name}`
+`cp {file source} {file destination}` copy file
 
-**Copy File**
+`rm {file name}` remove file
 
-`cp {file source} {file destination}`
+`mv {file source} {file destination}` move file
 
-**Remove File**
+**Note that if you use the same directory you can use the move command to rename a file.**
 
-`rm {file name}`
+`convert {file name} {new file name}` convert file
 
-**Move File**
+`touch {file name}` create empty file
 
-`mv {file source} {file destination}`
+`vi {file name}` open vi editor
 
-Note that if you use the same directory you can use the move command to rename a file.
+`nano {file name}` open nano editor
 
-**Convert File**
+`cat {file1} {file2}` concatenate files
 
-`convert {file name} {new file name}`
+**If you only provide one file as an argument this is a useful way to view a file as well.** 
 
-**Create Empty File**
+`less {file name}` read file
 
-`touch {file name}`
+`wc {file name}` produce word count of file
 
-**Open Vi Text Editor**
+`du -h` get memory size of files or directories in bytes
 
-`vi {file name}`
+`grep {phrase} {file name}` regex search of file
 
-**Open Nano Text Editor**
+`grep -r {phrase} {directory name}` recursive grep search
 
-`nano {file name}`
+`{data stream} > {destination}` redirecting data stream to a file
 
-**Concatinate Files**
-
-`cat {file1} {file2}`
-
-If you only provide one file as an argument this is a useful way to view a file as well.
-
-**Read Files**
-
-`less {file name}`
-
-**Produce Word Count of File**
-
-`wc {file name}`
-
-**Get Memory Size of Files/Directories in Bytes**
-
-`du -h`
-
-**Search Text of a File**
-
-`grep {phrase} {file name}`
-
-**Recursively Search a Folder**
-
-`grep -r {phrase} {directory name}`
-
-**Redirecting Data Stream to a File**
-
-`{data stream} > {destination}`
-
-Note that the destination file will be cleared. If you want to append data, use `>>`
+**Note that the destination file will be cleared. If you want to append data, use `>>`**
 
 ## Ownership Methods
 
-**Get Id Info**
+`id` get id info
 
-`id`
+`sudo chown -R {owner name} {directory name}` change ownership of a directory
 
-**Change Ownership of a Directory**
+`chgrp` change a file's group ownership
 
-`sudo chown -R {owner name} {directory name}`
+`passwd {user}` change a user's password
 
-**Change a File's Group Ownership**
+`chmod` change file mode
 
-`chgrp`
+`umask` set default permissions
 
-**Change a User's Password**
-
-`passwd {user}`
-
-**Change File Mode**
-
-`chmod`
-
-**Set Default Permissions**
-
-`umask`
-
-**Substitute User**
-
-`su {user}`
+`su {user}` substitute user
 
 ## Processes
 
-**Snapshot of Current Processes**
+`ps` snapshot of current processes
 
-`ps`
+`top` display tasks
 
-**Display Tasks**
+`jobs` list active jobs
 
-`top`
+`kill {pid}` kill a process
 
-**List Active Jobs**
+`killall {program or username}` kill all processes associated with a specified program or username
 
-`jobs`
+`sudo reboot` restart system
 
-**Kill a Process**
-
-`kill {pid}`
-
-**Kill all Processes Associated with a Specified Program or Username**
-
-`killall {program or username}`
-
-**Restart System**
-
-`sudo reboot`
-
-**Shutdown System At This Moment in Time**
-
-`sudo shutdown -h now`
+`sudo shutdown -h now` shutdown system now (instead of default minute delay)
 
 ## Misc
 
-**Read the Manual for a Command**
+`man {command name}` read the manual for a command
 
-`man {command name}`
+`df -h` get amount of free space on each partition
 
-**Get Amount of Free Space on Each Partition**
+`mount` show mounted filesystems
 
-`df -h`
+`iostat` get statistics about disk read/writes
 
-**Show Mounted Filesystems**
+`sudo service network-manager restart` reset wifi network lookup
 
-`mount`
+**This one is helpful while traveling.**
 
-**Get Statistics About Disk Read/Writes**
+`host myip.opendns.com resolver1.opendns.com | grep "myip.opendns.com has" | awk '{print $4}'` DNS lookup for public ip addresses
 
-`iostat`
+`echo hello world` stdout text
 
-**Reset Wifi Network Lookup**
-
-`sudo service network-manager restart`
-
-This one is helpful while traveling.
-
-**DNS Lookup for Public IP Address**
-
-`host myip.opendns.com resolver1.opendns.com | grep "myip.opendns.com has" | awk '{print $4}'`
-
-**Print Text**
-
-`echo hello world`
-
-**Arithmetic**
-
-`echo $((365 * 24))`
+`echo $((365 * 24))` arithmetic
