@@ -115,3 +115,5 @@
 `echo hello world` stdout text
 
 `echo $((365 * 24))` arithmetic
+
+`bc <<< "(365 * 24)"` an alternative method for arithmetic
