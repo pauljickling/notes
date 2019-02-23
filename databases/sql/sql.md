@@ -180,3 +180,9 @@ The `LIKE` operator uses two different kinds of wildcards. `_` is used for a sin
 Note that `NOT` can preface many logical operators, but for `IS NULL` you would use the more semantically palatable `IS NOT NULL`.
 
 SQL also accepts basic arithmetic operators, `+`, `-`, `*`, and `/`.
+
+## SQL Variables
+
+SQL uses recursive CTEs, and you can think of it as assigning query values to a variable.
+
+`WITH {variable name} AS ({conditions)`
