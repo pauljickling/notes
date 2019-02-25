@@ -104,6 +104,8 @@
 
 `y` yank selected text (i.e. copy)
 
+`Y` yanks entire line of text
+
 `p` put text (i.e. paste) below or to the right of cursor
 
 `P` put text above or to the left of cursor
