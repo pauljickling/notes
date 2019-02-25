@@ -64,7 +64,9 @@
 
 ## Editing
 
-`x` delete a character
+`x` delete a character as del key
+
+`X` deletes a character as backspace key
 
 `d ->` deletes to the right of the cursor
 
