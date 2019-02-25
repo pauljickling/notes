@@ -96,6 +96,10 @@
 
 `v` visual mode
 
+`V` visual line mode selects entire lines for visual selection
+
+`ctrl + v` visual block mode
+
 `y` yank selected text (i.e. copy)
 
 `p` put text (i.e. paste) below or to the right of cursor
