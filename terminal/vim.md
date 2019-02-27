@@ -38,9 +38,9 @@
 
 `e` or `w` move forward a word. w for beginning of word, and e for end.
 
-`f + char` moves cursor towards next specified char
+`f + {char}` moves cursor towards next specified char
 
-`F + char` moves cursor back towards specified char
+`F + {char}` moves cursor back towards specified char
 
 `B` move back a word without regard to special chars
 
@@ -132,15 +132,15 @@
 
 ## Markers
 
-`m + char` set a marker to cursor position
+`m + {char}` set a marker to cursor position
 
-``  ` + char`` go to specified marker
+``  ` + {char}`` go to specified marker
 
-``  ` + CHAR`` go to specified marker in another file
+``  ` + {CHAR}`` go to specified marker in another file
 
 `:marks` view list of markers
 
-`:delmark + char` deletes a marker
+`:delmark + {char}` deletes a marker
 
 `:delmarks!` deletes all markers
 
