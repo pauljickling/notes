@@ -124,6 +124,8 @@
 
 `/{expression}` search for expression
 
+`/c{expression}` case insensitive search for expression
+
 `n` search for next instance of expression
 
 `N` move back to last instance of expression
