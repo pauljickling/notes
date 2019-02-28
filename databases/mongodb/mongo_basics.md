@@ -1,4 +1,4 @@
-## MongoDB Basics
+# MongoDB Basics
 
 ### Terminal interface
 
@@ -8,11 +8,19 @@
 
 `sudo service mongod stop`
 
-#### Entering Mongo Shell
+### Entering Mongo Shell
 
 `mongo`
 
-### Structure
+### Examining Databases and Collections
+
+`show dbs`
+
+`show collections`
+
+`use {db/collection}`
+
+## Structure
 
 MongoDB is a document-oriented database rather than a relational one. When querying data MongoDB has databases, which contain collections, which contain documents, which contain key-value pairs. MongoDB documents resemble Javascript objects.
 
