@@ -4,7 +4,7 @@
 
 # Switching Values
 
-(a, b) = (b, a)
+`(a, b) = (b, a)`
 
 ## List Comprehensions
 
@@ -27,4 +27,4 @@ for index, element in enumerate(arr):
 
 ## String Interpolation
 
-"Name: {}, Age: {}, Occupation: {}".format(name, age, job)
+`"Name: {}, Age: {}, Occupation: {}".format(name, age, job)`
