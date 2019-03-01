@@ -34,22 +34,22 @@ C++ is a statically types language, meaning you must declare the type for your v
 
 `double` handles floats with double precision. Generally the preferred type to use for decimal numbers according to *C++ Primer*.
 
-# char
+## char
 
 `char` is used for single characters. Chars use single quotes, unlike strings which use double quotes. 8 bit.
 
-# wchar_t
+## wchar_t
 
 `wchar_t` stands for wide character and is 16 bits.
 
-# char16_t
+## char16_t
 
 `char16_t` is for Unicode 16 bit chars.
 
-# char32_t
+## char32_t
 
 `char32_t` is for Unicode 32 bit chars.
 
-# bool
+## bool
 
 `bool` is used for Booleans. Uses true and false (lowercase), and evaluating bool types returns 1 or 0.
