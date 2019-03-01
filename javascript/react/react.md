@@ -6,7 +6,7 @@ React is an unopinionated Javascript library for building out the UI of your web
 
 The simplest way to get started using React is to install and use the create-react-app npm package.
 
-`create-react-app {app name}` to create an app directory
+`npx create-react-app {app name}` to create an app directory
 `npm start` to build and run the app
 `npm run build` to create an optimized build of the app in the build folder
 
