@@ -8,6 +8,10 @@ Termion can format text colors in stdout. The Reset variant sets text to the def
 
 `println!("{} Hello {} World! {} Colors have been reset.", color::Fg(color::Red), color::Fg(color::Green), color::Fg(color::Reset));`
 
+If the default colors are insufficient for your needs you can also provide 24 bit rgb values.
+
+`termion::color::rgb(r, g, b)`
+
 ## Clearing the Screen
 
 The default way to clear the terminal screen in Rust would be something like the following statement:
