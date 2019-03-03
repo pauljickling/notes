@@ -34,7 +34,7 @@ The first parameter is the column placement, and the second parameter is the row
 
 ## Raw Mode
 
-Raw mode allows the development of things like games. Raw mode disables stdin, line buffering, and scrolling.
+Raw mode allows for the development of an interactive tty interface. Raw mode disables stdin, line buffering, and scrolling.
 
 ### Entering Raw Mode
 
