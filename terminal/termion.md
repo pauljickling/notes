@@ -40,17 +40,53 @@ Raw mode allows for the development of an interactive tty interface. Raw mode di
 
 ### Entering Raw Mode
 
+#### Imports
+
+```
+use std::io::{stdout, Write};
+use termion::raw::IntoRawMode;
+```
+
+#### Assign a stdout mutable variable
+
 `let mut stdout = stdout().into_raw_mode().unwrap();`
 
 ### Display in Raw Mode
 
-The `println!` macro doesn't work in raw mode. Use `writeln!` instead.
+Use `writeln!` while in raw mode, and control the display with the cursor.
 
 `writeln!(stdout, "Hey there.").unwrap();`
 
+You will always need to `unwrap()`.
+
 ## Inputs
 
-TODO
+### Keys
+
+#### Imports
+
+```
+use std::io::stdin;
+use termion::Event::Key;
+use termion::Input::TermRead;
+```
+
+#### Assign a stdin variable
+
+`let stdin = stdin();`
+
+#### Controller
+
+```
+for key in stdin.keys() {
+    match key {
+        Key::Char('q') => break,
+        Key::Left => println!("left arrow"),
+        Key::Char(key) => println!("{}", key),
+        _ => println!("Oops!"),
+    }    
+}
+```
 
 ## Learning More
 
