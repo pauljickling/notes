@@ -8,6 +8,8 @@ Termion can format text colors in stdout. The Reset variant sets text to the def
 
 `println!("{} Hello {} World! {} Colors have been reset.", color::Fg(color::Red), color::Fg(color::Green), color::Fg(color::Reset));`
 
+`Fg` stands for Foreground color. Use `Bg` for Background color.
+
 If the default colors are insufficient for your needs you can also provide 24 bit rgb values.
 
 `termion::color::rgb(r, g, b)`
