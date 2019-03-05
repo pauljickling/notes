@@ -4,6 +4,28 @@ A *crate* is a binary or library. Its *root* is a source file that is used to bu
 
 A *package* has a Cargo.toml file that describes how to build the crate or crates contained in the package. Thus, anytime `cargo new {project name}` is run, it can be said that you are creating a new package.
 
+Using modules can be kind of confusing. Here are the basics you need to know.
+
+### Importing an Internal Crate
+
+By internal crate we mean a different Rust file in your Cargo directory.
+
+```
+pub mod {filename};
+
+use self::{filename}::*;
+```
+
+### Importing an External Crate
+
+```
+extern crate {cratename}
+
+use {cratename}::{ImportType};
+```
+
+
+
 ## Modules
 
 When you create a new Rust package, you will typically have a source file like this:
