@@ -110,7 +110,7 @@ Functions declared in the `extern` block are always unsafe to call from Rust cod
 
 Global variables can create problems because if two threads are accessing the same mutable global variable it can create a data race.
 
-In Rust, globl variables are called *static* variables.
+In Rust, global variables are called *static* variables.
 
 ```
 static HELLO_WORLD: &str = "Hello world";
