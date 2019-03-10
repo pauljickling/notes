@@ -34,6 +34,16 @@ The terminal cursor controls the placement of characters in the display. Termion
 
 The first parameter is the column placement, and the second parameter is the row placement.
 
+In addition to specifying specific coordinates, you can simply move the cursor directionally as well.
+
+`cursor::Down(2)` moves the cursor down 2 spaces
+
+There are also structs for showing and hiding the cursor.
+
+`cursor::Hide()`
+
+`cursor::Show()`
+
 ## Raw Mode
 
 Raw mode allows for the development of an interactive tty interface. Raw mode disables stdin, line buffering, and scrolling.
