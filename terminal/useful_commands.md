@@ -92,6 +92,10 @@
 
 `sudo shutdown -h now` shutdown system now (instead of default minute delay)
 
+## Networking
+
+`ssh -i {path/to/key_file} {username@remote_host}` creates ssh connection to remote host using an identity specified by a private key
+
 ## Misc
 
 `ctrl + alt + t` open new terminal
