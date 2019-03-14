@@ -96,6 +96,14 @@
 
 `ssh -i {path/to/key_file} {username@remote_host}` creates ssh connection to remote host using an identity specified by a private key
 
+`scp {filename} {username@ipaddress:path/to/remote_dir} {path/to/local_dir}` remote file copy program. Use `-r` flag for directories
+
+`host myip.opendns.com resolver1.opendns.com | grep "myip.opendns.com has" | awk '{print $4}'` DNS lookup for public ip addresses
+
+`sudo service network-manager restart` reset wifi network lookup
+
+**This one is helpful while traveling.**
+
 ## Misc
 
 `ctrl + alt + t` open new terminal
@@ -109,12 +117,6 @@
 `mount` show mounted filesystems
 
 `iostat` get statistics about disk read/writes
-
-`sudo service network-manager restart` reset wifi network lookup
-
-**This one is helpful while traveling.**
-
-`host myip.opendns.com resolver1.opendns.com | grep "myip.opendns.com has" | awk '{print $4}'` DNS lookup for public ip addresses
 
 `echo hello world` stdout text
 
