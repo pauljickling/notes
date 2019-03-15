@@ -105,6 +105,12 @@ React also doesn't like to have components with multiple sibling elements. Thus,
 
 Components can be functional or class based. Any component that manages state will need to be class based.
 
+#### Inline Styling
+
+Inline styling for React components is common. Unlike CSS properties, in JSX a camel case format is used since hyphenations are not valid syntax.
+
+`<div style={{fontSize: 22}}>Lorem ipsum</div>`
+
 ## State
 
 Providing state to class based components requires several steps:
