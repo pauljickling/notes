@@ -68,9 +68,9 @@
 
 `X` deletes a character as backspace key
 
-`d ->` deletes to the right of the cursor
+`d {->}` deletes to the right of the cursor
 
-`d <-` deletes to the left of the cursor
+`d {<-}` deletes to the left of the cursor
 
 `dd` deletes entire line
 
@@ -80,7 +80,7 @@
 
 `D` delete all text on the line after cursor position
 
-`c ->` delete a char to the right of the cursor and insert a char
+`c {->}` delete a char to the right of the cursor and insert a char
 
 `cb` delete word and insert
 
