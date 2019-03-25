@@ -114,7 +114,7 @@
 
 `R` enters replace mode. Replace mode is a write-over editing style.
 
-`:s/{find_text}/{replacement_text}/g` Replace found text with replacement text globally in a file
+`:%s/{find_text}/{replacement_text}/g` Replace found text with replacement text globally in a file
 
 `>` while in visual mode ident block
 
