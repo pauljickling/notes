@@ -1,12 +1,8 @@
-## Problem
+# Polymorphism
 
-Describe and give an example of each of the following type of polymorphism:
+Polymorphism is the provision of a single interface to entities of different types or the use of a single symbol to represent multiple different types.
 
-- Ad-hoc polymorphism
-- Parametric Polymorphism
-- Subtype Polymorphism
-
-## Types of 
+## Types of Polymorphism 
 
 ### Ad-Hoc Polymorphism
 
