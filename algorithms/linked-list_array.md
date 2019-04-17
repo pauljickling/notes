@@ -6,7 +6,7 @@ A linked list is one where each item in the list stores the address of the next 
 
 #### Anatomy of a Linked List
 
-The elements of a linked list are called nodes, and they have two attributes: some sort of data, and a *next* property that points to the next node. So any prototype method created for a linked list like `addNode` or `removeNode` will perform its operation twice.
+The elements of a linked list are called nodes, and they have two attributes: some sort of data, and a *next* property that points to the next node. So any prototype method created for a linked list like `addNode` or `removeNode` will perform its operation twice. Additionally, a doubly-linked list will also contain a *previous* property that points to the prior node. 
 
 A linked list is said to have a *head* and a *tail* node, that is the first and last element. Therefore an element for a linked list with just one element is both the head and tail node.
 
