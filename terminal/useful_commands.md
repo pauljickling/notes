@@ -114,6 +114,8 @@
 
 `df -h` get amount of free space on each partition
 
+`df -h --total` find out about total disk space useage
+
 `mount` show mounted filesystems
 
 `iostat` get statistics about disk read/writes
