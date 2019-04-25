@@ -21,6 +21,29 @@ ansible_ssh_private_key_file=path/to/aws.pem
 ansible_python_interpreter=/usr/bin/python3
 ```
 
+### Dynamic Inventories
+
+If your inventory fluctuates over time the default inventory solution will be insufficient for your needs.
+
+There are two tools available for more dynamic needs: inventory plugins, and inventory scripts.
+
+#### Inventory Script Examples
+
+[Cobbler](https://cobbler.github.io) is an example of an inventory script. Using it involves adding the `cobbler.ini` file to `/etc/ansible`.
+
+There is also an [EC2 external inventory script](https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/ec2.py). There are two ways to use this script. The easiest is with the `-i` CLI flag, and specifying the path:
+
+`ansible -i ec2.py -u ubuntu us-west-1d -m ping`
+
+You can also copy the script to `/etc/ansible/hosts` and set permissions with `chmod + x` as well as copy the *ec2.ini* file to `/etc/ansible/`.
+
+For AWS you need to configure the Python interface for AWS, Boto. You can do this by exporting the following two environment variables:
+
+```
+export AWS_ACCESS_KEY_ID='AK123'
+export AWS_SECRET_ACCESS_KEY='abc123'
+```
+
 ## Modules
 
 There are over 450 provided modules to automate various tasks.
