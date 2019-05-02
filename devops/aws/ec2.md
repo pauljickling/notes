@@ -14,4 +14,4 @@ If the pem file is too permissive you will need to `chmod 600 <file address>` an
 
 ## Serving a Web Page
 
-To access a web application you have setup on your EC2 instance you need to make sure you have a TCP connection with a port range that includes the port your application is running. You can configure this in the security group for your EC2 instance. Then you go type <IPv4 address>:<port number> in your browser's URL bar to access.
+To access a web application you have setup on your EC2 instance you need to make sure you have a TCP connection with a port range that includes the port your application is running. You can configure this in the security group for your EC2 instance. Then you go type `<IPv4 address>:<port number>` in your browser's URL bar to access.
