@@ -1,0 +1,7 @@
+# MYSQL Basics
+
+`SHOW DATABASES;`
+
+`USE {DATABASE NAME};`
+
+`SHOW TABLES;`
