@@ -55,11 +55,11 @@ def difference(a, b):
 
 ### Lists, Dicts, Tuples, Sets
 
-A list works approximately the same as arrays in Javascript, and other dynamic languages.
+A list works approximately the same as arrays in JavaScript, and other dynamic languages.
 
 `numbers = [1, 2, 3, 4, 5]`
 
-Dicts resemble Javascript objects, although in Javascript objects keys are always strings, whereas with Python dicts any immutable type is a valid key. Since Python accepts any sort of immutable type as a key strings need to have quotation marks around them, unlike in Javascript where keys are always strings and therefore the quotation marks are assumed and implied.
+Dicts resemble JavaScript objects, although in JavaScript objects keys are always strings, whereas with Python dicts any immutable type is a valid key. Since Python accepts any sort of immutable type as a key strings need to have quotation marks around them, unlike in JavaScript where keys are always strings and therefore the quotation marks are assumed and implied.
 
 ```
 bike = {
@@ -71,7 +71,7 @@ bike = {
 
 Dicts use bracket notation for recalling them (dot notation is reserved for object instances defined via classes).
 
-Tuples are common in many programming languages, but they are not present in Javascript. A tuple is an immutable list. They are expressed this way:
+Tuples are common in many programming languages, but they are not present in JavaScript. A tuple is an immutable list. They are expressed this way:
 
 `x = (1, 2, 3)`
 
@@ -79,11 +79,11 @@ Common tuple methods include `count()` which returns the number of times a value
 
 Sets work like other languages where they are arrays that do not contain duplicative values.
 
-`s = set({1, 2, 3, 4, 5, 5, 5}) # outputs 1, 2, 3, 4, 5`
+`s = set({1, 2, 3, 4, 5, 5, 5}) # in no particular order outputs 1, 2, 3, 4, 5`
 
 ### Loops
 
-Unlike Javascript, Python does not make use of iterators. So loops in Python are typically expressed as while loops or using the for.. in pattern.
+Unlike JavaScript, Python does not make use of iterators. So loops in Python are typically expressed as while loops or using the for.. in pattern.
 
 ```
 i = 0
