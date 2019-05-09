@@ -62,6 +62,8 @@
 
 `{number}G` move cursor to specified file line
 
+`{number}|` move cursor to specified column number on line
+
 ## Editing
 
 `x` delete a character as del key
