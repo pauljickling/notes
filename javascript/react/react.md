@@ -1,6 +1,6 @@
 # React Notes
 
-React is an unopinionated Javascript library for building out the UI of your web app. You can learn more about React [here](https://reactjs.org/docs/getting-started.html).
+React is an unopinionated JavaScript library for building out the UI of your web app. You can learn more about React [here](https://reactjs.org/docs/getting-started.html).
 
 ## Startup
 
@@ -12,7 +12,7 @@ The simplest way to get started using React is to install and use the create-rea
 
 ## JSX
 
-JSX is a preprocessor that adds XML syntax to Javascript. It is not required, but typically used with React.
+JSX is a preprocessor that adds XML syntax to JavaScript. It is not required, but typically used with React.
 
 ## React Flowchart
 
@@ -35,7 +35,7 @@ JSX is a preprocessor that adds XML syntax to Javascript. It is not required, bu
 class {Name} extends React.Component {
   render() {
     return (
-      // your HTML with handlebars that accept any Javascript, for example:
+      // your HTML with handlebars that accept any JavaScript, for example:
       <div>{this.props.exampleComponent}</div>
       <{component name} /> // different component using this same pattern
     );
@@ -79,7 +79,7 @@ Here is how it is used:
 
 `Card.propTypes = { name: PropTypes.string }`
 
-Note that in Javascript there is a number type, not an integer. Also the PropTypes module uses `func` instead of function, and `bool` is used instead of boolean.
+Note that in JavaScript there is a number type, not an integer. Also the PropTypes module uses `func` instead of function, and `bool` is used instead of boolean.
 
 ### Parent Child Component Relationships
 
@@ -136,7 +136,7 @@ constructor(props) {
 
 6. Create any additional methods needed, for instance perhaps a method that is called from within the `componentDidMount()` method.
 
-Do not modify state directly, instead use `this.setState()`. The `setState()` method takes an anonymous object with the changed state values as its parameter. Also remember that state updates may be asynchronous like everything else in Javascript, so code accordingly.
+Do not modify state directly, instead use `this.setState()`. The `setState()` method takes an anonymous object with the changed state values as its parameter. Also remember that state updates may be asynchronous like everything else in JavaScript, so code accordingly.
 
 ## Event Handlers
 
@@ -155,7 +155,7 @@ class Button extends React.Component {
 }
 ```
 
-Another difference from standard Javascript event handlers is that you cannot return `false` to prevent default behavior. Instead you would have to call the `preventDefault()` method on the event.
+Another difference from standard JavaScript event handlers is that you cannot return `false` to prevent default behavior. Instead you would have to call the `preventDefault()` method on the event.
 
 ```
 function handleClick(e) {
@@ -163,7 +163,7 @@ function handleClick(e) {
 }
 ```
 
-Finally, it is important to remember that in Javascript class methods are not bound by default, therefore you will need to call the `bind()` method so the provided `this` value will pass its context along.
+Finally, it is important to remember that in JavaScript class methods are not bound by default, therefore you will need to call the `bind()` method so the provided `this` value will pass its context along.
 
 Typically the constructor function will contain a line of code like this for every component method:
 
