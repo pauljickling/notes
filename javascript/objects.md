@@ -1,10 +1,10 @@
 ## Objects
 
-Objects group together various properties and methods that are only accessible via reference to that object. *Properties* are key/value pairs where the key is always a string, and the value is any valid type of Javascript value. When objects contain functions these functions are called *methods*. Javascript provides a CRUD (Create, Read, Update, Delete) interface for interacting with object properties and methods.
+Objects group together various properties and methods that are only accessible via reference to that object. *Properties* are key/value pairs where the key is always a string, and the value is any valid type of JavaScript value. When objects contain functions these functions are called *methods*. JavaScript provides a CRUD (Create, Read, Update, Delete) interface for interacting with object properties and methods.
 
 ### Creating Objects
 
-Javascript has two methods of creating objects: *literal notation* and *constructor notation*.
+JavaScript has two methods of creating objects: *literal notation* and *constructor notation*.
 
 #### Literal Notation
 
@@ -12,7 +12,7 @@ Javascript has two methods of creating objects: *literal notation* and *construc
 
 #### Constructor Notation
 
-There are in fact two ways to use constructor notation. One method is to create a variable that is a new Object. However using Javascript's system of prototypal inheritance it is also possible to create new kinds of objects.
+There are in fact two ways to use constructor notation. One method is to create a variable that is a new Object. However using JavaScript's system of prototypal inheritance it is also possible to create new kinds of objects.
 
 New Object Technique:
 
@@ -35,7 +35,7 @@ let book = new Book('Twenty-one Love Poems', 'Adrienne Rich');
 
 #### ES6 Class Syntax
 
-ES6 provides a class syntax for constructing objects. Although Javascript is a language that features prototypal inheritance rather than classical inheritance, the class syntax provides a way to create prototypal objects that will be familiar to programmers that come from an object-oriented background where a class is distinct from its object instances (while in fact no such distinction exists in Javascript).
+ES6 provides a class syntax for constructing objects. Although JavaScript is a language that features prototypal inheritance rather than classical inheritance, the class syntax provides a way to create prototypal objects that will be familiar to programmers that come from an object-oriented background where a class is distinct from its object instances (while in fact no such distinction exists in JavaScript).
 
 ```
 class Book {
