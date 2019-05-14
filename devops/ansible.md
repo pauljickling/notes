@@ -52,6 +52,12 @@ tasks:
 
 The *command* and *shell* modules take a list of arguments instead of a key/value pair.
 
+### Executing a Playbook
+
+`ansible-playbook playbook.yml -f 10` runs a playbook "using a parallelism level of 10".
+
+If you want to invert the architecture of Ansible so nodes check into a central location instead of pushing configuration out to them you can use `ansible-pull`.
+
 ## Inventories
 
 Inventories are target servers for playbooks. For example, a server for your web application, and a server for your database.
