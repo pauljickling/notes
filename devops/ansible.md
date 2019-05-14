@@ -4,6 +4,54 @@
 
 Playbooks are YAML files that are used to build applications.
 
+### Hosts and Users
+
+For each play in a playbook there is a choice about which machines are targetted, and which remote user is used to complete the tasks.
+
+The `hosts` is a list of one or more groups or host patterns, separated by colons. The `remote_user` is the name of the user account.
+
+```
+---
+- hosts: webservers
+  remote_user: ubuntu
+  tasks:
+    - service:
+        name: apache
+        state: started
+      become: yes
+      become_method: sudo
+```
+
+### Order of Operations
+
+You can control the order in which hosts are run. The default is to follow the order supplied by the inventory. Valid parameters:
+
+- `inventory` (default)
+- `reverse_inventory` reverse of the order provided by the inventory
+- `sorted` sorted alphabetically
+- `reverse_sorted` reverse alphabetical order
+- `shuffle` shuffled order
+
+### Tasks List
+
+Each play contains a list of tasks. Tasks are executed in order, one at a time, against all machines matched by the host pattern before moving onto the next task.
+
+**NOTE:** A host that fails a task is taken out of rotation entirely. In this instance the point of failure should be corrected, and the playbook rerun.
+
+Every task should have a `name` which is included in the output from running the playbook and acts as a description of the task. Without a name the string fed to "action" will be used for output.
+
+A basic task looks like the following:
+
+```
+tasks:
+  - name: make sure apache is running
+    service:
+      name: httpd
+      state: started
+```
+
+The *command* and *shell* modules take a list of arguments instead of a key/value pair.
+
 ## Inventories
 
 Inventories are target servers for playbooks. For example, a server for your web application, and a server for your database.
