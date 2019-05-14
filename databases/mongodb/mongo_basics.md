@@ -22,7 +22,7 @@
 
 ## Structure
 
-MongoDB is a document-oriented database rather than a relational one. When querying data MongoDB has databases, which contain collections, which contain documents, which contain key-value pairs. MongoDB documents resemble Javascript objects.
+MongoDB is a document-oriented database rather than a relational one. When querying data MongoDB has databases, which contain collections, which contain documents, which contain key-value pairs. MongoDB documents resemble JavaScript objects.
 
 Documents always have a unique `"_id"` key. They are generated automatically.
 
@@ -37,7 +37,7 @@ Sub-collections don't have any special properties (they are just more collection
 
 ### CRUD Interface
 
-Using the MongoDB shell you can create a document the same way you would create an object in Javascript:
+Using the MongoDB shell you can create a document the same way you would create an object in JavaScript:
 
 ```
 posts = { "title" : "My Blog Post",
