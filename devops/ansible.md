@@ -91,13 +91,6 @@ There is also an [EC2 external inventory script](https://raw.githubusercontent.c
 
 You can also copy the script to `/etc/ansible/hosts` and set permissions with `chmod + x` as well as copy the *ec2.ini* file to `/etc/ansible/`.
 
-For AWS you need to configure the Python interface for AWS, Boto. You can do this by exporting the following two environment variables:
-
-```
-export AWS_ACCESS_KEY_ID='AK123'
-export AWS_SECRET_ACCESS_KEY='abc123'
-```
-
 ## Modules
 
 There are over 450 provided modules to automate various tasks.
@@ -119,3 +112,79 @@ In cases where a device does not support SFTP you should switch to SCP mode in y
 Ansible assumes the use of SSH keys. When using password authentication instead supply the `--ask-pass` flag. If using sudo features use the `--ask-become-pass` flag.
 
 Ansible runs best when it is near the machine being managed. Therefore if running in the cloud it is best to setup a machine inside the cloud to run it on.
+
+## AWS Guide
+
+Ansible modules need boto installed on the control machine.
+
+`pip install boto`
+
+Playbook steps typically use the following pattern for provisioning steps:
+
+```
+- hosts: localhost
+  connection: local
+  gather_facts: False
+  tasks:
+    - ...
+```
+
+### Authentication
+
+Authentication with AWS modules rel;ies on specifying access and the secret key as ENV variables or module arguments.
+
+Storing as ENV variables:
+
+```
+export AWS_ACCESS_KEY_ID='AK123'
+export AWS_SECRET_ACCESS_KEY='abc123'
+```
+
+As module arguments:
+
+```
+- ec2
+  aws_access_key: "{{ec2_access_key}}"
+  aws_secret_key: "{{ec2_secret_key}}"
+  image: "..."
+```
+
+### Provisioning
+
+```
+# demo_setup.yml
+
+- hosts: localhost
+  connection: local
+  gather_facts: False
+
+  tasks:
+
+    - name: Provision a set of instances
+      ec2:
+         key_name: my_key
+         group: test
+         instance_type: t2.micro
+         image: "{{ ami_id }}"
+         wait: true
+         exact_count: 5
+         count_tag:
+            Name: Demo
+         instance_tags:
+            Name: Demo
+      register: ec2
+```
+
+### Host Inventory
+
+With a cloud setup it doesn't make sense to maintain a static list of cloud hostnames. A better solution is to use [ec2 dynamic inventory script](https://docs.ansible.com/ansible/latest/user_guide/intro_dynamic_inventory.html#dynamic-inventory).
+
+### Tags and Groups and Variables
+
+With an inventory script hosts automatically appear in groups based on how they're tagged in EC2. So a host with the "class" tag and a value of "webserver" is found in a dynamic group with the following:
+
+```
+- hosts: tag_class_webserver
+  tasks:
+    - ping
+```
