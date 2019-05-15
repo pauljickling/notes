@@ -8,7 +8,7 @@ A recursive function has two parts: the *base case*, and the *recursive case*. T
 
 ### Example: a factorial function
 
-Here's an example of a factorial function written in Javascript using recursion.
+Here's an example of a factorial function written in JavaScript using recursion.
 
 ```
 function factorial(x) {
