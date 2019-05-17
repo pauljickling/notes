@@ -106,6 +106,12 @@
 
 **This one is helpful while traveling.**
 
+## SSH Keygen
+
+`ssh-keygen -t rsa -b 4096 -C  "{email address}"` Generates a SSH key associated with your email address
+
+`ssh-add ~/.ssh/id_rsa` Adds SSH private key to the SSH-agent.
+
 ## Misc
 
 `ctrl + alt + t` open new terminal
