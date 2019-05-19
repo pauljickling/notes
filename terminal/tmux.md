@@ -9,3 +9,5 @@
 `ctrl + b + {arrow key}` resize pane
 
 `ctrl + d` or `exit` close pane
+
+`ctrl + b` then `[` Scroll mode
