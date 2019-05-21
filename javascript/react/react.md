@@ -138,6 +138,26 @@ constructor(props) {
 
 Do not modify state directly, instead use `this.setState()`. The `setState()` method takes an anonymous object with the changed state values as its parameter. Also remember that state updates may be asynchronous like everything else in JavaScript, so code accordingly.
 
+## Lifting State Up
+
+The simplest way to pass data in React is from a parent component to child components (i.e. props). By contrast, passing data from child components to parent components, or between sibling components (which need a parent component as a mediator) is more complicated. This is by design, in general React components are supposed to act self-contained. Nonetheless, in actual practice there are many instances in which we want data to propogate in the described directions.
+
+React handles this sharing of state by moving it up to the closest common ancestor of the shared components, and is referred to as *lifting state up*. The owner of this shared state becomes the *source of truth* for this data, and this ensures that all components update their state appropriately.
+
+Suppose you have some components that are managing their local state. We want to change these components so that they are sharing a common state. We need to make the following changes to our application:
+
+1. Our components need references to `this.state.foo` to become `this.props.foo`
+
+2. Similarly, there needs to be a handleChange function with a reference to props instead of setting state.
+
+```
+handleChange(e) {
+  this.props.onChange(e.target.value)    
+}
+```
+
+3. For the parent component the props value of the component will be stored as local state. 
+
 ## Event Handlers
 
 Events work similarly to events that handle DOM elements, but the syntax is slightly different. As an example, here is an example for a button component that does something when clicked:
