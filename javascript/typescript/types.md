@@ -18,6 +18,8 @@ There are two ways to assign array types in TypeScript.
 
 2. `let goals: Array<number> = [0, 2, 1, 1, 0, 3];`
 
+If you want an immutable array, you can use the `ReadonlyArray<T>` type.
+
 ### Tuples
 
 Although JavaScript does not have tuples, in TypeScript you can define an array to not dynamically resize, essentially making it a tuple.
@@ -26,6 +28,8 @@ Although JavaScript does not have tuples, in TypeScript you can define an array 
 let person: [string, number];
 person = ["Hayao Miyazaki", 78];
 ```
+
+Note that unlike the `ReadonlyArray<T>` type, tuples are not immutable. They simply cannot be resized.
 
 ### Enums
 
