@@ -1,0 +1,29 @@
+# Git
+
+Git is a version control tool.
+
+## Basics
+
+`git status` Shows the current status.
+
+`git add {file}` Adds a file to a new commit
+
+`git add .` Adds all modified files to a new commit
+
+`git rm {file}` Removes a file from a new commit
+
+`git commit -m "{message}"` Creates a message describing the changes made in this commit
+
+`pit push {repository} {branch}` Pushes commit to specified repository and branch.
+
+`git fetch` Fetches new commits made to repository
+
+`git pull` Applies commits made to current working branch
+
+`git checkout {branch}` Switches to branch. Use `-b` flag for new branch.
+
+## Other Useful Commands
+
+`git status -uno` Only shows the current status of staged files. Useful when you have a lot of unstaged files that you are not interested in commiting.
+
+`git checkout -- {file}` Reverts any changes to file to prior commit. Potentially dangerous but useful command.
