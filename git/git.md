@@ -24,6 +24,10 @@ Git is a version control tool.
 
 ## Other Useful Commands
 
+`git diff {file}` Shows changes to file
+
+`git diff {branch1} {branch2}` Compares differences between two branches
+
 `git status -uno` Only shows the current status of staged files. Useful when you have a lot of unstaged files that you are not interested in commiting.
 
 `git checkout -- {file}` Reverts any changes to file to prior commit. Potentially dangerous but useful command.
