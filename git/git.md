@@ -31,3 +31,5 @@ Git is a version control tool.
 `git status -uno` Only shows the current status of staged files. Useful when you have a lot of unstaged files that you are not interested in commiting.
 
 `git checkout -- {file}` Reverts any changes to file to prior commit. Potentially dangerous but useful command.
+
+`git commit --amend -m "{message}"` Amends commit message to be pushed. Useful not only for changing the message, but also for instances where you forgot to add some files to your commit.
