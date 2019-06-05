@@ -8,6 +8,12 @@ TypeScript is a typed superset of JavaScript that compiles to JS. This gives the
 
 One interesting aspect of the TypeScript compiler is it will still compile code with errors.
 
+You can also compile an entire directory with the project directory flag `-p`.
+
+`tsc -p {file directory}`
+
+This is a recursive command.
+
 ## Type Declarations
 
 ```
