@@ -19,3 +19,13 @@
 `docker tag image {username}/{repository}:{tag}` Associates a local imager with a repository on a registry
 
 `docker push {username}/{repository}:{tag}` Uploads the tagged image to a repository
+
+`docker swarm init` Before `docker stack deploy` can be used this needs to run
+
+`docker stack deploy -c docker-compose.yml {app}` Runs docker stack and gives an app a name
+
+`docker service ls` List of docker services
+
+`docker stack rm {app}` Take the app down
+
+`docker swarm leave --force` Take down the swarm
