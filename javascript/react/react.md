@@ -188,3 +188,33 @@ Finally, it is important to remember that in JavaScript class methods are not bo
 Typically the constructor function will contain a line of code like this for every component method:
 
 `this.{method name} = this.{method name}.bind(this)`
+
+## Rendering Lists of Elements
+
+React relies on the `.map` method for rendering multiple elements. Furthermore *keys* are used to help identify individual elements to update changes as necessary.
+
+```
+. . .
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) => 
+  <li key={number.toString()}>
+    {number}
+  </li>
+  );
+  return (
+    <ul>{listItems}</ul>
+  );
+. . .
+```
+
+Use some sort of stable and unique indentification (among their siblings) for ID numbers. When you lack that, use the index.
+
+```
+const toDoItems = todos.map((todo, index) =>
+    <li key={index}>
+        {todo.text}
+    </li>
+);
+```
+
+Note that if the index for the keys is likely to change this can have a negative impact on performance and could create buggy component state.
