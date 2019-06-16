@@ -98,6 +98,8 @@
 
 `scp {filename} {username@ipaddress:path/to/remote_dir} {path/to/local_dir}` remote file copy program. Use `-r` flag for directories
 
+`sftp {username@ipaddress}` Sets up a secure FTP protocol
+
 `dig {url}` DNS lookup utility
 
 `host myip.opendns.com resolver1.opendns.com | grep "myip.opendns.com has" | awk '{print $4}'` DNS lookup for public ip addresses
