@@ -1,6 +1,8 @@
 # Jest
 
-Jest is a JavaScript testing framework.
+Jest is a JavaScript testing framework. Install with npm
+
+`npm install --save-dev jest`
 
 ## Config
 
