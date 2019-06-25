@@ -48,3 +48,43 @@ Whenever our test expects something out of a parameter, it is tested against a m
 - `toMatch` is used to evaluate strings against regular expressions
 - `toContain` is used in the way in Python you would check things with the statement `if x in arr`
 - `toThrow` is used to test that a function throws an error when its called
+
+## Asynchronous Code
+
+Asynchronous code is a core aspect of JavaScript, and this can pose specific problems for your test suite. Jest has several tools for handling these difficulties.
+
+First, their is a `test` ... `done =>` pattern to handle callbacks.
+
+```
+test('data should be 100', done => {
+  function callback(data) {
+    expect(data).toBe(100);
+    done();
+  }
+});
+```
+
+If `done()` is never called, the test fails.
+
+In the case of promises, simply return the promise, and Jest waits for the promise to resolve. In cases where you expect the promise to fail use the `.catch` method, and `expect.assertions` to verify how many assertions are called.
+
+The `.resolves` matcher also resolves promises. For promises expected to fail there is the `.rejects` matcher.
+
+```
+test('data should be 100', () => {
+  return expect(fetchData()).resolves.toBe(100);
+});
+
+test('fetch fails with an error', () => {
+  return expect(fetchData()).rejects.toMatch('error');
+});
+```
+
+Jest also supports the `async`/`await` syntax
+
+```
+test('the data is 100', async() => {
+  const data = await fetchData();
+  expect(data).toBe(100);
+});
+```
