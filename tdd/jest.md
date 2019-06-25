@@ -16,7 +16,7 @@ The `package.json` should contain the following section:
 }
 ```
 
-The test is run through the command line via `npm run test`
+The test is run through the command line via `npm run test` or `npm test`
 
 ## Format
 
