@@ -88,3 +88,21 @@ test('the data is 100', async() => {
   expect(data).toBe(100);
 });
 ```
+
+## Setup and Teardown
+
+If there is something that needs to be done for many tests, you can use `beforeEach` and `afterEach`.
+
+```
+beforeEach(() => {
+  initDb();
+});
+
+afterEach(() => {
+  clearDb();
+});
+```
+
+For cases where setup is only needed once there are the `beforeAll` and `afterAll` methods.
+
+By default `before` and `after` blocks apply to every test in a file. Tests can also be grouped up together with a `describe` block.
