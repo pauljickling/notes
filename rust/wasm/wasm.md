@@ -1,5 +1,7 @@
 # WebAssembly
 
+WebAssembly (WASM) is an executable format that is comprised of two formats: a text format, `.wat` files, and a `.wasm` binary format that uses a linear memory format.
+
 ## Setup and Configuration
 
 Unfortunately, WebAssembly requires quite a bit of setup.
