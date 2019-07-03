@@ -22,6 +22,8 @@ Git is a version control tool.
 
 `git checkout {branch}` Switches to branch. Use `-b` flag for new branch.
 
+`git reflog` Views history of changes to the HEAD
+
 ## Other Useful Commands
 
 `git diff {file}` Shows changes to file
