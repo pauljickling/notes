@@ -56,3 +56,12 @@ SomeComponent.contextType = languageContext;
 ```
 
 By assigning the context type for a component the component will consume the value of the current context using `this.context`.
+
+### Putting Context All Together
+
+1. Define your context using the `React.createContext(defaultValue)` method, and providing a default value in the parameter.
+
+2. Components that need context can subscribe to changes using the `.contextType` method. Those changes can be utilized by assigning a variable to `this.context`.
+
+3. The component(s) that need to manage the context value should be surrounded by `<contextName.provider value={this.state.value}><someComponent /></contextName.provider>`
+
