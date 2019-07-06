@@ -29,3 +29,30 @@ The Context object has a `.Provider` method that allows React components to subs
 ```
 
 Context consumers require a function as a child. They receive the current context value, and return a React node with it.
+
+### Context Type
+
+```
+class SomeComponent extends React.Component {
+  const language = this.context;
+  const english = "hello";
+  const spanish = "hola";
+
+  getText() {
+    if (language === "EN") {
+      return english;
+    } else {
+      return spanish;
+    }
+  }
+  render() {
+    return (
+      <p>{this.getText}</p>
+    );
+  }
+}
+
+SomeComponent.contextType = languageContext;
+```
+
+By assigning the context type for a component the component will consume the value of the current context using `this.context`.
