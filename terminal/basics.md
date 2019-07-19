@@ -114,6 +114,12 @@
 
 `ssh-add ~/.ssh/id_rsa` Adds SSH private key to the SSH-agent.
 
+## Security
+
+`md5 {file}` Creates a checksum for a file
+
+`md5 -s {string}` Creates a checksum for a string
+
 ## Misc
 
 `ctrl + alt + t` open new terminal
