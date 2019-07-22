@@ -111,3 +111,9 @@ Examples:
 `tlt R/I R/I` tests if first parameter is less than second
 
 `tcp R/I R/I` compares the value of parameters. Enables `+` and disables `-` when first argument is greater, disables both if equal, and disables `+` and enables `-` when first argument is less than.
+
+## Supplemental Data
+
+### Rubbish Audio Thing
+
+`AUDIO_OUT = (AUDIO_IN - 50) * 4 + 50`
