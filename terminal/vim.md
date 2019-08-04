@@ -30,7 +30,7 @@
 
 `O` newline above cursor position
 
-`Ctrl + p` keyword completion
+`ctrl + p` keyword completion
 
 ## Cursor movement
 
@@ -120,7 +120,11 @@
 
 `>` while in visual mode indent block
 
+`>>` indent block while in normal mode
+
 `<` while in visual mode remove indent from block
+
+`<<` remove indent block while in normal mode
 
 ## Search
 
