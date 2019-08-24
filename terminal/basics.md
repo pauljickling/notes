@@ -124,6 +124,12 @@
 
 ## Misc
 
+`ctrl + a` go to beginning of line
+
+`ctrl + e` go to end of line
+
+`set -o vi` use vi style commands for terminal
+
 `ctrl + alt + t` open new terminal
 
 `exit` exit terminal
