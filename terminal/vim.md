@@ -176,6 +176,12 @@
 
 `:vertical resize {num}` resize window vertically
 
+`zc` Close a fold
+
+`zo` Open a fold
+
+`za` Fold toggle
+
 ## Help
 
 `:help` open help file
