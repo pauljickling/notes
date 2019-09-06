@@ -172,9 +172,9 @@
 
 `:edit .` opens current file directory
 
-`:resize {num}` resize window
+`:resize {signed num}` resize window
 
-`:vertical resize {num}` resize window vertically
+`:vertical resize {signed num}` resize window vertically
 
 `zc` Close a fold
 
