@@ -18,7 +18,9 @@ Git is a version control tool.
 
 `git fetch` Fetches new commits made to repository
 
-`git pull` Applies commits made to current working branch
+`git pull` Applies changes from origin repo branch to current working branch
+
+`git merge {branch}` Applies changes from the argument specified branch into the current working branch. Git will complain if there are conflicts that need to be resolved.
 
 `git checkout {branch}` Switches to branch. Use `-b` flag for new branch.
 
