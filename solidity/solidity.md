@@ -20,8 +20,19 @@ contract Employment {
 
 Solidity has the following types available:
 
-- `uint` for unsigned integers
+- `uint` for unsigned, 256-bit default, integers
+- `int` for signed, 256-bit default, integers
+- `ufixed` unsigned fixed point number
+- `fixed` signed fixed point number
 - `string` for strings
+- `bool` can either be `true` or `false`
+- `address` a 20 byte value that can hold an Ethereum address
+- `address payable` is like an address, but with `transfer` and `send` members
+- `enums`
+- `functions`
+- `struct`
+- `mapping(keyType => valueType)` analogous to a hash table
+
 
 ### Typecasting
 
