@@ -7,5 +7,3 @@ To create a permanent alias you need to modify your *~/.bashrc* file.
 Sample aliasing:
 
 `alias activate='source env/bin/activate'`
-
-
