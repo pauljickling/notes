@@ -24,6 +24,10 @@ Git is a version control tool.
 
 `git checkout {branch}` Switches to branch. Use `-b` flag for new branch.
 
+`git stash` Stashes changes made to current branch
+
+`git stash apply` Apply changes that have been stashed to current branch
+
 `git reflog` Views history of changes to the HEAD
 
 ## Other Useful Commands
