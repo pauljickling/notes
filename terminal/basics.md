@@ -118,9 +118,9 @@
 
 ## Security
 
-`md5 {file}` Creates a checksum for a file
+`sha256sum` Generates a hash function
 
-`md5 -s {string}` Creates a checksum for a string
+`shasum -a 256` Use on Mac for the sha-256 formula (defaults to sha-1 which has broken collision resistance)
 
 ## Misc
 
