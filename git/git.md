@@ -41,3 +41,5 @@ Git is a version control tool.
 `git checkout -- {file}` Reverts any changes to file to prior commit. Potentially dangerous but useful command.
 
 `git commit --amend -m "{message}"` Amends commit message to be pushed. Useful not only for changing the message, but also for instances where you forgot to add some files to your commit.
+
+`git rebase -i HEAD~{number of commits}` When you have pushed some commits and need to amend the commit history, `git rebase` can help you fix a larger history. The `-i` flag is for interactive and opens up your default editor to make changes. The bottom of the page has more details on the types of changes you can make.
