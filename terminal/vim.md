@@ -16,6 +16,8 @@
 
 `:N` previous file
 
+`ctrl + w + n` create a new file in a new horizontal pane
+
 ## Insertions
 
 `i` insert chars prior to cursor location
