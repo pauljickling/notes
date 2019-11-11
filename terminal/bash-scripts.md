@@ -24,6 +24,18 @@ Substrings use the following convention:
 
 Note that in OSX bash does not support negative numbers for the index values
 
-## Loops
+## Control Flow
+
+### `if` Statements
+
+`if` statements have the following format:
+
+```
+if [ condition ] ; then
+  # code block
+fi
+```
+
+### Loops
 
 TODO
