@@ -10,7 +10,11 @@ In bash scripts you can run anything that you would run on the bash command line
 
 Example of assigning a variable:
 
-`$(shasum -a 256 $filename)`
+`hi="hello world"`
+
+Example of calling a variable:
+
+`echo $hi`
 
 ## Loops
 
