@@ -16,6 +16,14 @@ Example of calling a variable:
 
 `echo $hi`
 
+### Substrings
+
+Substrings use the following convention:
+
+`${string:start_index:end_index}`
+
+Note that in OSX bash does not support negative numbers for the index values
+
 ## Loops
 
 TODO
