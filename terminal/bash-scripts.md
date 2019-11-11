@@ -1,6 +1,6 @@
 # Bash Scripts
 
-The start of a bash script begins with `#!/bin/bash`
+The start of a bash script begins with `#!/bin/bash`. This is called the *shebang*, and it defines which program is run to interpret the script.
 
 `#` is used for comments.
 
