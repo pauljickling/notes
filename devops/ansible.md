@@ -1,190 +1,55 @@
 # Ansible
 
-## Playbooks
+Ansible is a configuration management tool that defines how software should be provisioned. Ansible differs from other popular configuration management tools like Puppet and Chef because it is *agentless*. Ansible operates by using SSH to connect to a server, and run a set of tasks, and as long as the server you are connecting to has Python installed (and if you are using Linux servers, it almost certainly will), it will just work.
 
-Playbooks are YAML files that are used to build applications.
+So like bash scripts, Ansible is used for for running a series of tasks to configure an installation of some software. However Ansible has the advantage of being idempotent. This means it makes it much easier to handle edge cases compared to bash scripts without creating a lot of extra complexity.
 
-### Hosts and Users
+## Tech Stack
 
-For each play in a playbook there is a choice about which machines are targetted, and which remote user is used to complete the tasks.
+Under the hood, Ansible is just a bunch of Python, and it is open source so it is easy to take a look at what is going on. Ansible mostly uses yaml files for defining configurations, and it also uses Jinja as a templating engine to allow a little more flexibility with how those yaml files are composed. The Jinja templating syntax with look very familiar to anyone that has used Django's templating language.
 
-The `hosts` is a list of one or more groups or host patterns, separated by colons. The `remote_user` is the name of the user account.
+## The Ansible Config File
 
-```
----
-- hosts: webservers
-  remote_user: ubuntu
-  tasks:
-    - service:
-        name: apache
-        state: started
-      become: yes
-      become_method: sudo
-```
-
-### Order of Operations
-
-You can control the order in which hosts are run. The default is to follow the order supplied by the inventory. Valid parameters:
-
-- `inventory` (default)
-- `reverse_inventory` reverse of the order provided by the inventory
-- `sorted` sorted alphabetically
-- `reverse_sorted` reverse alphabetical order
-- `shuffle` shuffled order
-
-### Tasks List
-
-Each play contains a list of tasks. Tasks are executed in order, one at a time, against all machines matched by the host pattern before moving onto the next task.
-
-**NOTE:** A host that fails a task is taken out of rotation entirely. In this instance the point of failure should be corrected, and the playbook rerun.
-
-Every task should have a `name` which is included in the output from running the playbook and acts as a description of the task. Without a name the string fed to "action" will be used for output.
-
-A basic task looks like the following:
-
-```
-tasks:
-  - name: make sure apache is running
-    service:
-      name: httpd
-      state: started
-```
-
-The *command* and *shell* modules take a list of arguments instead of a key/value pair.
-
-### Executing a Playbook
-
-`ansible-playbook playbook.yml -f 10` runs a playbook "using a parallelism level of 10".
-
-If you want to invert the architecture of Ansible so nodes check into a central location instead of pushing configuration out to them you can use `ansible-pull`.
+The `ansible.cfg` file is primarily used to point to the path for various files like inventories, and roles that could exist in various places because of the needs of your configuration.
 
 ## Inventories
 
-Inventories are target servers for playbooks. For example, a server for your web application, and a server for your database.
-
-The default inventory file is found in `/etc/ansible/hosts` and a simple configuration would look like this:
-
-```
-[webservers]
-ec2-instance1
- 
-[webservers:vars]
-ansible_host=<ip_address>
-ansible_user=ubuntu
-ansible_ssh_private_key_file=path/to/aws.pem
-ansible_python_interpreter=/usr/bin/python3
-```
-
-### Dynamic Inventories
-
-If your inventory fluctuates over time the default inventory solution will be insufficient for your needs.
-
-There are two tools available for more dynamic needs: inventory plugins, and inventory scripts.
-
-#### Inventory Script Examples
-
-[Cobbler](https://cobbler.github.io) is an example of an inventory script. Using it involves adding the `cobbler.ini` file to `/etc/ansible`.
-
-There is also an [EC2 external inventory script](https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/ec2.py). There are two ways to use this script. The easiest is with the `-i` CLI flag, and specifying the path:
-
-`ansible -i ec2.py -u ubuntu us-west-1d -m ping`
-
-You can also copy the script to `/etc/ansible/hosts` and set permissions with `chmod + x` as well as copy the *ec2.ini* file to `/etc/ansible/`.
+Ansible starts out with an inventory file. An inventory file is just a list of servers with information about how to connect to that server. There are also dynamic inventories which is useful for things like AWS EC2 instances. You can use the AWS API to collect the information you need (since you might not have a fixed IP address that you are using).
 
 ## Modules
 
-There are over 450 provided modules to automate various tasks.
+Modules are what are used to configure things. Essentially, Python scripts that are executed on the specified machine. Some of the first modules you will learn about are `ping` and `setup`. `ping` is used to test connections to various servers, and `setup` will return a list of *facts* about that server.
 
-## Running Ansible
+As mentioned before, Ansible is idempotent so these modules won't change anything if there is nothing that needs to be changed.
 
-1. Running CLI `ansible <inventory>`
+## Plugins
 
-2. Running playbooks `ansible-playbook <playbook name>`
+Ansible also has plugins. One useful one is called **Lookup**. You can use Lookup to find things like files, which is a useful way of managing API keys.
 
-3. Check mode or "dry-run" is used to validate changes that have been made. `ansible -C <inventory>`
+## Directory Structure
 
-## Remote Connection Information
+There are a lot of ways directories can be structured, but some best practices are to have the `ansible.cfg` and playbook file at the root directory, and then have inventory directories for your inventory files, and a group variables directory that has variables that only apply to certain groups of the inventory.
 
-By default Ansible uses native OpenSSH for remote communication when possible. When this is not possible, it will fallback into a Python implementation of OpenSSH called "paramiko".
+## Roles
 
-In cases where a device does not support SFTP you should switch to SCP mode in your ansible config file.
+A group of tasks that executes one or more modules with the purpose of setting something up. Roles can be located in a lot of different places in your directory structure, so you should definitely specify the path in your ansible config file.
 
-Ansible assumes the use of SSH keys. When using password authentication instead supply the `--ask-pass` flag. If using sudo features use the `--ask-become-pass` flag.
+An example might be your install role that installs all the prerequisite things for your software:
 
-Ansible runs best when it is near the machine being managed. Therefore if running in the cloud it is best to setup a machine inside the cloud to run it on.
+`ansible-galaxy install -r path/to/`
 
-## AWS Guide
+Roles will setup things by executing a sequential order of modules. Once you have your role configurations organized you are ready to compose a playbook.
 
-Ansible modules need boto installed on the control machine.
+## Playbook
 
-`pip install boto`
+A playbook will specify hosts from your inventory, and then the roles that are executed.
 
-Playbook steps typically use the following pattern for provisioning steps:
+One thing to note is that `{{ inventory_hostname }}` is a magical variable name that always specifies the correct server item from your inventory.
 
-```
-- hosts: localhost
-  connection: local
-  gather_facts: False
-  tasks:
-    - ...
-```
+Tags can also be used to create flags that are only executing specific roles. For example:
 
-### Authentication
+`ansible-playbook playbook.yaml -t setup`
 
-Authentication with AWS modules rel;ies on specifying access and the secret key as ENV variables or module arguments.
+Runs the playbook, but just the setup tag.
 
-Storing as ENV variables:
-
-```
-export AWS_ACCESS_KEY_ID='AK123'
-export AWS_SECRET_ACCESS_KEY='abc123'
-```
-
-As module arguments:
-
-```
-- ec2
-  aws_access_key: "{{ec2_access_key}}"
-  aws_secret_key: "{{ec2_secret_key}}"
-  image: "..."
-```
-
-### Provisioning
-
-```
-# demo_setup.yml
-
-- hosts: localhost
-  connection: local
-  gather_facts: False
-
-  tasks:
-
-    - name: Provision a set of instances
-      ec2:
-         key_name: my_key
-         group: test
-         instance_type: t2.micro
-         image: "{{ ami_id }}"
-         wait: true
-         exact_count: 5
-         count_tag:
-            Name: Demo
-         instance_tags:
-            Name: Demo
-      register: ec2
-```
-
-### Host Inventory
-
-With a cloud setup it doesn't make sense to maintain a static list of cloud hostnames. A better solution is to use [ec2 dynamic inventory script](https://docs.ansible.com/ansible/latest/user_guide/intro_dynamic_inventory.html#dynamic-inventory).
-
-### Tags and Groups and Variables
-
-With an inventory script hosts automatically appear in groups based on how they're tagged in EC2. So a host with the "class" tag and a value of "webserver" is found in a dynamic group with the following:
-
-```
-- hosts: tag_class_webserver
-  tasks:
-    - ping
-```
+One useful thing to do in your playbook is volume management which can extend volume arbitrarily for cloud services like AWS.
