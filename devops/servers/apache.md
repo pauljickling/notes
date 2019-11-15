@@ -1,0 +1,13 @@
+# Apache
+
+Apache is a HTTP server that is configured with an assortment of text files. The directory structure on an OS like Ubuntu is as follows:
+
+- `/etc/apache2/` for the server root, modules, and configuration files
+- `/var/log/apache2/` for the logs
+- `/var/www/` for the document root (i.e. your html pages/web framework)
+- `/usr/sbin` for the apachectl binaries
+- `/etc/init.d/apache2` for the various service commands (start, stop, reload, etc.)
+
+These differ from OS to OS however so you should consult the wiki for confirmation.
+
+
