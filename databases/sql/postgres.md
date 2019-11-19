@@ -1,4 +1,4 @@
-# SQL
+# Postgres
 
 SQL stands for *Structured Query Language*, and it is the standard language used to communicate with relational databases. There are many flavors of SQL available (MySQL, PostgreSQL, SQLite, etc.) These notes will be referencing PostGreSQL.
 
@@ -27,6 +27,14 @@ Exiting shell:
 Exiting SQL:
 
 `exit`
+
+## Navigating `psql`
+
+`\l` Lists databases
+
+`\c {db name}` Connect to specified database
+
+`\dt` Lists tables in database
 
 ## Data Fields
 
