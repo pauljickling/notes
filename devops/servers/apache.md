@@ -19,3 +19,7 @@ Hostnames are configured via the host file in `/etc/hosts`. The host file will h
 Traditionally, Apache was configured via the `httpd.conf` file. However typically this configuration is broken up into multiple, smaller config files. In the standard Ubuntu build, for example, there is instead the `apache2.conf` file that manages all the smaller config files, and there is no `httpd.conf` file.
 
 Content directories contain the `.htaccess` file that allow configuration changes on a per directory basis. They are typically used by users that do not have system-wide access to a server.
+
+## Running as a Process
+
+The Apache server can be managed with commands like `sudo service apache start`, `sudo service apache stop`, `sudo service apache restart`, etc.
