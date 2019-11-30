@@ -1,5 +1,7 @@
 # Docker Compose YAML
 
+`docker-compose` is a command line interface that lets you build and deploy apps with the aid of a `docker-compose.yml` file.
+
 The `docker-compose.yml` file defines how a Docker container behaves in production.
 
 ```
@@ -22,3 +24,5 @@ services:
     networks:
       webnet:
 ```
+
+The docker compose file can define the sorts of flags you would need to remember and reuse in the shell to simplify deployment.
