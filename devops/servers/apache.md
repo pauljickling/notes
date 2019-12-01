@@ -22,4 +22,4 @@ Content directories contain the `.htaccess` file that allow configuration change
 
 ## Running as a Process
 
-The Apache server can be managed with commands like `sudo service apache start`, `sudo service apache stop`, `sudo service apache restart`, etc.
+The Apache server can be managed with commands like `sudo service apache start`, `sudo service apache stop`, `sudo service apache restart`, etc. By default the restart of an Apache service is handled gracefully so that it does not interfere with client requests.
