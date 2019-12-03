@@ -23,3 +23,16 @@ Content directories contain the `.htaccess` file that allow configuration change
 ## Running as a Process
 
 The Apache server can be managed with commands like `sudo service apache start`, `sudo service apache stop`, `sudo service apache restart`, etc. By default the restart of an Apache service is handled gracefully so that it does not interfere with client requests.
+
+## Configuring a Subdomain
+
+There are lots of places where you could define your subdomain. A common location might be `/etc/apache2/sites-enabled/` and you will have a config file with the following info:
+
+```
+<VirtualHost {IP Address:Port}>
+    ServerName subdomain.domain.com
+    DocumentRoot /var/www/subdomain
+</VirtualHost>
+```
+
+Anytime you make config changes like this you will need to run `service apache2 restart`.
