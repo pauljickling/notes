@@ -8,7 +8,7 @@ Apache is a HTTP server that is configured with an assortment of text files. The
 - `/usr/sbin` for the apachectl binaries
 - `/etc/init.d/apache2` for the various service commands (start, stop, reload, etc.)
 
-These differ from OS to OS however so you should consult the wiki for confirmation.
+These differ from OS to OS however so you should consult [the wiki](https://cwiki.apache.org/confluence/display/HTTPD/DistrosDefaultLayout) for confirmation.
 
 ## Hostnames and DNS
 
