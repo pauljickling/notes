@@ -124,6 +124,8 @@
 
 ## Misc
 
+`cat /etc/os-release` get information about the OS
+
 `ctrl + a` go to beginning of line
 
 `ctrl + e` go to end of line
