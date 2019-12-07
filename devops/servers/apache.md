@@ -12,6 +12,8 @@ These differ from OS to OS however so you should consult [the wiki](https://cwik
 
 Official documentation for Apache can be found [here](http://httpd.apache.org/docs/current/).
 
+**Note** thee rest of this page will work under the assumption of an Ubuntu Apache structure.
+
 ## Hostnames and DNS
 
 Hostnames are configured via the host file in `/etc/hosts`. The host file will have a list of IP addresses and the attached host name.
@@ -21,6 +23,8 @@ Hostnames are configured via the host file in `/etc/hosts`. The host file will h
 Traditionally, Apache was configured via the `httpd.conf` file. However typically this configuration is broken up into multiple, smaller config files. In the standard Ubuntu build, for example, there is instead the `apache2.conf` file that manages all the smaller config files, and there is no `httpd.conf` file.
 
 Content directories contain the `.htaccess` file that allow configuration changes on a per directory basis. They are typically used by users that do not have system-wide access to a server.
+
+Apache has two directories related to site configuration, `sites-available` and `sites-enabled`. As an administrator you should modify the config files in `sites-available` and the `sites-enabled` directory will automatically update with necessary changes after a server restart.
 
 ## Running as a Process
 
