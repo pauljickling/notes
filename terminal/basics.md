@@ -66,7 +66,7 @@
 
 `id` get id info
 
-`sudo chown -R {owner name} {directory name}` change ownership of a directory
+`chown -R {owner name} {directory name}` change ownership of a directory
 
 `chgrp` change a file's group ownership
 
@@ -90,9 +90,9 @@
 
 `killall {program or username}` kill all processes associated with a specified program or username
 
-`sudo reboot` restart system
+`reboot` restart system
 
-`sudo shutdown -h now` shutdown system now (instead of default minute delay)
+`shutdown -h now` shutdown system now (instead of default minute delay)
 
 ## Networking
 
@@ -106,7 +106,7 @@
 
 `host myip.opendns.com resolver1.opendns.com | grep "myip.opendns.com has" | awk '{print $4}'` DNS lookup for public ip addresses
 
-`sudo service network-manager restart` reset wifi network lookup
+`service network-manager restart` reset wifi network lookup
 
 **This one is helpful while traveling.**
 
