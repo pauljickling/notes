@@ -2,7 +2,7 @@
 
 ## Lecture 1: Signatures, Hashing, Hash Chains, ecash, and Motivation
 
-A cryptocurrency is a p2p electronic currencies.
+A cryptocurrency is a p2p electronic currency.
 
 ### Primitives for a Cyrptocurrency
 
