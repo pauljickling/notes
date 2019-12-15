@@ -38,6 +38,8 @@
 
 `b` move back a word or special chars starting at first char
 
+`gE` move back a word or special chars to the last char
+
 `e` or `w` move forward a word. w for beginning of word, and e for end.
 
 `f + {char}` moves cursor towards next specified char
@@ -61,6 +63,20 @@
 `gg` moves cursor to first line of the file
 
 `G` move cursor to last line of file
+
+`)` move forward one sentence
+
+`(` move backward one sentence
+
+`}` move forward one paragraph
+
+`{` move backward one paragraph
+
+`H` move to the top of the screen
+
+`M` move to the middle of the screen
+
+`L` move to the bottom of the screen
 
 `{number}G` move cursor to specified file line
 
