@@ -8,7 +8,7 @@ Generics are abstract stand-ins for concrete types. This allows you to write fun
 
 ## Generic Data Types
 
-Generics can be used to create definitions for items like function signatures or structs, allowing for multiple concrete data types.
+Generics can be used to create definitions for items like function signatures or structs that will allow the use of multiple concrete data types.
 
 ### Generics in Functions
 
@@ -52,11 +52,17 @@ struct Point<T, U> {
 }
 ```
 
-This configuration of generics will handle all possibilities. That is, it can handle x and y belonging to the same type, or differing.
+This configuration of generics will handle all possibile types permitted by your generic's traits. That is, it can handle x and y belonging to the same type, or differing types. So the following code would be valid:
 
-## Generics in Enums
+```
+    let both_integer = Point { x: 5, y: 10 };
+    let both_float = Point { x : 1.0, y: 4.0 };
+    let integer_and_float { x: 5, y: 4.0 };
+```
 
-Here's a review of the option enum:
+### Generics in Enums
+
+Here's a review of the `Option` enum:
 
 ```
 enum Option<T> {
@@ -74,11 +80,47 @@ enum Result<T, E> {
 }
 ```
 
-Here any Error types produce the `Err` variant, and any `T` types produce the `Ok` variant.
+The Result enum handles two types of Generics, `T` and `E`, and has the variants `Ok` that holds a value of type `T`, and `Err` that holds a a value of type `E`.
+
+### Generics in Method Implementations
+
+When creating methods for structs and enums generic types can be used in these definitions as well.
+
+```
+struct Point<T> {
+    x: T,
+    y: T,
+}
+
+impl<T> Point<T> {
+    fn x(&self) -> &T {
+        &self.x
+    }
+}
+```
+
+This method returns a reference of the Point value for x, regardless of its type. Note that the `<T>` must be declared after `impl` so that it can be specified that we are using the type from `Point<T>`, that way the Rust compiler is aware that this is a generic rather than a concrete type. Put another way, if our `Point` struct used a concrete type like `f32` then there would be no need to type something like `impl<f32> Point<f32>` it would instead be sufficient to type `impl Point<f32>`.
+
+It is not necessary for methods to use the generics of the struct's signature. Consider the following method:
+
+```
+fn mixup<V, W>(self, other: Point<V, W>) -> Point<T, W> {
+    Point {
+        x: self.x,
+        y: other.y,
+    }
+}
+```
+
+This method acts on the the initial struct instance, and takes a second instance as its argument, and returns a new struct instance that has a value of x from the first instance, and a value of y from the instance provided in the argument. It is able to combine multiple types thanks to providing the generics `<V, W>` which do not belong in struct `Point<T, U>`, but are provided in the `Point<V, W>` parameter. So you can have cases where the `impl` block provides generic parameters, and method blocks provide separate generic parameters.
 
 ## Traits
 
-The methods that can be called on a type are that type's behavior. Trait definitions are a way to group method signatures together. In that way, they are similar to interfaces in object oriented programming. Suppose you have a `NewsArticle` and `Tweet` struct that have various properties. One method you might want them to share is `summarize`. We can create a `Summary` trait to help define this behavior.
+Traits inform the compiler about the functionality of a particular type has, and that it shares with other types. This is a very abstract concept so it helps to illustrate with an example. Any Rust type that you can perform a comparison operation on (`>`, `<`, `==`, etc.) has a `PartialOrd` trait. This trait lets the compiler know that Types with this trait have certain logical properties, for example that if a is greater than b, then b cannot also be greater than a. Because this trait exists for this type, it means we can perform comparison operations on this type of data and get results that make sense. If you try to perform a comparison operation on a type that lacks the `PartialOrd` trait then the compiler will complain that it cannot be applied to that type.
+
+This means that different types that share the same traits can call the same methods on those types, and exhibit the same set of behaviors from those method calls.
+
+Suppose you are building a media aggregator tool. One of the things it will do is summarize media content. There will be various types of media: `NewsArticles`, `Tweets`, etc. each of which will be expressed as structs. We can create a `Summary` trait for these differnt media structs that will define a type of function that they all should be able to perform (`summarize`).
 
 ```
 pub trait Summary {
@@ -86,7 +128,7 @@ pub trait Summary {
 }
 ```
 
-Our `Summary` trait establishes that the behavior for a `summarize` method is that it should take an instance reference as a parameter and return a string. Now any `summarize` method we create that has this trait will have to have these rules regarding what it accepts as a parameter, and what it returns.
+Our `Summary` trait establishes a `summarize` method behavior that takes an instance reference as a parameter, and returns a string. Now any `summarize` method we create that has this trait will have to have these rules regarding what it accepts as a parameter, and what it returns.
 
 Here is how those methods would be implemented:
 
