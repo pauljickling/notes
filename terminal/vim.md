@@ -200,6 +200,10 @@
 
 `za` Fold toggle
 
+`:mks /path/to/{session name}.vim` Create a session (a specific configuration of windows and files)
+
+`:source /path/too/{session name}.vim` Restore session
+
 ## Help
 
 `:help` open help file
