@@ -74,6 +74,14 @@ done
 
 Note that `seq` is a key word for sequence ranges.
 
+#### Looping through lines of a file
+
+```
+while read i; do
+    echo "$i"
+done < /path/to/file
+```
+
 ### Running Multiple Programs
 
 `sed -i .bak "s/my_varaible/my_variable/g" app.js; node app.js` Runs these two programs no matter what
