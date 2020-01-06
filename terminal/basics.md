@@ -54,7 +54,7 @@
 
 `du -h` get memory size of files or directories in bytes
 
-`grep {phrase} {file name}` regex search of file
+`grep {phrase} {file name}` regex search of file (to use actual regular expressions place phrase in quotation marks i.e. `grep '[0-9]' file` to search for numbers in a file)
 
 `grep -r {phrase} {directory name}` recursive grep search
 
