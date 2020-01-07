@@ -42,7 +42,7 @@ One important use of tagging is to itemize your resources for billing purposes. 
 
 By default new tag keys are not included in the cost allocation report. To include them, the following steps need to be taken:
 
-1. Open the Billing and Cost Management console.
+1. Open the **Billing** console.
 2. From the navigation pane under **Preferences** select **Billing Preferences**.
 3. In the **Report** list check the box for **Cost allocation report**.
 4. Select **Manage report tags** and select the group of tags you want to include in the report, and click the **Activate** button.
