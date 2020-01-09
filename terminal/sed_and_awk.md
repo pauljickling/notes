@@ -1,6 +1,6 @@
 # Sed and Awk
 
-Sed and Awk are text processing languages that can be used on the command line or in bash scripts. They are incredibly handy for handling repetitive changes to a document.
+Sed and awk are text processing languages that can be used on the command line or in bash scripts. They are incredibly handy for handling repetitive changes to a document.
 
 ## Sed
 
@@ -28,8 +28,12 @@ The `&` character indicates a matched pattern where you don't necessarily know w
 
 ### Sed on Macs
 
-If you want to use a Sed script that works equally well on Mac's version of Linux along with other Linux OSs you should supply the `-i.bak` flag which will create a backup file that you are editing.
+If you want to use a sed script that works equally well on Mac's version of Linux along with other Linux OSs you should supply the `-i.bak` flag which will create a backup file that you are editing.
 
 ## Awk
 
-TODO
+Whereas sed operates on lines, awk operates on columns. That makes it handy for manipulating csv files, for example. The following command would print the second column in your file: `awk < file '{ print $2 }'`
+
+By default awk uses whitespace as a delimiter. The `-F` flag is used to specify the delimiter. `awk -F, < file.csv '{ print $2 }'`
+
+Some useful built-in variables include $0 which is for the entire line, and $NF which is the last field on a line.
