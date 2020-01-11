@@ -10,7 +10,7 @@ EC2 instances can be interacted with an SSH command.
 
 Typical user name will be `ubuntu` or `es2-user`.
 
-If the pem file is too permissive you will need to `chmod 600 <file address>` and `chmod 700 <file address>` before you can connect via SSH.
+If the pem file is too permissive you will need to `chmod 0400 </path/to/file>` before you can connect via SSH.
 
 ## Serving a Web Page
 
