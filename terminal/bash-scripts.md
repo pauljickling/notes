@@ -74,6 +74,26 @@ done
 
 Note that `seq` is a key word for sequence ranges.
 
+#### Looping through Files and Directories
+
+One thing bash is really good at is looping through files and directories. The syntax for looping through directories from your currently working directory is:
+
+```
+for DIRECTORY in \*/ ; do
+    echo "$DIRECTORY"
+done
+```
+
+To loop through files in a directory:
+
+```
+for FILE in * ; do
+    echo "$FILE"
+done
+```
+
+Note that this will search every file in the directory since `*` is a wild cardcharacter . This is why for the directory search you have `*/`, essentially you are searc hing for any file that ends with a `/` i.e. a directory. So if you wanted to just search for, say, JavaScript files in a directory, you would write something like `for JSFILE in *.js ; do`.
+
 #### Looping through lines of a file
 
 ```
