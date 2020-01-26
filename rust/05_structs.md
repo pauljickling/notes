@@ -22,6 +22,8 @@ let user1 = User {
 };
 ```
 
+The mutability of a struct's fields is dependent on the instance of the struct.
+
 Dot notation is used to access a field value, for example `user1.email` would return `someone@example.com`.
 
 ### Tuple Structs
