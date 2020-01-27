@@ -18,7 +18,11 @@
 
 `docker tag image {username}/{repository}:{tag}` Associates a local imager with a repository on a registry
 
+`docker logs {container}` View the logs for the name of the container
+
 `docker push {username}/{repository}:{tag}` Uploads the tagged image to a repository
+
+`docker rename {container}` Renames a container
 
 `docker swarm init` Before `docker stack deploy` can be used this needs to run
 
@@ -29,3 +33,13 @@
 `docker stack rm {app}` Take the app down
 
 `docker swarm leave --force` Take down the swarm
+
+## Useful Flags
+
+`--detach` / `-d` runs a program in the background as a daemon/service
+
+`--interactive` / `-i` runs an interactive program that accepts input
+
+`--tty` / `-t` allocates a virtual terminal for the program. Typically used in conjunction with the `-i` flag
+
+`--name` assigns a name to the container (you can see this name when you run `docker ps`)
