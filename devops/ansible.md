@@ -20,7 +20,9 @@ Ansible starts out with an inventory file. An inventory file is just a list of s
 
 Modules are what are used to configure things. Essentially, Python scripts that are executed on the specified machine. Some of the first modules you will learn about are `ping` and `setup`. `ping` is used to test connections to various servers, and `setup` will return a list of *facts* about that server.
 
-As mentioned before, Ansible is idempotent so these modules won't change anything if there is nothing that needs to be changed.
+As mentioned before, Ansible is idempotent so these modules won't change anything if the remote server already has the desired state.
+
+The amount of Ansible modules available are significant, and can be found [here](https://docs.ansible.com/ansible/latest/modules/modules_by_category.html).
 
 ## Plugins
 
