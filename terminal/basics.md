@@ -142,6 +142,8 @@
 
 `df -h --total` find out about total disk space useage
 
+`free -m` View available and used RAM (note this is available on Ubuntu, but not sure about other versions of Linux)
+
 `mount` show mounted filesystems
 
 `iostat` get statistics about disk read/writes
