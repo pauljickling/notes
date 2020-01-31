@@ -8,6 +8,10 @@ Unzip file and run `terraform`. Make sure `terraform` binary is available in `PA
 
 `terraform init` in the root project directory after you have created your config file to download the necessary plugins.
 
+`terraform fmt` is recommended to enable standardization by automatically updating configurations in the current working directory with a consistent style/formatting.
+
+`terraform validate` isa used to ensure that your configuration file is syntactically valid
+
 `terraform plan` to verify the creation process of the application deployment.
 
 ## The Config File
@@ -32,4 +36,10 @@ You can verify your AWS profile credentials by running `aws configure`.
 
 Note that the key/value pairs for the resource hashmap are required. Also pay close attention to the ami value. Those are region specific.
 
-Once this information is completed you can run `terraform apply` and the instance will be created.
+## Applying Terraform State
+
+Once this information is completed you can run `terraform apply` and the instance will be created. Terraform will have also written some data to `terraform.tfstate`, which is a file that tracks the IDs of created resources.
+
+The current state of the instance can be viewed with `terraform show`.
+
+`terraform state` can be used for advanced state management, and `terraform state list` provides the list of resources and addresses that can be modified.
