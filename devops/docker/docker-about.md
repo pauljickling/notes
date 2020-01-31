@@ -10,4 +10,4 @@ Docker uses namespaces and cgroups tech to create an isolated workspace. This is
 
 ## Creating a New Container
 
-A collection of files and instructions is what Docker calls an *image*.
+A collection of files and instructions is what Docker calls an *image*. When the `docker run` command is used, a container is created from an image.
