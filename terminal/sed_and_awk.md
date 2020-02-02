@@ -2,6 +2,11 @@
 
 Sed and awk are text processing languages that can be used on the command line or in bash scripts. They are incredibly handy for handling repetitive changes to a document.
 
+Useful links for both these tools:
+
+[sed](https://www.grymoire.com/Unix/Sed.html)
+[awk](https://www.grymoire.com/Unix/Awk.html)
+
 ## Sed
 
 The simplest sed command has the following format:
