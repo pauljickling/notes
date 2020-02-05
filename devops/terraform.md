@@ -43,3 +43,9 @@ Once this information is completed you can run `terraform apply` and the instanc
 The current state of the instance can be viewed with `terraform show`.
 
 `terraform state` can be used for advanced state management, and `terraform state list` provides the list of resources and addresses that can be modified.
+
+### Reading Terraform Plans
+
+After running `terraform plan` or `terraform apply` you will view a list of actions that terraform will take in order to achieve the state described in your config file.
+
+A `+` or `-` prefix means that Terraform will need to destroy and recreate a resource, whereas a `~` means the resource can be modified in place.
