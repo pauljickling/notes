@@ -49,3 +49,7 @@ The current state of the instance can be viewed with `terraform show`.
 After running `terraform plan` or `terraform apply` you will view a list of actions that terraform will take in order to achieve the state described in your config file.
 
 A `+` or `-` prefix means that Terraform will need to destroy and recreate a resource, whereas a `~` means the resource can be modified in place.
+
+## Destroying Resources
+
+Resources can be destroyed with the `terraform destroy` command.
