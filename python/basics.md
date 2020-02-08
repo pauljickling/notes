@@ -16,6 +16,10 @@ Running Python on Windows:
 
 `py {filename}.py`
 
+### Getting Help
+
+You can read the extensive Python documentation offline using the `pydoc` CLI. The interface is `pydoc {topic}`. Of course because of its "batteries included" philosophy Python has a massive standard library. So sometimes you just want to browse to look around and see what's there. The easiest way to do that is to run a simple HTTP server to serve up the docs, which you can do with the `-p` flag (for port) that accepts as an argument the port number. So `pydoc -p 1234` creates a localhost on port 1234.
+
 ### Variables
 
 There is no keyword to declare variables in Python.
