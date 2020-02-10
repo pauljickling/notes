@@ -42,4 +42,4 @@ Whereas sed operates on lines, awk operates on columns. That makes it handy for 
 
 By default awk uses whitespace as a delimiter. The `-F` flag is used to specify the delimiter. `awk -F, < file.csv '{ print $2 }'`
 
-Some useful built-in variables include $0 which is for the entire line, and $NF which is the last field on a line.
+Some useful built-in variables include `$0` which is for the entire line, and `$NF` which is the last field on a line.
