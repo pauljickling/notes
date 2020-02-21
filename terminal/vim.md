@@ -82,6 +82,10 @@
 
 `{number}|` move cursor to specified column number on line
 
+`*` move cursor to next instance of current word
+
+`#` move cursor to previous instance of current word
+
 ## Editing
 
 `x` delete a character as del key
