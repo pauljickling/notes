@@ -36,6 +36,8 @@ You can verify your AWS profile credentials by running `aws configure`.
 
 Note that the key/value pairs for the resource hashmap are required. Also pay close attention to the ami value. Those are region specific.
 
+You can view version constraints of the providers in a configuration with the `terraform providers` command.
+
 ## Applying Terraform State
 
 Once this information is completed you can run `terraform apply` and the instance will be created. Terraform will have also written some data to `terraform.tfstate`, which is a file that tracks the IDs of created resources.
