@@ -55,3 +55,7 @@ A `+` or `-` prefix means that Terraform will need to destroy and recreate a res
 ## Destroying Resources
 
 Resources can be destroyed with the `terraform destroy` command.
+
+## Provisioners
+
+Provisioners are used after you have created resources to perform actions like upload files, run shell scripts, or run configuration management tools.
