@@ -59,3 +59,29 @@ Resources can be destroyed with the `terraform destroy` command.
 ## Provisioners
 
 Provisioners are used after you have created resources to perform actions like upload files, run shell scripts, or run configuration management tools.
+
+## Variables
+
+### Input Variables
+
+Instead of hard coding values, it is possible to provide input variables.
+
+```
+provider "aws" {
+  region = var.region
+}
+```
+
+Now the region is specified via a parameter that can be provided either in the command line with the `-var` flag, from a file (`terraform.tfvars`), or from environmental variables that take the form `TF_VAR_{variable name}`. Note that environmental variables can only be used for string-type variables.
+
+### Output Variables
+
+Output variables allow a user to control the type of output they are interested in. For example:
+
+```
+output "ip" {
+  value = aws_eip.ip.public_ip
+}
+```
+
+can be used to view the public ip address for the populated resources.
