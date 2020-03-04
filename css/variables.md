@@ -19,3 +19,7 @@ element {
 ```
 
 Like many newer CSS features, it is unavailable in Internet Explorer, but if that is not a target browser custom properties can be a nice way to simplify your stylesheet.
+
+## Imports
+
+If you are working with multiple CSS files it can be useful to have a file that contains your variables that you import into your other files. You can do this by including `@import "{relative/path/to/file}"` at the top of your file.
