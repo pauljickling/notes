@@ -92,7 +92,7 @@ for FILE in * ; do
 done
 ```
 
-Note that this will search every file in the directory since `*` is a wild cardcharacter . This is why for the directory search you have `*/`, essentially you are searc hing for any file that ends with a `/` i.e. a directory. So if you wanted to just search for, say, JavaScript files in a directory, you would write something like `for JSFILE in *.js ; do`.
+Note that this will search every file in the directory since `*` is a wild card character. This is why for the directory search you have `*/`, essentially you are searching for any file that ends with a `/` i.e. a directory. So if you wanted to search for JavaScript files in a directory, you would write `for JSFILE in *.js ; do`.
 
 #### Looping through lines of a file
 
