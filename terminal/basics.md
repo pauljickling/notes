@@ -32,7 +32,7 @@
 
 `mv {file source} {file destination}` move file
 
-**Note that if you use the same directory you can use the move command to rename a file.**
+**Note that for the same path you can use the move command to rename a file.**
 
 `convert {file name} {new file name}` convert file
 
