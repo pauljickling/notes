@@ -47,3 +47,9 @@ The rotation component defines the orientation of an entity in degrees along the
 ### Scale
 
 The scale component defines a shrinking, stetching, or skewing transformation of an entity along the x, y, and z axis. When these values are negative it results in a reflection. Scale is relative to the parent entity.
+
+## Resources
+
+- [Supercraft](https://supermedium.com/supercraft) is a tool for creating VR objects in VR that can be loaded into an A-Frame environment.
+
+- [A-Painter](https://aframe.io/a-painter) a painting tool created by Mozilla similar to Google's Tilt Brush with an API for creating your own brushes.
