@@ -104,7 +104,7 @@
 
 `dig {url}` DNS lookup utility
 
-`host myip.opendns.com resolver1.opendns.com | grep "myip.opendns.com has" | awk '{print $4}'` DNS lookup for public ip addresses
+`host {url}` DNS lookup for public ip addresses
 
 `service network-manager restart` reset wifi network lookup
 
