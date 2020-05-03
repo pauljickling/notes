@@ -4,6 +4,8 @@ The Volka Keys is a small analog synth with built-in delay effects by Korg.
 
 ## Synthesis Overview
 
+Each aspect of the synthesis has parameters that affect other aspects of the synthesis. VCO and VCF have knobs that affect EG, and LFO has knobs that affect the VCO and VCF.
+
 ### VCO (Voltage Controlled Ocillator)
 
 The VCO specifies the basis of sound for the Volka Keys. It is controlled with the ocave knob, which has doubling values from 1 to 32, and specifies the pitch range of the keyboard. It is also controlled by the voice knob, which sets the operation mode for the VCO:
@@ -19,15 +21,15 @@ Additionally there are knobs for detuning the sound, portamento (i.e. pitch slid
 
 ### VCF (Voltage Controlled low-pass Filter)
 
-TODO
+The VCF modifies the sound by boosting and cutting different frequency ranges using the cutoff, peak knobs, as well as an EG intensity knob that affects how the EG affects the cutoff frequency.
 
 ### LFO (Low Frequency Ocillator)
 
-TODO
+The LFO controls the cyclical changes and modulation applied to the VCO pitch and VCF cutoff frequencies with rate, pitch intensity, and cutoff intensity knobs.
 
 ### EG (Envelope Generator)
 
-TODO
+The EG changes the VCA (Voltage Controlled Amplifier) over time, that is, volume dynamics. It has knobs for attack (the time between key press and max volume), decay/release (time until sustain level is reached after the attack point), and sustain (the volume maintained while the key is pressed after decay time has elapsed).
 
 ## SEQUENCING
 
