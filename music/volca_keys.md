@@ -33,7 +33,13 @@ The EG changes the VCA (Voltage Controlled Amplifier) over time, that is, volume
 
 ## SEQUENCING
 
-TODO
+Volca keys has 8 memory locations that can be selected by pressing the `MEMORY` buton and one of the `M1` to `M8` keys located on the keyboard to load a saved sequence. To save a sequence press the `FUNC` and `MEMORY` buttons together, and then select `M1` to `M8`.
+
+### Functions
+
+In addition to saving, the `FUNC` button performs an array of other functions that are performed by holding down the button, and pressing another key on the keyboard.
+
+#### Motion Sequencing
 
 ## GLOBAL PARAMETERS
 
