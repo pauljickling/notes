@@ -34,6 +34,8 @@ Git is a version control tool. Git manages versions of a project with a history 
 
 ## Other Useful Commands
 
+`git remote -v` View available remote repositories
+
 `git diff {file}` Shows changes to file
 
 `git diff {branch1} {branch2}` Compares differences between two branches
@@ -55,6 +57,8 @@ Git is a version control tool. Git manages versions of a project with a history 
 `git cherry-pick {SHA id}` Applies changes from specified commit to current commit.
 
 `git rebase -i HEAD~{number of commits}` When you have pushed some commits and need to amend the commit history, `git rebase` can help you fix a larger history. The `-i` flag is for interactive and opens up your default editor to make changes. The bottom of the page has more details on the types of changes you can make.
+
+`git push --force-with-lease {remote location} {branch}` When rebasing, it is often necessary to use the `--force` flag when pushing an update because of the modified history. `--force-with-lease` is a safer alternative that protects the old commit history while still allowing for a sanitized rebase summary.
 
 `git reset --hard HEAD~{number of commits}` Resets branch back to the number of commits specified.
 
