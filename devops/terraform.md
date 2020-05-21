@@ -10,7 +10,7 @@ Unzip file and run `terraform`. Make sure `terraform` binary is available in `PA
 
 `terraform fmt` is recommended to enable standardization by automatically updating configurations in the current working directory with a consistent style/formatting.
 
-`terraform validate` isa used to ensure that your configuration file is syntactically valid
+`terraform validate` is used to ensure that your configuration file is syntactically valid
 
 `terraform plan` to verify the creation process of the application deployment.
 
