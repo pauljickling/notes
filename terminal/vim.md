@@ -217,3 +217,5 @@
 ## Misc
 
 `esc` return to normal mode
+
+`:verbose set ai? cin? cink? cino? si? inde? indk?` view where current indentation settings were set
