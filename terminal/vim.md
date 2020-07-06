@@ -82,6 +82,8 @@
 
 `{number}|` move cursor to specified column number on line
 
+`g*` Find next phrase that matches word at cursor location
+
 `*` move cursor to next instance of current word
 
 `#` move cursor to previous instance of current word
