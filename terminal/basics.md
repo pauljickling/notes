@@ -80,6 +80,12 @@
 
 ## Processes
 
+`ctrl + c` halt a process executed via the terminal
+
+`ctrl + z` pause a process executed via the terminal
+
+`bg` run paused process as a background job
+
 `ps` snapshot of current processes
 
 `top` display tasks
