@@ -86,11 +86,15 @@
 
 `bg` run paused process as a background job (alternatively you can append `&` at the end of a command to run it in the background)
 
+`jobs` list active jobs
+
+`disown -h %{job number}` Disowns background job as a shell job which allows a process to continue running even if the controlling terminal session ends.
+
+`nohub {command}` a simpler alternative command to running a background job and disowning
+
 `ps` snapshot of current processes
 
 `top` display tasks
-
-`jobs` list active jobs
 
 `kill {pid}` kill a process
 
