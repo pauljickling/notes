@@ -84,7 +84,7 @@
 
 `ctrl + z` pause a process executed via the terminal
 
-`bg` run paused process as a background job
+`bg` run paused process as a background job (alternatively you can append `&` at the end of a command to run it in the background)
 
 `ps` snapshot of current processes
 
