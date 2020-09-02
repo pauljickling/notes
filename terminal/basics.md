@@ -90,7 +90,7 @@
 
 `disown -h %{job number}` Disowns background job as a shell job which allows a process to continue running even if the controlling terminal session ends.
 
-`nohub {command}` a simpler alternative command to running a background job and disowning
+`nohup {command}` a simpler alternative command to running a background job and disowning. Typically it will feature `nohup {command} 2>&1`.
 
 `ps` snapshot of current processes
 
@@ -106,6 +106,12 @@
 
 ## Networking
 
+`ping {address}` pings address with small byte packet with a response time
+
+`ifconfig` provides network info
+
+`netstat` provides network statistics
+
 `ssh -i {path/to/key_file} {username@remote_host}` creates ssh connection to remote host using an identity specified by a private key
 
 `scp {filename} {username@ipaddress:path/to/remote_dir} {path/to/local_dir}` remote file copy program. Use `-r` flag for directories
@@ -116,9 +122,7 @@
 
 `host {url}` DNS lookup for public ip addresses
 
-`service network-manager restart` reset wifi network lookup
-
-**This one is helpful while traveling.**
+`service network-manager restart` reset wifi network lookup. **This one is helpful while traveling.**
 
 ## SSH Keygen
 
