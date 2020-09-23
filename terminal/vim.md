@@ -210,6 +210,14 @@
 
 `:source /path/too/{session name}.vim` Restore session
 
+`:tabe {filename}` open file as tab
+
+`gt` go to next tab
+
+`gT` go to previous tab
+
+`{i}gt` for to number speicifed tab
+
 ## Help
 
 `:help` open help file
