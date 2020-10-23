@@ -38,6 +38,7 @@ Constants can be declared with the `const` keyword. They are immutable, and know
 const (
     japan = "Tokyo"
     ghana = "Accra"
+    italy = "Rome"
 )
 ```
 
@@ -58,3 +59,34 @@ Converting other data types to strings and vice versa is a common type of operat
 ### Unicode
 
 Go calls unicode code points "runes". Go encodes string using UTF-8.
+
+### Arrays
+
+Arrays in Go are fixed length, and contain a single data type. Typically the length of the array is assigned when the variable is declared.
+
+`var importantDates [3]int = [3]int{1791, 1848, 1905}`
+
+However you can also use an ellipsis to specify that the length of the array is specified by the initial values.
+
+`var nums := [...]int{4, 6, 13}`
+
+If you provide an array length that exceeds the initially supplied values, the subsequent values will be whatever the `0` value is for that type.
+
+It is also possible to specify the index with `const`s that are an `int` type.
+
+```
+type Country int
+
+const (
+    japan Country = iota
+    ghana
+    italy
+)
+
+capitals := [...]string{japan: "Tokyo", ghana: "Accra", italy: "Rome"}
+fmt.Println(capitals[ghana]) // "Accra"
+```
+
+Furthermore it is also possible to create a numbered index that is not sequential.
+
+`q1Months := [...]string{1: "January", 2: "February", 3: "March"}`
