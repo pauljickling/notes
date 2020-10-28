@@ -90,3 +90,69 @@ fmt.Println(capitals[ghana]) // "Accra"
 Furthermore it is also possible to create a numbered index that is not sequential.
 
 `q1Months := [...]string{1: "January", 2: "February", 3: "March"}`
+
+### Slices
+
+Slices are variable length sequences with an underlying array that consist of three components:
+
+1. a pointer
+2. a length
+3. a capacity
+
+The pointer is the start of the slice, the length is the number of slice elements, and the capacity is is the number of elements between the start of the slice, and the end of the underlying array.
+
+Slices are defined with two operators that define the scope of the slice. `my_slice[start:end]`.
+
+### Maps
+
+Go uses the `map` type to create hash tables. You can create a map using the `make()` function. Alternatively, you can construct a map literal when you have some initial key/value pairs you want in your map.
+
+```
+capitals := map[string]string {
+    "japan": "Tokyo",
+    "ghana": "Akkra",
+    "italy": "Rome",
+}
+```
+
+The built-in `delete()` function can remove key/value pairs. `delete(capitals, "laputa")`.
+
+Map values are accessed with bracket notation.
+
+### Structs
+
+Structs are an aggregate of arbitrary data types with values called *fields*.
+
+```
+type Country struct {
+    Name        string
+    Capital     string
+    Pop         int
+    GDP         int
+    Landmass    int
+}
+```
+
+Struct fields are accessed with dot notation. Struct field names can also be imported if they are capitalized.
+
+Struct literals can also be declared. `type Point struct{ X, Y int }`.
+
+It is possible to embed structs as fields within other structs.
+
+```
+type Circle struct {
+    Center  Point
+    Radius  int
+}
+```
+
+This would make accessing the fields of a struct instance more verbose though, so it is possible to declare *anonymous fields*, fields with no field name.
+
+```
+type Circle struct {
+    Point
+    Radius  int
+}
+```
+
+This way, when trying to access the `Circle` instance's `Point` fields, `my_circle.X` can be accessed instead of `my_circle.Center.X`. This is especially useful if there are multiple layers of embedded structs.
