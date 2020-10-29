@@ -55,3 +55,13 @@ Tags can also be used to create flags that are only executing specific roles. Fo
 Runs the playbook, but just the setup tag.
 
 One useful thing to do in your playbook is volume management which can extend volume arbitrarily for cloud services like AWS.
+
+### Playbook Anatomy
+
+`- hosts: {hosts}` Describes which hosts the playbook applies to. Possible values could either be `all` or a value defined in your `hosts` file.
+
+`become: {yes/no}` Describes if changes should be made as the root user
+
+`tasks:` Describes the tasks that will be performed
+
+`-name: {description}` Human readable account of what is happening
