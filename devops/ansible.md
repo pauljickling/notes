@@ -32,6 +32,12 @@ Ansible also has plugins. One useful one is called **Lookup**. You can use Looku
 
 There are a lot of ways directories can be structured, but some best practices are to have the `ansible.cfg` and playbook file at the root directory, and then have inventory directories for your inventory files, and a group variables directory that has variables that only apply to certain groups of the inventory.
 
+## Ansible CLI
+
+Some useful Ansible command lines:
+
+`ansible {host name} -m setup` is used to gather facts about the provided servers such as file systems, memory, OS, etc.
+
 ## Roles
 
 A group of tasks that executes one or more modules with the purpose of setting something up. Roles can be located in a lot of different places in your directory structure, so you should definitely specify the path in your ansible config file.
