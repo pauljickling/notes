@@ -18,4 +18,6 @@ Vagrant is a virtual server provisioning tool.
 
 `vagrant ssh-config` Manual configuration of SSH access to virtual server
 
-`vagrnt provision` Provisions virtual server resources as defined in your Vagrantfile (for example, running an Ansible playbook).
+`vagrant provision` Provisions virtual server resources as defined in your Vagrantfile (for example, running an Ansible playbook).
+
+`vagrant global-status` provides the state of all active Vagrant environments in the currently running system
