@@ -38,6 +38,22 @@ Some useful Ansible command lines:
 
 `ansible {host name} -m setup` is used to gather facts about the provided servers such as file systems, memory, OS, etc.
 
+Some flags used by Ansible:
+
+`-b` for "becomes". This runs a command as a sudo user.
+
+`-m` for "module". Runs a particular module.
+
+`-a` for passing optional CLI arguments.
+
+`-K` for "`--ask-become-pass`" to supply a password
+
+`--limit "{server IP/name}"` limits ansible ad-hoc command to specified server. You can use regular expressions for your limit argument if you prefix the quoted arguments with a tilde `~` character.
+
+`-B {seconds}` specifies the max amount of time to let a job run
+
+`-P {seconds}` spcifies the amount of time to wait between polling a server for the current job status
+
 ## Roles
 
 A group of tasks that executes one or more modules with the purpose of setting something up. Roles can be located in a lot of different places in your directory structure, so you should definitely specify the path in your ansible config file.
