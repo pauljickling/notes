@@ -54,6 +54,8 @@ Some flags used by Ansible:
 
 `-P {seconds}` spcifies the amount of time to wait between polling a server for the current job status
 
+`ansible-playbook {playbook} --list-hosts` lists the hosts that will be affected by running the playbook
+
 ## Roles
 
 A group of tasks that executes one or more modules with the purpose of setting something up. Roles can be located in a lot of different places in your directory structure, so you should definitely specify the path in your ansible config file.
