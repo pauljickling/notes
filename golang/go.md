@@ -1,6 +1,6 @@
 # Go Lang
 
-Go is a statically-typed, compiled programming language with a garbage collector. It has a concise syntax, and seems to generally operate in the spirit of the Zen of Python. Although it is very effective as a general purpose language, Go shines in the ease of use, and performant development of concurrent and networkng application programming.
+Go is a statically-typed, compiled programming language with a garbage collector. It has a concise syntax, and it is an effective general purpose language, but it shines in the development of concurrent networking application programming.
 
 ## `Printf` Reference
 
@@ -156,3 +156,7 @@ type Circle struct {
 ```
 
 This way, when trying to access the `Circle` instance's `Point` fields, `my_circle.X` can be accessed instead of `my_circle.Center.X`. This is especially useful if there are multiple layers of embedded structs.
+
+## Functions
+
+Functions have a name, parameters, an optional result list, and a body. If there is no optional result list provided, that means that there is no returned value. The result list does not have to have a returned variable name, it can just specify the data type, in which case it does not need to be enclosed in parenthesis. If there is a provided result list, then the function body must end in a return statement.
