@@ -138,6 +138,8 @@
 
 `shasum -a 256` Use on Mac for the sha-256 formula (defaults to sha-1 which has broken collision resistance)
 
+`pwgen -s {num}` Generate a random and secure password of `{num}` length
+
 ## Misc
 
 `cat /etc/os-release` get information about the OS
