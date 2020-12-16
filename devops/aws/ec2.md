@@ -1,6 +1,6 @@
 # EC2 Instances
 
-EC2 instances are a scalable web service that provide virtual machines that can run any needed software.
+EC2 instances are a scalable web service that provide virtual machines that can run any needed software. To quickly understand the potential costs of deploying EC2 instances, check out this [web app](https://ec2instances.info).
 
 ## Connecting
 
