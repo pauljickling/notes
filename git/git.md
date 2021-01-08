@@ -64,6 +64,8 @@ Git is a version control tool. Git manages versions of a project with a history 
 
 `git clean` Deletes files not tracked by git.
 
+`git fetch --prune origin` Removes references to branches that have been deleted on your remote repo, in this case the origin repo
+
 ## Writing Git Hooks
 
 In any directory where git is being used there will be a `.git/hooks` file which contains a bunch of sample scripts that take place at different times. This is useful if you want to make sure certain tasks always happen when writing or pushing commits.
