@@ -6,7 +6,7 @@ Terraform is a so-called "infrastructure as code" tool. More concretely, it is u
 
 Unzip file and run `terraform`. Make sure `terraform` binary is available in `PATH`. You can run `terraform` without any arguments to see if it is working.
 
-`terraform init` in the root project directory after you have created your config file to download the necessary plugins.
+`terraform init` in the root project directory after you have created your config file to download the necessary plugins. You can use the `--reconfigure` flag for when you need to refresh the init state.
 
 `terraform fmt` is recommended to enable standardization by automatically updating configurations in the current working directory with a consistent style/formatting.
 
