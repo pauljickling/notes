@@ -54,7 +54,13 @@ Some flags used by Ansible:
 
 `-P {seconds}` spcifies the amount of time to wait between polling a server for the current job status
 
+`ansible-vault encrypt {path/to/file}` encrypts a file. Useful for a variable file that contains passwords and other sensitive information.
+
 `ansible-playbook {playbook} --list-hosts` lists the hosts that will be affected by running the playbook
+
+`ansible-playbook {playbook} --extra-vars "{var}={value}"` provides variable values for your playbook
+
+`ansible-playbook {playbook} --ask-vault-pass` if you use the `ansible-vault` feature you can use the `--ask-vault-pass` flag to decrypt files encrypted using ansible-vault.
 
 ## Roles
 
