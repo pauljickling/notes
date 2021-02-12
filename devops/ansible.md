@@ -86,6 +86,12 @@ One useful thing to do in your playbook is volume management which can extend vo
 
 `become: {yes/no}` Describes if changes should be made as the root user
 
+`pre-tasks:` Are tasks that must be executed before other tasks are performed. A common pre-task would be updating a server's package management.
+
 `tasks:` Describes the tasks that will be performed
 
 `-name: {description}` Human readable account of what is happening
+
+`{module name}: {module params}` After having a name for your task you will use specified Ansible modules to perform that task
+
+`handlers:` Handlers are special tasks that are called by other tasks with the `notify:` option. You can even use `notify` for handlers so that they can call other handlers. A common type of handler might be restarting a service where a restart is necessary after certain configuration changes have taken place. Handlers only run if a task notifies the handler, and they only run once at the end of the play.
