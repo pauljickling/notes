@@ -36,7 +36,7 @@ Note that in OSX bash does not support negative numbers for the index values
 
 ```
 say_hello () {
-    echo "Hello  there";
+    echo "Hello there";
 }
 say_hello
 ```
