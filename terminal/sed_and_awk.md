@@ -22,7 +22,7 @@ You can also specify a particular line or range of lines like in the following e
 
 To specify the last line of a final you can use the `$` character.
 
-`sed "$ s/THE EDN/THE END/g" my_book.txt`
+`sed "$s/THE EDN/THE END/g" my_book.txt`
 
 Sometimes you may need to search or replace some text that is using the standard delimiter. In those instances you can supply an alternative delimiter.
 
