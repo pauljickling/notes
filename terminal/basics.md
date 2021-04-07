@@ -142,6 +142,10 @@
 
 ## Misc
 
+`ctrl + w` delete word
+
+`ctrl + u` clear line
+
 `cat /etc/os-release` get information about the OS
 
 `ctrl + a` go to beginning of line
