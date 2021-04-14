@@ -58,7 +58,7 @@ Some flags used by Ansible:
 
 `ansible-playbook {playbook} --list-hosts` lists the hosts that will be affected by running the playbook
 
-`ansible-playbook {playbook} --extra-vars "{var}={value}"` provides variable values for your playbook
+`ansible-playbook {playbook} --extra-vars "{var}={value}"` provides variable values for your playbook. Can accept JSON or YML files for variable definitions with the syntax `--extra-vars "@vars.json"`
 
 `ansible-playbook {playbook} --ask-vault-pass` if you use the `ansible-vault` feature you can use the `--ask-vault-pass` flag to decrypt files encrypted using ansible-vault.
 
@@ -101,3 +101,31 @@ One useful thing to do in your playbook is volume management which can extend vo
 `{module name}: {module params}` After having a name for your task you will use specified Ansible modules to perform that task
 
 `handlers:` Handlers are special tasks that are called by other tasks with the `notify:` option. You can even use `notify` for handlers so that they can call other handlers. A common type of handler might be restarting a service where a restart is necessary after certain configuration changes have taken place. Handlers only run if a task notifies the handler, and they only run once at the end of the play.
+
+`vars:` The vars section allows you to not have to hardcode values that will be used multiple times by your playbook so you can keep your playbook DRY. Ansible accepts any variable name that would be valid in Python code. Sticking to Python style is considered good practice.
+
+## Environmental Variables
+
+You can set an environmental variable by adding it to the remote user's `.bash_profile`.
+
+```
+- name: Add environmental variable foo
+  lineinfile:
+    dest: ~/.bash_profile
+    regexp: '^FOO='
+    line: "FOO=bar"
+```
+
+This will make the environmental variable usable with Ansible's `shell` module. To use the variable in additional tasks you need to register it.
+
+```
+- name: Register environmental variable
+  shell: 'source ~/.bash_profile && echo $FOO'
+  register: foo
+
+- name: Print registered environmental variable
+  debug:
+    msg: "The value for the variable FOO is {{ foo.stdout }}"
+```
+
+For Linux systems you can also store global environmental variables in `/etc/environment`.
