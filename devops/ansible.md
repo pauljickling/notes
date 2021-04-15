@@ -104,6 +104,10 @@ One useful thing to do in your playbook is volume management which can extend vo
 
 `vars:` The vars section allows you to not have to hardcode values that will be used multiple times by your playbook so you can keep your playbook DRY. Ansible accepts any variable name that would be valid in Python code. Sticking to Python style is considered good practice.
 
+`vars_files:` If your `vars` section is lengthy, it can make sense to create separate files, and use `vars_file` to include them. When you create a vars yaml, you don't need to place them under a `vars` heading, you can have a simple yaml file that just declares the values.
+
+`register:` Register takes the output of a command, and stores it for future use. For example, this is how environmental variables are declared (see Environmental Variables section below for an example).
+
 ## Environmental Variables
 
 You can set an environmental variable by adding it to the remote user's `.bash_profile`.
@@ -129,3 +133,13 @@ This will make the environmental variable usable with Ansible's `shell` module. 
 ```
 
 For Linux systems you can also store global environmental variables in `/etc/environment`.
+
+## Using Variables
+
+Declared variables are used with double curly braces e.g. `{{ foo }}`. When you declare a variable list, you can select items in that list with square bracket notation e.g. `{{ foo[0] }}`. For responses that return array objects you can retrieve nested values with square bracket or dot notation.
+
+Files located in the `group_vars` and `host_vars` directories are automatically loaded.
+
+## Pre-Assigned Variables
+
+Ansible has the magic variable `hostvars` so you can retrieve host variables from any other host defined in the inventory file. Other variables like this include `groups`, `group_names`, `inventory_hostname`, and `play_hosts`. A full list of these can be found [here](https://docs.ansible.com/ansible/latest/reference_appendices/special_variables.html). 
