@@ -58,6 +58,8 @@ Some flags used by Ansible:
 
 `ansible-playbook {playbook} --list-hosts` lists the hosts that will be affected by running the playbook
 
+`ansible-playbook {playbook} --connection=local` runs the playbook on local host (also referred to as self-provisioning)
+
 `ansible-playbook {playbook} --extra-vars "{var}={value}"` provides variable values for your playbook. Can accept JSON or YML files for variable definitions with the syntax `--extra-vars "@vars.json"`
 
 `ansible-playbook {playbook} --ask-vault-pass` if you use the `ansible-vault` feature you can use the `--ask-vault-pass` flag to decrypt files encrypted using ansible-vault.
@@ -143,3 +145,25 @@ Files located in the `group_vars` and `host_vars` directories are automatically 
 ## Pre-Assigned Variables
 
 Ansible has the magic variable `hostvars` so you can retrieve host variables from any other host defined in the inventory file. Other variables like this include `groups`, `group_names`, `inventory_hostname`, and `play_hosts`. A full list of these can be found [here](https://docs.ansible.com/ansible/latest/reference_appendices/special_variables.html). 
+
+## Conditionals
+
+Ansible can use certain conditionals for sections of a playbook that only need to be run when certain facts are true. Examples of conditionals:
+
+`when: is_foo`
+
+The task that contains this conditional will run when you have a variable registered called `is_foo` that returns a value of `True`. Nearly any conditional test you might apply in a Python script applies in Ansible.
+
+`ignore_errors` is another conditional that will force a task to run. This is useful for tasks that always need to happen regardless of other circumstances that might occur during playbook execution.
+
+Somewhat related to conditionals, you can also use the phrase `delegate_to` to specify the particular host for a task. `local_action` is another phrase that can include the command type, and automatically specifies the local host as the host executing the action for a particular task.
+
+`wait_for` is a module that can be used to pause a playbook until certain conditions are true.
+
+## Tags
+
+Tags are a simple way to to create sets, and subsets of tasks in a playbook. Tags can be strings, or lists of strings. When running the playbook you can include the flag `--tags "foo,bar,cool"` to only run tasks with those tags, or you can use the flag `--skip-tags "foo,bar,cool"` to run everything except those tags.
+
+## Blocks
+
+Blocks are tasks that are bundled together. Blocks are useful if a set of tasks logically fit together for a certain service to operate. You can use conditionals with blocks to improve error handling for your services.
