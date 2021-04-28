@@ -167,3 +167,47 @@ Tags are a simple way to to create sets, and subsets of tasks in a playbook. Tag
 ## Blocks
 
 Blocks are tasks that are bundled together. Blocks are useful if a set of tasks logically fit together for a certain service to operate. You can use conditionals with blocks to improve error handling for your services.
+
+## Importing Tasks
+
+Just as variable files can be imported into a playbook
+
+```
+var_files:
+  - vars.yml
+```
+
+Tasks can also be imported into a playbook
+
+```
+tasks:
+  - import_tasks: tasks.yml
+```
+
+As with variables, your tasks yaml file will be a flat list. Import tasks are always run in a playbook. When you need to conditionally run tasks, you can use `include_tasks`
+
+```
+- include_tasks: tasks.yml
+  when: foo_file.stat.exists
+```
+
+**Note** that in this hypothetical example stat is a module that is used to retrieve file or file system status.
+
+You could also include tasks with a `with_items` loop.
+
+Handlers are also imported the same way as other tasks.
+
+At the top level of your playbook, you can also import additional playbooks with the `import_playbook:` definition.
+
+## Roles
+
+Instead of importing playbooks, roles are a useful way to organize related configuration tasks. To create a role, you will need to create a `roles/` directory, and then a directory within `roles/` with you role name, and create two sub-directories called `meta/` and `tasks/`. The yaml files in these subdirectories should be called `main.yml`. If you do that Ansible will run all the tasks defined if your playbook has the following config:
+
+```
+---
+- hosts: all
+  roles:
+    - foo
+```
+
+Where `foo` is the name of your role directory. Roles can be made more modula and flexible with the use of role vars.
