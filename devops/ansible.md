@@ -4,6 +4,8 @@ Ansible is a configuration management tool that defines how software should be p
 
 So like bash scripts, Ansible is used for for running a series of tasks to configure an installation of some software. However Ansible has the advantage of being idempotent. This means it makes it much easier to handle edge cases compared to bash scripts without creating a lot of extra complexity.
 
+If you wish to learn more about Ansible in a more structured way, I recommend [Ansible for DevOps by Jeff Geerling](https://www.ansiblefordevops.com/).
+
 ## Tech Stack
 
 Under the hood, Ansible is just a bunch of Python, and it is open source so it is easy to take a look at what is going on. Ansible mostly uses yaml files for defining configurations, and it also uses Jinja as a templating engine to allow a little more flexibility with how those yaml files are composed. The Jinja templating syntax with look very familiar to anyone that has used Django's templating language.
