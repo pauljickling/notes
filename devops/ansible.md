@@ -215,3 +215,23 @@ Instead of importing playbooks, roles are a useful way to organize related confi
 Where `foo` is the name of your role directory. Roles can be made more modula and flexible with the use of role vars.
 
 In addition to the `meta/` and `tasks/` dirs, you can also include `files/` and `templates/` dirs for managing tasks. When copying files from your `files/` directory using the copy module, you only need to specify the filename in the `src` section of the task. The same logic applies to the template module for files in the `templates/` directory.
+
+## Ansible Galaxy
+
+Ansible Galaxy is a repo of Ansible roles and collections that you can include in your playbook. To add a role you can use a command like:
+
+`ansible-galaxy role install {provider}.{role}`
+
+Alternatively, you can  create a roles requirement file called `requirements.yml` to manage dependencies. It might look something like this:
+
+```
+---
+roles:
+  -  name:  {provider}.{role}
+     version: {version number}
+
+  - name: {provider}.{role}
+    src: {http download path}
+```
+
+Then  you can install it via `ansible-galaxy install -r requirements.yml`
