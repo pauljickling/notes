@@ -214,4 +214,4 @@ Instead of importing playbooks, roles are a useful way to organize related confi
 
 Where `foo` is the name of your role directory. Roles can be made more modula and flexible with the use of role vars.
 
-In addition to the `meta/` and `tasks/` dirs, you can also include `files/` and `templates/` dirs for managing tasks.
+In addition to the `meta/` and `tasks/` dirs, you can also include `files/` and `templates/` dirs for managing tasks. When copying files from your `files/` directory using the copy module, you only need to specify the filename in the `src` section of the task. The same logic applies to the template module for files in the `templates/` directory.
