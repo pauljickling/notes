@@ -144,7 +144,7 @@ Declared variables are used with double curly braces e.g. `{{ foo }}`. When you 
 
 Files located in the `group_vars` and `host_vars` directories are automatically loaded.
 
-## Pre-Assigned Variables
+### Pre-Assigned Variables
 
 Ansible has the magic variable `hostvars` so you can retrieve host variables from any other host defined in the inventory file. Other variables like this include `groups`, `group_names`, `inventory_hostname`, and `play_hosts`. A full list of these can be found [here](https://docs.ansible.com/ansible/latest/reference_appendices/special_variables.html). 
 
@@ -213,3 +213,5 @@ Instead of importing playbooks, roles are a useful way to organize related confi
 ```
 
 Where `foo` is the name of your role directory. Roles can be made more modula and flexible with the use of role vars.
+
+In addition to the `meta/` and `tasks/` dirs, you can also include `files/` and `templates/` dirs for managing tasks.
