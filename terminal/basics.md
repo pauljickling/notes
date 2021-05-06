@@ -170,6 +170,10 @@
 
 `iostat` get statistics about disk read/writes
 
+`nproc` get number of CPUs available
+
+`ulimit -n` get number of worker processes available
+
 `echo hello world` stdout text
 
 `echo $((365 * 24))` arithmetic
