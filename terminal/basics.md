@@ -116,7 +116,9 @@
 
 `ssh -i {path/to/key_file} {username@remote_host}` creates ssh connection to remote host using an identity specified by a private key
 
-`scp {filename} {username@ipaddress:path/to/remote_dir} {path/to/local_dir}` remote file copy program. Use `-r` flag for directories
+`scp {path/to/file} {username@ipaddress:path/to/remote_dir}` copies local file to remote directory. Use `-r` flag for directories.
+
+`scp {username@ipaddress:path/to/remote_dir} {path/to/local_dir}` copies remote file to local directory  Use `-r` flag for directories.
 
 `sftp {username@ipaddress}` Sets up a secure FTP protocol
 
