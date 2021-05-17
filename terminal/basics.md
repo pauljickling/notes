@@ -148,6 +148,10 @@
 
 `ctrl + u` clear line
 
+`pbcopy` copies standard input to the pasteboard. For example, `cat foo.txt | pbcopy` would copy the contents of the foo.txt file to the pasteboard.
+
+`pbpaste` copies pasteboard content
+
 `cat /etc/os-release` get information about the OS
 
 `ctrl + a` go to beginning of line
