@@ -142,6 +142,8 @@
 
 `:%s/{find_text}/{replacement_text}/g` Replace found text with replacement text globally in a file
 
+`:g/{pattern}/{vim command}` Globally execute the specified vim command on every line matching the specified pattern
+
 `>` while in visual mode indent block
 
 `>>` indent block while in normal mode
