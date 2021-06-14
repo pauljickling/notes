@@ -28,3 +28,7 @@ Next includes some React components you get for free. You can include them via i
 `import {Component} from 'next/{component}';`
 
 The `Link` component can be used to handle client-side nevigation in a performant way.
+
+The `Image` component can be used to serve optimized images.
+
+The `Head` component can be used to add metadata to your site.
