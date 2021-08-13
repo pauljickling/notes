@@ -1,6 +1,6 @@
 # Prometheus
 
-Prometheus is an open source, monitoring and alerting service for applications and infrastructure. The big draw of Prometheus is it has a simple to use, but powerful query language (promQL) for analyzing metrics. It also plays well with Loki and Grafana. The data model gives each time series a name and a key-value pair called a label.
+Prometheus is an open source, monitoring and alerting service for applications and infrastructure. The big draw of Prometheus is it has a simple to use, but powerful query language (promQL) for analyzing metrics. It also plays well with Loki and Grafana. The data model gives each time series a name and a key-value pair called a label. You can use "label matchers" to restrict the type of metrics that are returned, e.g. `process_resdient_memory_bytes{job="node"}`.
 
 Prometheus monitors metrics -- *the aggregation of event types that occur on a piece of infrastructure or application*. Prometheus collects metrics using pieces of software called exporters. Prometheus uses service discovery tools to determine where it can find these exporters. Collecting the metrics from these exporters is called *scraping*.
 
@@ -11,6 +11,8 @@ Prometheus can create alert rules, and send alerts to Alertmanager, which turns 
 ## Running Prometheus
 
 Prometheus is written in Go, and so using it just involves downloading and running the appropriate binary for your OS.
+
+By default Prometheus runs on port 9090.
 
 ### Prometheus Components
 
@@ -26,6 +28,12 @@ In addition to the base Prometheus package, there are a number of components tha
 - Node Exporter
 - Pushgateway
 - Statsd Exporter
+
+#### Node Exporter
+
+Node Exporter exposes kernel and machine level metrics on Unix systems such as CPU, memory usgae, disk space, IOPS, network bandwidth, etc. It does not cover the metrics for individual processes.
+
+By default Node Exporter runs on port 9100.
 
 ## Types of Metrics
 
