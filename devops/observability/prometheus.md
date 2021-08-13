@@ -33,6 +33,8 @@ In addition to the base Prometheus package, there are a number of components tha
 
 After creating alerting rules in Prometheus, Alertmanager can handle the notification process for those alerts using a variety of messaging protocols. Alerting rules use PromQL expressions. For example, an alerting rule for when a node is down would be expressed this way: `up == 0`.
 
+By default Alertmanager runs on port 9093.
+
 #### Node Exporter
 
 Node Exporter exposes kernel and machine level metrics on Unix systems such as CPU, memory usgae, disk space, IOPS, network bandwidth, etc. It does not cover the metrics for individual processes.
