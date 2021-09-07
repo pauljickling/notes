@@ -43,6 +43,12 @@ By default Node Exporter runs on port 9100.
 
 ## Types of Metrics
 
-**Gauge:** A gauge are a current absolute value.
+**Gauge:** A gauge are a current absolute value. Gauge involves values that can increase or decrease over time. Gauges have three primary metrics, increment (`.inc()`), decrement (`.dec()`), and set (`.set()`).
 
-**Counter:** A counter tracks how many events have occured, or the size of all the events
+**Counter:** A counter tracks how many events have occured, or the size of all the events. Counters are a number goes up type of metric that can accept non-negative integers and 64-bit floats. Counters have an increment (`.inc()`) method as well as some built in functionality for counting exceptions.
+
+**Summary:** Summary metrics track a sample of observations, principally through the `.observe()` method which takes the conditions for observing as its argument. Note that the Python Prometheus client does not accept client-side quantiles.
+
+**Histogram:** Histograms take observable events and count them based on configurable buckets. Like the summary metric it uses the `.observe()` method.
+
+[Best practices on designing Instrumentation](https://prometheus.io/docs/practices/instrumentation/#counter-vs-gauge-summary-vs-histogram).
