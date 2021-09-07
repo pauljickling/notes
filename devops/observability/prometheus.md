@@ -49,6 +49,6 @@ By default Node Exporter runs on port 9100.
 
 **Summary:** Summary metrics track a sample of observations, principally through the `.observe()` method which takes the conditions for observing as its argument. Note that the Python Prometheus client does not accept client-side quantiles.
 
-**Histogram:** Histograms take observable events and count them based on configurable buckets. Like the summary metric it uses the `.observe()` method.
+**Histogram:** Histograms take observable events and count them based on configurable buckets. Like the summary metric it uses the `.observe()` method. Buckets can be defined as sorted lists. In the Python library you can use list comprehensions if the bucket has a defined increment.
 
 [Best practices on designing Instrumentation](https://prometheus.io/docs/practices/instrumentation/#counter-vs-gauge-summary-vs-histogram).
