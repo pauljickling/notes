@@ -16,6 +16,10 @@ If the pem file is too permissive you will need to `chmod 0400 </path/to/file>` 
 
 To access a web application you have setup on your EC2 instance you need to make sure you have a TCP connection with a port range that includes the port your application is running. You can configure this in the security group for your EC2 instance. Then you type `<IPv4 address>:<port number>` in your browser's URL bar to access.
 
+## Increasing Disk Space
+
+If you did not provision sufficient disk space initially for an EC2 instance itcan be easily extended using EBS (Elastic Block Storage). After creating the EBS volume and attaching it to the EC2 instance, you can follow along with [this guide](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html) to format and mount the attached volume.
+
 ## Tagging EC2 Resources
 
 Tags are metadata labels associated with each resource using key/(optional)value pairs. Tags are returned by many different API calls, and therefore you should not include any sensitive data in your tags.
