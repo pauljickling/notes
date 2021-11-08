@@ -50,7 +50,7 @@ Some flags used by Ansible:
 
 `-K` for "`--ask-become-pass`" to supply a password
 
-`--limit "{server IP/name}"` limits ansible ad-hoc command to specified server. You can use regular expressions for your limit argument if you prefix the quoted arguments with a tilde `~` character.
+`-l` or `--limit "{server IP/name}"` limits ansible ad-hoc command to specified server. You can use regular expressions for your limit argument if you prefix the quoted arguments with a tilde `~` character.
 
 `-B {seconds}` specifies the max amount of time to let a job run
 
