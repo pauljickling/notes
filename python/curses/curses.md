@@ -10,14 +10,31 @@ And the [std lib ref](https://docs.python.org/3/library/curses.html)
 
 `import curses` to include the library in your script.
 
-`win = curses.initscr()` initializes the library and returns a window object that is assigned to the variable that, in this case, we are calling `win`, but `screen` or whatever else might be appropriate would be fine too.
+`win = curses.initscr()` initializes the library and returns a window object that is assigned to the variable that, in this case, we are calling `win`, but `screen` or whatever else might be appropriate would be fine too. The rest of this reference page will use the `win` variable for cases where you call a method from this window objecxt, and `curses` for cases where you are calling a method from the curses library itself.
 
 `curses.endwin()` closes the window object and returns you to your normal terminal prompt environment. As important to know as `:wq` in vim!
 
-`curses.refresh()` is needed to update the screen with any changes that have been made in the buffer.
+`win.refresh()` is needed to update the screen with any changes that have been made in the buffer.
 
-`curses.addstr(x, y, str)` adds strings to the buffer in positions x and y. Note that the positioning is zero-indexed, and begins in the top left-hand corner of the window object.
+`win.addstr(x, y, str)` adds strings to the buffer in positions x and y. Note that the positioning is zero-indexed, and begins in the top left-hand corner of the window object.
 
-`curses.clear()` clears out the window object and resets the cursor object to position 0, 0.
+`win.clear()` clears out the window object and resets the cursor object to position 0, 0.
 
 `curses.napms(x)` creates a timed delay in milliseconds.
+
+## Common Defaults
+
+`curses.noecho()` turns off the echoing of keys to the screen
+
+`curses.cbreak()` removes the buffer input terminal style where it waits for the Enter key before processing commands
+
+`win.keypad(True)` handles special keys.
+
+## Restoring Terminal Defaults
+
+```
+curses.nocbreak()
+win.keypad(False)
+curses.echo()
+curses.endwin()
+```
