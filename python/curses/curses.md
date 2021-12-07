@@ -5,3 +5,19 @@ Curses (along with ncurses i.e. new curses) is an older library for the C langua
 The python.org [tutorial](https://docs.python.org/3/howto/curses.html#curses-howto)
 
 And the [std lib ref](https://docs.python.org/3/library/curses.html)
+
+## Basics
+
+`import curses` to include the library in your script.
+
+`win = curses.initscr()` initializes the library and returns a window object that is assigned to the variable that, in this case, we are calling `win`, but `screen` or whatever else might be appropriate would be fine too.
+
+`win.endwin()` closes the window object and returns you to your normal terminal prompt environment. As important to know as `:wq` in vim!
+
+`win.refresh()` is needed to update the screen with any changes that have been made in the buffer.
+
+`win.addstr(x, y, str)` adds strings to the buffer in positions x and y. Note that the positioning is zero-indexed, and begins in the top left-hand corner of the window object.
+
+`win.clear()` clears out the window object and resets the cursor object to position 0, 0.
+
+`win.napms(x)` creates a timed delay in milliseconds.
