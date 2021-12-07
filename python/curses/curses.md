@@ -55,3 +55,15 @@ win.keypad(False)
 curses.echo()
 curses.endwin()
 ```
+
+## Window Management
+
+`newwin = curses.newwin(height, width, y, x)` Creates a new window with a specified height and width starting from the y and x coordinates specified.
+
+`curses.LINES` can be used to determine the ending y size
+
+`curses.COLS` can be used to determine the ending x size
+
+`pad = curses.newpad(100, 100)` when you need to create a window that is larger than the dimensions of the window object you are operating out of you can create a pad which then only displays a portion of the pad at a time.
+
+`pad.refresh(pad_y, pad_x, win1_y, win1_x, win2_y, win2_x)` is used to refresh a pad. Its parameters include the coordinates of the pad area to display, as well as the starting and ending dimensions of the window where the pad will be displayed.
