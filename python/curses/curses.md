@@ -18,6 +18,8 @@ And the [std lib ref](https://docs.python.org/3/library/curses.html)
 
 `win.addstr(x, y, str)` adds strings to the buffer in positions x and y. Note that the positioning is zero-indexed, and begins in the top left-hand corner of the window object.
 
+`win.addch(x, y, char)` adds a character to the buffer in positions x and y. Useful for variables where you definitely don't want them to be a string (like characters displayed in a roguelike)
+
 `win.clear()` clears out the window object and resets the cursor object to position 0, 0.
 
 `curses.napms(x)` creates a timed delay in milliseconds.
