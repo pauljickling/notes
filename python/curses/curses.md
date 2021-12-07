@@ -10,7 +10,7 @@ And the [std lib ref](https://docs.python.org/3/library/curses.html)
 
 `import curses` to include the library in your script.
 
-`win = curses.initscr()` initializes the library and returns a window object that is assigned to the variable that, in this case, we are calling `win`, but `screen` or whatever else might be appropriate would be fine too. The rest of this reference page will use the `win` variable for cases where you call a method from this window objecxt, and `curses` for cases where you are calling a method from the curses library itself.
+`win = curses.initscr()` initializes the library and returns a window object the size of your terminal that is assigned to the variable that, in this case, we are calling `win`, but `screen` or whatever else might be appropriate would be fine too. The rest of this reference page will use the `win` variable for cases where you call a method from this window objecxt, and `curses` for cases where you are calling a method from the curses library itself.
 
 `curses.endwin()` closes the window object and returns you to your normal terminal prompt environment. As important to know as `:wq` in vim!
 
@@ -29,6 +29,23 @@ And the [std lib ref](https://docs.python.org/3/library/curses.html)
 `curses.cbreak()` removes the buffer input terminal style where it waits for the Enter key before processing commands
 
 `win.keypad(True)` handles special keys.
+
+### Using a Wrapper
+
+If you write a bad script that crashes out unexpectedly from an unhandled exception you run the risk of your terminal still operating in the interactive mode (the curses library operates at a fairly low level!)
+
+This can be mitigated by using the `wrapper()` function in the following way:
+
+```
+from curses import wrapper
+
+def main(win):
+    """
+    Your application code
+    """
+
+wrapper(main)
+```
 
 ## Restoring Terminal Defaults
 
