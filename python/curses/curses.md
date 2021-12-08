@@ -74,6 +74,33 @@ curses.endwin()
 
 `pad.refresh(pad_y, pad_x, win1_y, win1_x, win2_y, win2_x)` is used to refresh a pad. Its parameters include the coordinates of the pad area to display, as well as the starting and ending dimensions of the window where the pad will be displayed.
 
+## Cursor Management
+
+`curses.curs_set(bin)` a value of `0` or `1` where `0` disables the cursor, and `1` activates it.
+
+## Color Management
+
+`color_pair(n)` Provided as an argument to an `addstr()` function that returns a foreground and background color value. `n` is an int.
+
+`curses.init_pair(n, foreground_color, background_color)` sets a color pair used by the `color_pair` function to a specified foreground and background color.
+
+### Color Values
+
+When `start_color()` is called, it initializes 8 color values.
+
+| Index | Color   |
+| ----- | -----   |
+| 0     | Black   |
+| 1     | Red     |
+| 2     | Green   |
+| 3     | Yellow  |
+| 4     | Blue    |
+| 5     | Magenta |
+| 6     | Cyan    |
+| 7     | White   |
+
+When assigning colors using the `init_pair` function you can use constants available in the curses library like `curses.COLOR_CYAN`, etc.
+
 ## Attributes
 
 `curses.A_BLINK` blinking text
