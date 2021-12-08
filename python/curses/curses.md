@@ -6,6 +6,8 @@ The python.org [tutorial](https://docs.python.org/3/howto/curses.html#curses-how
 
 And the [std lib ref](https://docs.python.org/3/library/curses.html)
 
+You can also consult the man pages for more info on curses. `man curses`.
+
 ## Basics
 
 `import curses` to include the library in your script.
@@ -114,3 +116,9 @@ When assigning colors using the `init_pair` function you can use constants avail
 `curses.A_STANDOUT` highlighted text
 
 `curses.A_UNDERLINE` underlines text
+
+## User Input
+
+`getch()` refreshes the screen and then waits for the user to hit a key, displaying the key. A coordinate can be provided as an option for where the cursor should be located while awaiting input. It returns an integer value between 0 and 255 (the number of values for ASCII), plus some additional integer values for special keys like `KEY_UP`.
+
+`getkey()` is similar, but converts the int value to a string.
