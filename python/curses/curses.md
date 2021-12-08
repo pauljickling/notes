@@ -16,7 +16,7 @@ And the [std lib ref](https://docs.python.org/3/library/curses.html)
 
 `win.refresh()` is needed to update the screen with any changes that have been made in the buffer.
 
-`win.addstr(row, col, str)` adds strings to the buffer in positions row and col. Note that the positioning is zero-indexed, and begins in the top left-hand corner of the window object.
+`win.addstr(row, col, str, attribute)` adds strings to the buffer in positions row and col. Note that the positioning is zero-indexed, and begins in the top left-hand corner of the window object. The attribute arg is optional.
 
 `win.addch(row, col, char)` adds a character to the buffer in positions row and col. Useful for variables where you definitely don't want them to be a string (like characters displayed in a roguelike)
 
@@ -31,6 +31,8 @@ And the [std lib ref](https://docs.python.org/3/library/curses.html)
 `curses.cbreak()` removes the buffer input terminal style where it waits for the Enter key before processing commands
 
 `win.keypad(True)` handles special keys.
+
+`curses.start_color()` allows the script to specify color values for text
 
 ### Using a Wrapper
 
@@ -66,6 +68,22 @@ curses.endwin()
 
 `curses.COLS` can be used to determine the ending x size
 
+`newwin.mvwin(row, col)` relocate the window to the specified coordinates.
+
 `pad = curses.newpad(100, 100)` when you need to create a window that is larger than the dimensions of the window object you are operating out of you can create a pad which then only displays a portion of the pad at a time.
 
 `pad.refresh(pad_y, pad_x, win1_y, win1_x, win2_y, win2_x)` is used to refresh a pad. Its parameters include the coordinates of the pad area to display, as well as the starting and ending dimensions of the window where the pad will be displayed.
+
+## Attributes
+
+`curses.A_BLINK` blinking text
+
+`curses.A_BOLD` bold text
+
+`curses.A_DIM` half bright text
+
+`curses.A_REVERSE` reverse video text
+
+`curses.A_STANDOUT` highlighted text
+
+`curses.A_UNDERLINE` underlines text
