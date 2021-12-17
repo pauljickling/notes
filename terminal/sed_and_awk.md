@@ -44,6 +44,8 @@ By default awk uses whitespace as a delimiter. The `-F` flag is used to specify 
 
 Some useful built-in variables include `$0` which is for the entire line, `$NR` is the line number, and `$NF` which is the last field on a line.
 
+You can use regex patterns in awk to filter your results. `awk '/foo/ { print $0 }' file` will only return lines that contain a regex match.
+
 Awk has associative arrays, which is incredibly useful, so you could include something like `name[$1]++;` to place data from the first column into your `name` associative array.
 
 `BEGIN` and `END` are important keywords in awk. awk scripts follow a format of a pattern and action, with the action enclosed in curly braces. The default pattern is implicit if no pattern is specified, and it matches every line of the program. By contrast, `BEGIN` is a pattern that is performed before any pattern is read, and `END` is a pattern that is performed after the last line is read.
