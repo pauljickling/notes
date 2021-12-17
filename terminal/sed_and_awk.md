@@ -48,6 +48,8 @@ You can use regex patterns in awk to filter your results. `awk '/foo/ { print $0
 
 Awk has associative arrays, which is incredibly useful, so you could include something like `name[$1]++;` to place data from the first column into your `name` associative array.
 
+You can set variables to your awk script prior to execution with the `-v` flag e.g. `awk -v foo=bar -v cool=wow ...`. It is advisable not to set these variables to one of the built-in variables as it will overwrite them and make your script harder to understand.
+
 `BEGIN` and `END` are important keywords in awk. awk scripts follow a format of a pattern and action, with the action enclosed in curly braces. The default pattern is implicit if no pattern is specified, and it matches every line of the program. By contrast, `BEGIN` is a pattern that is performed before any pattern is read, and `END` is a pattern that is performed after the last line is read.
 
 `\47` is a way to insert a single quotation mark without having to use even more verbose shell syntax.
