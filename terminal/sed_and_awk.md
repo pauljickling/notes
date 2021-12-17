@@ -46,6 +46,8 @@ Some useful built-in variables include `$0` which is for the entire line, `$NR` 
 
 You can use regex patterns in awk to filter your results. `awk '/foo/ { print $0 }' file` will only return lines that contain a regex match.
 
+Awk can evaluate conditionals. `awk -F, '$2 > 6 { print $0 }' file` will print the lines where the 2nd column has a value greater than 6.
+
 Awk has associative arrays, which is incredibly useful, so you could include something like `name[$1]++;` to place data from the first column into your `name` associative array.
 
 You can set variables to your awk script prior to execution with the `-v` flag e.g. `awk -v foo=bar -v cool=wow ...`. It is advisable not to set these variables to one of the built-in variables as it will overwrite them and make your script harder to understand.
