@@ -47,3 +47,9 @@ Some useful built-in variables include `$0` which is for the entire line, `$NR` 
 Awk has associative arrays, which is incredibly useful, so you could include something like `name[$1]++;` to place data from the first column into your `name` associative array.
 
 `BEGIN` and `END` are important keywords in awk. awk scripts follow a format of a pattern and action, with the action enclosed in curly braces. The default pattern is implicit if no pattern is specified, and it matches every line of the program. By contrast, `BEGIN` is a pattern that is performed before any pattern is read, and `END` is a pattern that is performed after the last line is read.
+
+`\47` is a way to insert a single quotation mark without having to use even more verbose shell syntax.
+
+### Writing an Awk file
+
+Using the `-f` flag (lowercase) will allow you to specify an awk file which is useful for more complicated instructions. You can also write self-contained awk scripts by beginning your script as follows: `#! /bin/awk -f` or `#! /usr/bin/awk -f` depending on the location of awk on your system.
