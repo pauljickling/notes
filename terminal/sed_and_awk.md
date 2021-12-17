@@ -38,9 +38,9 @@ If you want to use a sed script that works equally well on Mac's version of Linu
 
 ## Awk
 
-Whereas sed operates on lines, awk operates on columns. That makes it handy for manipulating csv files, for example. The following command would print the second column in your file: `awk < file '{ print $2 }'`
+Whereas sed operates on lines, awk operates on columns. That makes it handy for manipulating csv files, for example. The following command would print the second column in your file: `awk '{ print $2 }' file`
 
-By default awk uses whitespace as a delimiter. The `-F` flag is used to specify the delimiter. `awk -F, < file.csv '{ print $2 }'`
+By default awk uses whitespace as a delimiter. The `-F` flag is used to specify the delimiter. `awk -F, '{ print $2 }' file.csv`
 
 Some useful built-in variables include `$0` which is for the entire line, `$NR` is the line number, and `$NF` which is the last field on a line.
 
