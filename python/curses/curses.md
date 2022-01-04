@@ -26,6 +26,8 @@ You can also consult the man pages for more info on curses. `man curses`.
 
 `curses.napms(x)` creates a timed delay in milliseconds.
 
+`chr(win.inch(y, x))` returns the character at position `y` and `x`.
+
 ## Common Defaults
 
 `curses.noecho()` turns off the echoing of keys to the screen
@@ -79,6 +81,8 @@ curses.endwin()
 ## Cursor Management
 
 `curses.curs_set(bin)` a value of `0` or `1` where `0` disables the cursor, and `1` activates it.
+
+`win.move(row, col)` moves the cursor to the specified position
 
 ## Color Management
 
