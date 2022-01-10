@@ -56,3 +56,5 @@ By default Node Exporter runs on port 9100.
 ## Some Basic PromQL Queries
 
 **Disk Usage as Percentage:** `(1 - node_filesystem_avail_bytes / node_filesystem_size_bytes) * 100`
+
+**CPU Utilization:** `avg by (instance,mode) (irate(node_cpu_seconds_total{mode!='idle'}[1m]))`
