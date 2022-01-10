@@ -52,3 +52,7 @@ By default Node Exporter runs on port 9100.
 **Histogram:** Histograms take observable events and count them based on configurable buckets. Like the summary metric it uses the `.observe()` method. Buckets can be defined as sorted lists. In the Python library you can use list comprehensions if the bucket has a defined increment.
 
 [Best practices on designing Instrumentation](https://prometheus.io/docs/practices/instrumentation/#counter-vs-gauge-summary-vs-histogram).
+
+## Some Basic PromQL Queries
+
+**Disk Usage as Percentage:** `(1 - node_filesystem_avail_bytes / node_filesystem_size_bytes) * 100`
