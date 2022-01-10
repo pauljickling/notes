@@ -41,6 +41,8 @@ Node Exporter exposes kernel and machine level metrics on Unix systems such as C
 
 By default Node Exporter runs on port 9100.
 
+You can import Node exporter metrics as a Grafana Dashboard by clicking the `+` icon on the side panel, and selecting import. Then enter `1860` under the ID number to import the `Node Exporter Full` dashboard from grafana.com. This is a nice and quick way to monitor common metrics in Grafana.
+
 ## Types of Metrics
 
 **Gauge:** A gauge are a current absolute value. Gauge involves values that can increase or decrease over time. Gauges have three primary metrics, increment (`.inc()`), decrement (`.dec()`), and set (`.set()`).
@@ -58,3 +60,5 @@ By default Node Exporter runs on port 9100.
 **Disk Usage as Percentage:** `(1 - node_filesystem_avail_bytes / node_filesystem_size_bytes) * 100`
 
 **CPU Utilization:** `avg by (instance,mode) (irate(node_cpu_seconds_total{mode!='idle'}[1m]))`
+
+**Average Network Traffic Received:** `rate(node_network_receive_bytes)`
