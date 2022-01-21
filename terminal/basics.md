@@ -52,6 +52,10 @@
 
 `wc {file name}` produce word count of file
 
+`wc -l devcon_costs.csv | awk '{ print $1 }'` number of lines of a file
+
+`cat data.csv | awk "{ print NF }" FS=, | uniq` number of columns in csv file
+
 `du -h` get memory size of files or directories in bytes
 
 `grep {phrase} {file name}` regex search of file (to use actual regular expressions place phrase in quotation marks i.e. `grep '[0-9]' file` to search for numbers in a file)
@@ -153,6 +157,8 @@
 `pbpaste` pastes pasteboard content
 
 `cat /etc/os-release` get information about the OS
+
+`date +"%Z %z"` get time zone. Useful for remote servers where you aren't necessarily sure what region it is in.
 
 `ctrl + a` go to beginning of line
 
