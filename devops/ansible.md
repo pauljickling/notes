@@ -62,6 +62,8 @@ Some flags used by Ansible:
 
 `ansible-playbook {playbook} --connection=local` runs the playbook on local host (also referred to as self-provisioning)
 
+`ansible-playbook {playbook} --check` performs a dry run of the playbook
+
 `ansible-playbook {playbook} --extra-vars "{var}={value}"` provides variable values for your playbook. Can accept JSON or YML files for variable definitions with the syntax `--extra-vars "@vars.json"`
 
 `ansible-playbook {playbook} --ask-vault-pass` if you use the `ansible-vault` feature you can use the `--ask-vault-pass` flag to decrypt files encrypted using ansible-vault.
