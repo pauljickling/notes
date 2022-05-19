@@ -152,6 +152,8 @@
 
 `ctrl + u` clear line
 
+`dmesg` review messages stored in the ring buffer. Useful for understanding processes that are failing without clear stderr messages, among other things.
+
 `pbcopy` copies standard input to the pasteboard. For example, `cat foo.txt | pbcopy` would copy the contents of the foo.txt file to the pasteboard.
 
 `pbpaste` pastes pasteboard content
