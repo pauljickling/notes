@@ -56,7 +56,9 @@
 
 `cat data.csv | awk "{ print NF }" FS=, | uniq` number of columns in csv file
 
-`du -h` get memory size of files or directories in bytes
+`du -h` get memory size of files or directories in human readable format
+
+`du -h --max-depth=1 {dir}` get memory size of files/directories of specified directory (as oppose to pwd)
 
 `grep {phrase} {file name}` regex search of file (to use actual regular expressions place phrase in quotation marks i.e. `grep '[0-9]' file` to search for numbers in a file)
 
