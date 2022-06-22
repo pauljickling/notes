@@ -64,6 +64,10 @@
 
 `grep -r {phrase} {directory name}` recursive grep search
 
+`pgrep {phrase}` searches process names and outputs PIDs. Almost identical to the command `ps aux | grep {phrase} | awk '{ print $2 }'` but it has the advantage of not including the grep process as a match
+
+`pkill {phrase}` like `pgrep` but kills the process(es)
+
 `{data stream} > {destination}` redirecting data stream to a file
 
 **Note that the destination file will be cleared. If you want to append data, use `>>`**
