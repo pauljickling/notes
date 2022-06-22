@@ -52,7 +52,7 @@
 
 `wc {file name}` produce word count of file
 
-`wc -l devcon_costs.csv | awk '{ print $1 }'` number of lines of a file
+`wc -l {file name} | awk '{ print $1 }'` number of lines of a file
 
 `cat data.csv | awk "{ print NF }" FS=, | uniq` number of columns in csv file
 
