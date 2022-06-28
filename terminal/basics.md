@@ -124,7 +124,7 @@
 
 `ifconfig | grep inet` filters the network info into an easy eay to lookup local ip address
 
-`netstat` provides network statistics
+`netstat` provides network statistics. Note that it is no longer included by default in recent Ubuntu/Debian distros. To install it you will need to run `apt install net-tools`
 
 `ssh -i {path/to/key_file} {username@remote_host}` creates ssh connection to remote host using an identity specified by a private key
 
