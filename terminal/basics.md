@@ -114,6 +114,8 @@
 
 `shutdown -h now` shutdown system now (instead of default minute delay)
 
+`systemctl | grep daemon` get list of running daemons
+
 ## Networking
 
 `ping {address}` pings address with small byte packet with a response time
