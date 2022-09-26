@@ -13,3 +13,15 @@ This README contains some simple suggestions for how to do basic text manipulati
 ## Print the Total Value of Column N?
 
 `awk -F, '{ sum += $N } END { print sum }' file.csv`
+
+## Handle Software Updates for OSX via CLI?
+
+`softwareupdate -l` to get the list of updates. It will list which updates are recommended. The following methods are possible for install:
+
+`softwareupdate -r` for recommended updates
+
+`softwareupdate -i -a` for all updates applicable to your system
+
+`softwareupdate -i {pkg name}` to install specific updates.
+
+`softwareupdate --ignore {pkg name}` to install all updates except for the specified package
