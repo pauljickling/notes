@@ -15,3 +15,10 @@ Every worker node has three processes running:
 3. The Kube Proxy which allows nodes to communicate with each other
 
 In addition to pods, a node can also run what is called a *service*. Services provide a fixed IP address as opposed to pods that tend to have more dynamically changing IP addresses (whenever a pod dies and is restarted, which is frequent behavior in Kubernetes, a new IP address is generated). Services thus can also act as a load balancer for your application(s).
+
+## Kube Flavors
+
+- kubeadm: official Kubernetes tool, but heavyweight
+- k3s: lightweight alternative provided by Rancher. Can run on Rasberry Pi.
+- kind: kubernetes-in-docker
+- minikube: tool for testing kubernetes locally
