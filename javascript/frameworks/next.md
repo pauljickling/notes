@@ -18,7 +18,7 @@ The root dir simply contains the package.json
 
 `styles/` contains CSS, CSS modules
 `pages/` contains individually crafted pages
-`posts/` contans blog style posts
+`posts/` contans blog style posts that supports markdown files
 `public/` contains static assets
 
 ## Built In Components
