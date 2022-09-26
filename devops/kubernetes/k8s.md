@@ -22,3 +22,9 @@ In addition to pods, a node can also run what is called a *service*. Services pr
 - k3s: lightweight alternative provided by Rancher. Can run on Rasberry Pi.
 - kind: kubernetes-in-docker
 - minikube: tool for testing kubernetes locally
+
+## CLI
+
+`kubectl` is the command line interface for managing your Kubernetes infrastrucutre.
+
+`kubectl expose deployment {app name} --type=NodePort --port=80` deploys a web app exposing the http port
