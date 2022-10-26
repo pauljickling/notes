@@ -26,6 +26,10 @@ Content directories contain the `.htaccess` file that allow configuration change
 
 Apache has two directories related to site configuration, `sites-available` and `sites-enabled`. As an administrator you should modify the config files in `sites-available` and the `sites-enabled` directory will automatically update with necessary changes after a server restart.
 
+## Testing Your Configuration
+
+Before resetting the Apache process after making configuration changes, it is a good idea to check to run a test on your config. You can run `apache2ctl configtest` or `apache2ctl -t` to check for syntax errors, as well as other potential issues with your config changes.
+
 ## Running as a Process
 
 The Apache server can be managed with commands like `sudo service apache start`, `sudo service apache stop`, `sudo service apache restart`, etc. By default the restart of an Apache service is handled gracefully so that it does not interfere with client requests.
