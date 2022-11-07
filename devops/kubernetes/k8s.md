@@ -25,6 +25,6 @@ In addition to pods, a node can also run what is called a *service*. Services pr
 
 ## CLI
 
-`kubectl` is the command line interface for managing your Kubernetes infrastrucutre.
+`kubectl` is the command line interface for managing your Kubernetes infrastrucutre. It does not deploy a cluster, but rather is used to manage defined infrastructure.
 
 `kubectl expose deployment {app name} --type=NodePort --port=80` deploys a web app exposing the http port
