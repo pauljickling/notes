@@ -44,6 +44,8 @@
 
 `sed -i.bak "{number}s|{phrase}|{phrase}|g" {file name}` searches the number line for instances of a phrase and replaces it with another phrase in the specified file, using a flag that makes this command friendly for GNU and BSD flavors of sed
 
+`sort -t "," -k 2` BSD sort defines a delimiter with `-t` flag and `-k` flag defines the column to sort by
+
 `cat {file1} {file2}` concatenate files
 
 **If you only provide one file as an argument this is a useful way to view a file as well.** 
