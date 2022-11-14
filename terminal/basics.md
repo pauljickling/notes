@@ -98,6 +98,10 @@
 
 `bg` run paused process as a background job (alternatively you can append `&` at the end of a command to run it in the background)
 
+`lsof` get a stream of open files
+
+`lsof {file name}` list processes that are writing to a file
+
 `jobs` list active jobs
 
 `disown -h %{job number}` Disowns background job as a shell job which allows a process to continue running even if the controlling terminal session ends.
