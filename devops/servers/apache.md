@@ -32,7 +32,7 @@ Before resetting the Apache process after making configuration changes, it is a 
 
 ## Running as a Process
 
-The Apache server can be managed with commands like `sudo service apache start`, `sudo service apache stop`, `sudo service apache restart`, etc. By default the restart of an Apache service is handled gracefully so that it does not interfere with client requests.
+The Apache server can be managed with commands like `sudo service apache start`, `sudo service apache stop`, `sudo service apache restart`, etc. By default the restart of an Apache service is handled gracefully so that it does not interfere with client requests. For non-Ubuntu/Debian Linux OSs you can use `systemctl` instead.
 
 ## Configuring a Subdomain
 
