@@ -46,3 +46,7 @@ There are lots of places where you could define your subdomain. A common locatio
 ```
 
 Anytime you make config changes like this you will need to run `service apache2 restart`.
+
+## Allow/Deny Lists
+
+[link](https://www.rewriteguide.com/apache-whitelist-blacklist-ip-addresses/)
