@@ -164,6 +164,10 @@
 
 `:noh` remove search highlighting until next search
 
+`:%s/foo/bar/g` sed-like search and replace that finds all instances of foo, and replaces them with bar. Supports regexes.
+
+`:%50,80s/foo/bar/g` Sets a range for the search function where it searches and replaces between lines 50 and 80.
+
 ## Markers
 
 `m + {char}` set a marker to cursor position
