@@ -18,10 +18,14 @@ In addition to pods, a node can also run what is called a *service*. Services pr
 
 ## Kube Flavors
 
+There are lots of tools for setting up a Kubernetes environment. Here are a few:
+
 - kubeadm: official Kubernetes tool, but heavyweight
 - k3s: lightweight alternative provided by Rancher. Can run on Rasberry Pi.
 - kind: kubernetes-in-docker
 - minikube: tool for testing kubernetes locally
+
+Additionally, most cloud providers offer a managed Kubernetes service which takes the pain out of having to configure your own master node.
 
 ## CLI
 
@@ -29,4 +33,34 @@ In addition to pods, a node can also run what is called a *service*. Services pr
 
 `kubectl get nodes` will list deployed infrastructure
 
-`kubectl expose deployment {app name} --type=NodePort --port=80` deploys a web app exposing the http port
+`kubectl create deployment {app name} --image={container hub/image:version}` deploys app with docker image
+
+`watch kubectl get deployment {app name}` view deployment info
+
+`kubectl describe pod -l {app name}` get pod information
+
+`kubectl expose deployment {app name} --type=NodePort --port=80 --target-port=8080` deploys a web app exposing the http port using the kubernetes 8080 port. The `--type-NodePort` flag creates a node port service that takes traffic and routes it to pods
+
+`kubectl get service {app name}` lists services running for an app
+
+`kubectl get svc {app name}` shorthand for service
+
+`kubectl edit deployment {app name}` edits the configuration file for an app
+
+`kubectl delete pod {pod name}` deletes a pod
+
+`kubectl create secret {secret type}` creates a secret when kubernetes needs sensitive data like passwords, API tokens, etc.
+
+`kubectl get secrets` view available secrets
+
+`kubectl logs -f -l app={app name}` view app logs. `-l` flag adds labels which is useful when you are running multiple pods.
+
+## Kubeconfig
+
+This is a yml config file that describes how to connect to a kubernetes control plane. Once you have your defined config you will need to have it exposed to kubectl, which you can do in bash with `export KUBECONFIG=/path/to/config` (the path is probably in $HOME/.kube)
+
+## Deploying Apps
+
+To create replicas of a service edit the kubeconfig file and change `replicas` under `spec`.
+
+You can view logs for your apps 
