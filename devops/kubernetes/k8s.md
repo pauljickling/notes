@@ -47,6 +47,8 @@ Additionally, most cloud providers offer a managed Kubernetes service which take
 
 `kubectl edit deployment {app name}` edits the configuration file for an app
 
+`kubectl set image deployment/{container name} {app name}={image path}` specifies an image to use for your application
+
 `kubectl delete pod {pod name}` deletes a pod
 
 `kubectl create secret {secret type}` creates a secret when kubernetes needs sensitive data like passwords, API tokens, etc.
@@ -64,3 +66,5 @@ This is a yml config file that describes how to connect to a kubernetes control 
 To create replicas of a service edit the kubeconfig file and change `replicas` under `spec`.
 
 You can view logs for your apps 
+
+When making changes to a config for a deployed app it is recommended to commit changes before changes are applied so if there is an issue you can roll back.
