@@ -49,6 +49,10 @@ Additionally, most cloud providers offer a managed Kubernetes service which take
 
 `kubectl set image deployment/{container name} {app name}={image path}` specifies an image to use for your application
 
+`kubectl rollout history deployment {app name}` view revisions of app rollouts
+
+`kubectl rollout undo deployment {app name}` rolls back to previous deployment
+
 `kubectl delete pod {pod name}` deletes a pod
 
 `kubectl create secret {secret type}` creates a secret when kubernetes needs sensitive data like passwords, API tokens, etc.
@@ -68,3 +72,5 @@ To create replicas of a service edit the kubeconfig file and change `replicas` u
 You can view logs for your apps 
 
 When making changes to a config for a deployed app it is recommended to commit changes before changes are applied so if there is an issue you can roll back.
+
+Rollouts can be managed via the `kubectl rollout` command.
