@@ -6,7 +6,11 @@ Instructions on changing MIDI channels.
 
 Hold shift to select Utility, and then go into the MIDI channels menu to set the MIDI channels for tracks 1-4.
 
-## TB-08
+## TR-08
+
+1. Press MENU
+2. Adjust VALUE knob to CH and press TAP
+3. Adjust VALUE knob to desired channel and press TAP
 
 ## TB-03
 
