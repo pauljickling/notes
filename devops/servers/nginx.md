@@ -36,6 +36,6 @@ Logs are usually located in `/var/log/nginx/`. Logging activity can be managed f
 
 ## Reverse Proxy Configuration
 
-When NGINX is a reverse proxy it acts as a middleman between the client and the server. At the most basic level, you can configure the proxy in the `location` directive by using the `proxy_pass` directive where you would normally provide the `return` directive, with the URL that NGINX is proxying to. Other directives you can provide include `proxy_http_version`, and `proxy_set_header`.
+When NGINX is a reverse proxy it acts as a middleman between the client and the server. At the most basic level, you can configure the proxy in the `location` directive by using the `proxy_pass` directive where you would normally provide the `return` directive, with the IP addr/URL (and optionally the port number) that NGINX is proxying to. Other directives you can provide include `proxy_http_version`, and `proxy_set_header`.
 
 One very useful function of a reverse proxy is it can act as a load balancer for your web application. So you can run multiple instances of your app on different ports, and include those instances with the `upstream` directive.
