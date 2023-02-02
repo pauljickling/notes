@@ -74,3 +74,9 @@ You can view logs for your apps
 When making changes to a config for a deployed app it is recommended to commit changes before changes are applied so if there is an issue you can roll back.
 
 Rollouts can be managed via the `kubectl rollout` command.
+
+## Helm
+
+Helm is the package manager for Kubernetes. For browsing helm charts you can go to [https://artifacthub.io/](https://artifacthub.io/). Releases in Helm are instances of a helm configuration.
+
+The manifest.yml is a representation of Kubernetes resources generated from a release chart. In the manifest you can define things like services, deployments, persistent storage, replicas, metadata, and namespaces, among other things. Namespaces in Kubernetes allow otherwise isolated containers and pods to communicate with one another, but not an externally facing network.
