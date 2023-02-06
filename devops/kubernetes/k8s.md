@@ -35,6 +35,8 @@ Additionally, most cloud providers offer a managed Kubernetes service which take
 
 `kubectl create deployment {app name} --image={container hub/image:version}` deploys app with docker image
 
+`kubectl create namespace {namespace}` create a namespace for your cluster
+
 `watch kubectl get deployment {app name}` view deployment info
 
 `kubectl describe pod -l {app name}` get pod information
