@@ -35,7 +35,7 @@ Additionally, most cloud providers offer a managed Kubernetes service which take
 
 `kubectl create deployment {app name} --image={container hub/image:version}` deploys app with docker image
 
-`kubectl create namespace {namespace}` create a namespace for your cluster
+`kubectl create namespace {namespace}` create a namespace for your cluster. Before you create a namespace there is just a default namespace. To declare a namespace when using kubectl use the `-n` flag.
 
 `watch kubectl get deployment {app name}` view deployment info
 
