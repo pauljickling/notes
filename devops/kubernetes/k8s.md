@@ -102,3 +102,5 @@ To autoscale via CLI you can run `kubectl autoscale -n <namespace> deployment <d
 You can check information about horizontal autoscaling with `kubectl get hpa -n <namespace> <reference name>`.
 
 Vertical pod auto-scaling is also possible, although you should be very careful with this as it can increase costs dramatically depending on your configuration.
+
+Databases have their own considerations for scaling. One solution is the provisioning of in-cluster high availability databases like [vitess](vitess.io). Most cloud providers also provide high availability databases that are very convenient to use, and have well-tuned defaults.
