@@ -83,6 +83,8 @@ Helm is the package manager for Kubernetes. For browsing helm charts you can go 
 
 The manifest.yml is a representation of Kubernetes resources generated from a release chart. In the manifest you can define things like services, deployments, persistent storage, replicas, metadata, and namespaces, among other things. Namespaces in Kubernetes allow otherwise isolated containers and pods to communicate with one another, but not an externally facing network.
 
+`helm install -f <path/to/yaml_config.yml> <name> <chart repo>` will install a chart for use with your cluster and include some default configs.
+
 ## Scaling
 
 One common problem you need to deal with when configuring a Kubernetes cluster to be able to scale up as needed is dealing with stateful volumes. Most generic cloud volume resources can only attach to one pod at a time.
@@ -93,4 +95,10 @@ There are also solutions like [rook](rook.io) which is a management tool for fil
 
 Some sort of FS client provisioner is another solution in use cases where you don't have so many pods running where it creates folders for any application that needs to write data, and any pod can then retrieve that data using a ReadWriteMany volume approach.
 
-For horizontal pod auto-scaling you can use kubectl or edit configs. To start you'll need to use some sort of metrics server for monitoring load. You can check to see if the Metrics API is available with `kubectl top nodes`. There are several good options available such as Bitnami or Prometheus for exposing the Metrics API.
+For horizontal pod auto-scaling you can use kubectl or edit configs. To start you'll need to use some sort of metrics server for monitoring load. You can check to see if the Metrics API is available with `kubectl top nodes`. There are several good options available such as Bitnami or Prometheus for exposing the Metrics API. Other metrics you might want to look at at a glance are `kubectl top pods -n <namespace>`.
+
+To autoscale via CLI you can run `kubectl autoscale -n <namespace> deployment <deployment name> --min=n --max=m --cup-percent=l`. where `n`, `m`, and `l` are numeric values.
+
+You can check information about horizontal autoscaling with `kubectl get hpa -n <namespace> <reference name>`.
+
+Vertical pod auto-scaling is also possible, although you should be very careful with this as it can increase costs dramatically depending on your configuration.
