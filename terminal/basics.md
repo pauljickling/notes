@@ -52,6 +52,12 @@
 
 `less {file name}` read file
 
+`head {file name}` view the head of a file. By default it shows the first 10 results, but you can use the `-n` flag to specify the number of lines.
+
+`tail {file name}` view the tail of a file. Like `head`, you can use the `-n` flag to specify the number of lines, but you can also use the `-r` flag to reverse the order so the last line appears first, then the second to last line, etc.
+
+`tail -f {file name}` for files that are continuously being written to (e.g. logs) you can use the `-f` flag to view the file as a stream.
+
 `wc {file name}` produce word count of file
 
 `wc -l {file name} | awk '{ print $1 }'` number of lines of a file
@@ -145,6 +151,8 @@
 `host {url}` DNS lookup for public ip addresses
 
 `service network-manager restart` reset wifi network lookup. **This one is helpful while traveling.**
+
+`ab -n 1000 -c 10 {url}` apache benchmarker. `-n` flag is for the number of requests to poll, and `-c` is for the number of concurrent requests. Note that for the URL you must end with a `/` or `ab` will be an error.
 
 ## SSH Keygen
 
