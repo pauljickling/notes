@@ -23,3 +23,7 @@ The numbers on the sequencer that are lit up are active notes. You can press the
 To edit a note you press shift and the corresponding numbered step button you wish to edit. You adjust the octave with the KB + STEP arrow buttons. You play a note on the sequencer button or through a MIDI controller to adjust the note. You can ratchet the note by holding shift and adjusting the glide knob and adjust the gate knob to alter the length of the note.
 
 Press shift and the corresponding numbered step button to complete editing that note in the sequence.
+
+# Random Sequences
+
+While a sequence is playing you can press the KB, STEP, and the 4 button for your sequence to be played in random order.
