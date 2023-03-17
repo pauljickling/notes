@@ -22,6 +22,8 @@ Git is a version control tool. Git manages versions of a project with a history 
 
 `git pull` Applies changes from origin repo branch to current working branch
 
+`git fetch origin pull/{pull request id}/head:{branch name}` Pulls the latest changes from a branch with an open pull request. Useful when you want to review changes from a pull request locally.
+
 `git merge {branch}` Applies changes from the argument specified branch into the current working branch. Git will complain if there are conflicts that need to be resolved.
 
 `git checkout {branch}` Switches to branch. Use `-b` flag for new branch. You can also checkout a specific commit by using the SHA id (you only need the first six characters).
