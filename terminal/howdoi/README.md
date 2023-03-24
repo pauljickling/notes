@@ -14,6 +14,14 @@ This README contains some simple suggestions for how to do basic text manipulati
 
 `awk -F, '{ sum += $N } END { print sum }' file.csv`
 
+## Create a pseudo file and pipe the output to another command?
+
+`command1 <( command to create pseudofile )`
+
+Within the paranthesis bash will take the stdout of the command used, and pipe it to `command1`. So for example, if you wanted to examine changes made to a git PR locally you could use:
+
+`git apply <(curl -L  https://github.com/<user/org>/<repo>/pull/<PR no>.diff)`
+
 ## Handle Software Updates for OSX via CLI?
 
 `softwareupdate -l` to get the list of updates. It will list which updates are recommended. The following methods are possible for install:
