@@ -22,6 +22,10 @@ Within the paranthesis bash will take the stdout of the command used, and pipe i
 
 `git apply <(curl -L  https://github.com/<user/org>/<repo>/pull/<PR no>.diff)`
 
+## Specify the file line range for grep output?
+
+`sed -n '{min}, {max}p' {file} | grep {query}`
+
 ## Handle Software Updates for OSX via CLI?
 
 `softwareupdate -l` to get the list of updates. It will list which updates are recommended. The following methods are possible for install:
