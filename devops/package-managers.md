@@ -1,4 +1,14 @@
-# RPM
+## pacman
+
+pacman is the package manager for Arch-Linux.
+
+`pacman -S {package name}` installs a package
+
+`pacman -R {package name}` removes a package
+
+`pacman -Syu` updates and upgrades all packages
+
+## RPM
 
 rpm is the package manager for the RHEL OS.
 
