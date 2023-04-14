@@ -32,7 +32,9 @@ You can also use single quotation marks for the search and replace operation if 
 
 The `&` character indicates a matched pattern where you don't necessarily know what the exact pattern will be. For example, lets say you want to put parenthesis around a particular matched pattern, you could write `sed "s/[a-z]*/(&)/g" file`
 
+In addition to replacing lines, sed can also be used to delete lines that match the regular expression.
 
+`sed /expression/d foo.txt`
 
 ### Sed on Macs
 
