@@ -26,11 +26,13 @@ To specify the last line of a final you can use the `$` character.
 
 Sometimes you may need to search or replace some text that is using the standard delimiter. In those instances you can supply an alternative delimiter.
 
-`sed "s|</dv>|</div>|g index.html"`
+`sed "s|</dv>|</div>|g" index.html`
 
 You can also use single quotation marks for the search and replace operation if you need to look for double quotation marks. And of course you can use the backslash to escape any characters that have a special meaning in bash.
 
 The `&` character indicates a matched pattern where you don't necessarily know what the exact pattern will be. For example, lets say you want to put parenthesis around a particular matched pattern, you could write `sed "s/[a-z]*/(&)/g" file`
+
+
 
 ### Sed on Macs
 
