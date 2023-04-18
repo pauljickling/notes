@@ -4,7 +4,7 @@ Kubernetes is an open-source container orchestration framework. It makes it easi
 
 ## Architecture
 
-Kubernetes deploys a master node that is an API server that all the other worker nodes rely on. It keeps track of the state of your inventory, schedules changes, a virtual network, and runs the etcd database which is a key-value db that maintains the state of the network.
+Kubernetes deploys a control plane node that is an API server that all the other worker nodes rely on. It keeps track of the state of your inventory, schedules changes, a virtual network, and runs the etcd database which is a key-value db that maintains the state of the network.
 
 The worker nodes run *pods*. Pods are a wrapper around a container or containers. They have their own IP address, and therefore acts as a self-contained server. Pods communicate with each other through their internal IP addresses.
 
@@ -25,7 +25,7 @@ There are lots of tools for setting up a Kubernetes environment. Here are a few:
 - kind: kubernetes-in-docker
 - minikube: tool for testing kubernetes locally
 
-Additionally, most cloud providers offer a managed Kubernetes service which takes the pain out of having to configure your own master node.
+Additionally, most cloud providers offer a managed Kubernetes service which takes the pain out of having to configure your own control plane node.
 
 ## CLI
 
