@@ -68,7 +68,7 @@
 
 `du -h --max-depth=1 {dir}` get memory size of files/directories of specified directory (as oppose to pwd)
 
-`du -h --max-depth=1 {dir} | sort -hr` get memory size of files/directories of specified directory and sort output by file size
+`du -h --max-depth=1 {dir} | sort -hr` get memory size of files/directories of specified directory and sort output by file size (alternatively remove the `r` flag if you'd like the order to go from smallest to largest)
 
 `grep {phrase} {file name}` regex search of file (to use actual regular expressions place phrase in quotation marks i.e. `grep '[0-9]' file` to search for numbers in a file)
 
