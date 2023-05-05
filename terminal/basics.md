@@ -176,6 +176,8 @@
 
 `ctrl + u` clear line
 
+`!!` execute previous command. Useful for example, if you lack privileges, and need to escalate with sudo you can simply type `sudo !!`
+
 `dmesg` review messages stored in the ring buffer. Useful for understanding processes that are failing without clear stderr messages, among other things.
 
 `pbcopy` copies standard input to the pasteboard. For example, `cat foo.txt | pbcopy` would copy the contents of the foo.txt file to the pasteboard.
