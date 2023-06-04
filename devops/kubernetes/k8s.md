@@ -33,6 +33,8 @@ Additionally, most cloud providers offer a managed Kubernetes service which take
 
 `kubectl get nodes` will list deployed infrastructure
 
+`kubectl apply -f config.yml` Applies any type of Kubernetes pod, service, etc. that is described in a yaml file. The preferable way to deploy infrasrtucture since you can commit it to git and have some version history.
+
 `kubectl create deployment {app name} --image={container hub/image:version}` deploys app with docker image
 
 `kubectl create namespace {namespace}` create a namespace for your cluster. Before you create a namespace there is just a default namespace. To declare a namespace when using kubectl use the `-n` flag.
