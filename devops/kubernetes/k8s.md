@@ -31,6 +31,8 @@ Additionally, most cloud providers offer a managed Kubernetes service which take
 
 `kubectl` is the command line interface for managing your Kubernetes infrastrucutre. It does not deploy a cluster, but rather is used to manage defined infrastructure.
 
+`kubectl config get-contexts` lists the available contexts and clusters
+
 `kubectl get nodes` will list deployed infrastructure
 
 `kubectl apply -f config.yml` Applies any type of Kubernetes pod, service, etc. that is described in a yaml file. The preferable way to deploy infrasrtucture since you can commit it to git and have some version history.
