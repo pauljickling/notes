@@ -79,8 +79,6 @@ You can view logs for your apps
 
 When making changes to a config for a deployed app it is recommended to commit changes before changes are applied so if there is an issue you can roll back.
 
-Rollouts can be managed via the `kubectl rollout` command.
-
 ## Helm
 
 Helm is the package manager for Kubernetes. For browsing helm charts you can go to [https://artifacthub.io/](https://artifacthub.io/). Releases in Helm are instances of a helm configuration.
@@ -108,3 +106,21 @@ You can check information about horizontal autoscaling with `kubectl get hpa -n 
 Vertical pod auto-scaling is also possible, although you should be very careful with this as it can increase costs dramatically depending on your configuration.
 
 Databases have their own considerations for scaling. One solution is the provisioning of in-cluster high availability databases like [vitess](vitess.io). Most cloud providers also provide high availability databases that are very convenient to use, and have well-tuned defaults.
+
+## Rollouts
+
+Rollouts can be managed via the `kubectl rollout` command. In the following hypothetical example we use the command to see the history of revisions to an app deployment.
+
+`kubectl rollout history deployment <deployment/app name>`
+
+```
+REVISION   CHANGE/CAUSE
+1          <none>
+2          kubectl apply --deployment.yml
+```
+
+One could thus revert the above from revision 2 to 1 with the following command:
+
+`kubectl rollout undo deployment <deployment/app name> --to-revision=1`
+
+One can check on the status of rollback with the standard command for checking on the status of deployments, `kubectl get deploy <deployment/app name>`.
