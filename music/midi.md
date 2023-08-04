@@ -4,7 +4,8 @@ Instructions on changing MIDI channels.
 
 ## Arturia Keystep
 
-Hold shift to select Utility, and then go into the MIDI channels menu to set the MIDI channels for tracks 1-4.
+1. Hold shift to select Utility
+2. Go into the MIDI channels menu to set the MIDI channels for tracks 1-4
 
 ## TR-08
 
@@ -14,7 +15,9 @@ Hold shift to select Utility, and then go into the MIDI channels menu to set the
 
 ## TB-03
 
-Hold FUNCTION and turn the value knob to `CH`. Release FUNCTION button and adjust the value knob to the desired setting. Press the FUNCTION button to exit the system settings menu.
+1. Hold FUNCTION and turn the value knob to `CH`
+2. Release FUNCTION button and adjust the value knob to the desired setting
+3. Press the FUNCTION button to exit the system settings menu
 
 ## SH-01A
 
@@ -25,8 +28,8 @@ Hold FUNCTION and turn the value knob to `CH`. Release FUNCTION button and adjus
 
 ## Moog Mother-32
 
-1. Enter setup mode by pressing SHIFT + RESET + SET END + STEP 8.
-2. Use the KB + STEP arrows to go from page to page, and select page 2.
-3. The highlighted page will be in yellow, and the highlighted value will be in green.
-4. Press step and the key number for the channel number you want.
+1. Enter setup mode by pressing SHIFT + RESET + SET END + STEP 8
+2. Use the KB + STEP arrows to go from page to page, and select page 2
+3. The highlighted page will be in yellow, and the highlighted value will be in green
+4. Press step and the key number for the channel number you want
 5. Press SHIFT + RESET + SET END + STEP 8 to exit setup mode
