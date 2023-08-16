@@ -98,6 +98,8 @@
 
 `su {user}` substitute user
 
+`stat -c "%a" {file/directory}` outputs the octal permissions for file/directory
+
 ## Processes
 
 `ctrl + c` halt a process executed via the terminal
