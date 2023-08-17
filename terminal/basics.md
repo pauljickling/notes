@@ -162,6 +162,8 @@
 
 `ssh-keygen -t rsa -b 4096 -C  "{email address}"` Generates a SSH key associated with your email address. Providing an email address at the end of your public key is a good practice because it allows an admin to easily identify who has access to a server in the `authorized_keys` file.
 
+`ssh-keygen -t ed25519` Generates an ssh key with the ED-25519 cryptography algorithm, which is preferred over RSA keys as best practice. Note that with these there is no need to specify the bit length using the `-b` flag.
+
 `ssh-add ~/.ssh/id_rsa` Adds SSH private key to the SSH-agent.
 
 ## Security
