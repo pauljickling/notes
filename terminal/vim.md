@@ -120,6 +120,8 @@
 
 `U` undo all changes on a line
 
+`v + U` change selected text in visual mode to uppercase characters
+
 `ctrl + r` redo last undo
 
 `v` visual mode
