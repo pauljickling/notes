@@ -37,3 +37,7 @@ Within the paranthesis bash will take the stdout of the command used, and pipe i
 `softwareupdate -i {pkg name}` to install specific updates.
 
 `softwareupdate -i -a --ignore {pkg name}` to install all updates except for the specified package
+
+# See all the git commits I made over the last week?
+
+`find $HOME -type d -name ".git" -exec sh -c 'cd "{}" && git long --author="{author name}" --since="1 weekago"' \;`
