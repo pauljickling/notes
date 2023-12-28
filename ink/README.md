@@ -266,4 +266,71 @@ Threads allow knots and stitches to be integrated into the current knot/stitch u
 
 ## ADVANCED STATE TRACKING (LISTS)
 
-TODO
+### Lists
+
+Lists in Ink are a list of states. They are declared this way:
+
+`LIST timeOfDay = morning, noon, afternoon, evening, night`
+
+Use the tilde to declare what value for the list to take.
+
+`~ timeOfDay = afternoon`
+
+At this point you can query the value.
+
+```
+{ timeOfDay == night:
+    It was too dark to see.
+- else:
+    Light poured in through the window.
+}
+```
+You can use `()` around one value from a list to assign a default state when assigned.
+
+Current state increments with `++` and decrements with `--`.
+
+### Reusing Lists
+
+Elements of a list can be assigned to variables. That allows the same state to be used in multiple places. Lists can also have the same element. In those cases when assigning an element to a variable you will need to use the list name and dot notation.
+
+### List Values
+
+`{LIST(element)}` will produce a number.
+
+`{LIST(index)}` will produce a value.
+
+### Multivalued Lists
+
+Lists are boolean sets. So when earlier we initialized a starting value, there was one element present in the list. In fact, multiple elements can be present.
+
+`LIST dogsInRoom = (Frisket), (Phoebe), Pixie, (Chowder)`
+
+This is also valid syntax:
+
+`LIST dogsInRoom = (Frisket, Phoebe, Chowder)`
+
+You can also assign an empty list:
+
+`LIST futureDays = ()`
+
+`+=` and `-=` notation can be used to update list elements.
+
+There are several useful built-in functions for querying lists. `LIST_COUNT()` (list length), `LIST_MIN()` (first in-state element), `LIST_MAX()` (last in-state element), and `LIST_RANDOM()` (random in-state element).
+
+Lists can also be queried to see if it possesses an element using `?` or `has` syntax, e.g.
+
+`{ dogsInRoom ? (Frisket, Chowder)} // True`
+
+`hasnt` or `!?` can be used for lacking elements.
+
+`^` can be used to return any element shared among two lists.
+
+`LIST_ALL()` counts all elements of a list, regardless of whether they are in-state or not.
+
+`LIST_RANGE(list, min_int, max_int)` lets you create slices of a list. This can also be done with the element names instead of the integers.
+
+`LIST_INVERT()` switches the state of the list.
+
+### Multi-list Lists
+
+It is possible to assign variables that include elements from multiple lists. This allows for richer tracking of state and world properties.
