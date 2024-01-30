@@ -80,6 +80,20 @@ Additionally, these conditonals don't have to just be treated as booleans. It is
 
 `* {on_the_road > 7} [I had been on the road for over a week] -> on_the_road`
 
+One interesting thing to note is that the knot count only increments after you have left the knot. In other words, if you have a structure like the following:
+
+```
+=== travel ===
+I travelled to...
+* [Kyoto] -> travel
+* [Istanbul] -> travel
+* [Paris] -> travel
+* [Buenos Aires] -> travel
+* {travel > 1} [That's all] -> next_knot
+```
+
+You will never trigger the condition for the `That's all` option to appear because the count is going to remain at `1`. To get around this issue you would need to create a proxy knot that just re-diverts back to `travel`.
+
 Text can also be included conditionally. The syntax for it is as follows:
 
 `{glasses_of_wine > 3: I was feeling quite drunk.|I was enjoying myself at the dinner party.}`
