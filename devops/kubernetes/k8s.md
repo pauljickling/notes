@@ -67,6 +67,8 @@ Additionally, most cloud providers offer a managed Kubernetes service which take
 
 `kubectl logs -f -l app={app name}` view app logs. `-l` flag adds labels which is useful when you are running multiple pods.
 
+`kubectl exec -it {pod name} -c {container name} -- /bin/kill -s SIGUSR1 1` Sends the `SIGUSR1` signal to the specified container
+
 ## Kubeconfig
 
 This is a yml config file that describes how to connect to a kubernetes control plane. Once you have your defined config you will need to have it exposed to kubectl, which you can do in bash with `export KUBECONFIG=/path/to/config` (the path is probably in $HOME/.kube)
