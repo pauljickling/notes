@@ -158,6 +158,20 @@
 
 `ab -n 1000 -c 10 {url}` apache benchmarker. `-n` flag is for the number of requests to poll, and `-c` is for the number of concurrent requests. Note that for the URL you must end with a `/` or `ab` will be an error.
 
+`ip link add {device type} {device name}` creates an ip address for a new device type
+
+`ip link list` view existing network conditions in current network namespace environment
+
+`ip route list` provide a list of ip routes
+
+`ip link set {device name} netns {network namespace name}` attaches a network device to a network namespace
+
+`ip link set {device name} up` activates a network device
+
+`ip link addr add {ip address} dev {device name}` assigns an ip address to a device within the network namespace environment
+
+`nsenter --net=/run/netns/{network namespace name} bash` create a bash environment for your network namespace
+
 ## SSH Keygen
 
 `ssh-keygen -t rsa -b 4096 -C  "{email address}"` Generates a SSH key associated with your email address. Providing an email address at the end of your public key is a good practice because it allows an admin to easily identify who has access to a server in the `authorized_keys` file.
