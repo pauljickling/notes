@@ -204,6 +204,8 @@
 
 `cat /etc/os-release` get information about the OS
 
+`dpkg --print-architecture` get information about chip architecture
+
 `date +"%Z %z"` get time zone. Useful for remote servers where you aren't necessarily sure what region it is in.
 
 `ctrl + a` go to beginning of line
