@@ -60,6 +60,16 @@ You can set variables to your awk script prior to execution with the `-v` flag e
 
 `\47` is a way to insert a single quotation mark without having to use even more verbose shell syntax.
 
+### Built-in Vars
+
+- `FS` Field Seperator. Equivalent to the `-F` flag in the commandline
+- `OFS` Output Field Seperator. By default the following statement `print $2, $3` would output the 2nd and 3rd field with a space between them. `OFS=", "`, for example, would output that with a comma separating the field values
+- `NF` Number of Fields.
+- `NR` Number of Records (e.g. rows or file lines)
+- `RS` Record Separator. By default the newline character, but you could set it to anything
+- `ORS` Output Record Separator. Similar to `OFS` you can set how awk output handles new records
+- `FILENAME` is the value of the file name being read
+
 ### Writing an Awk file
 
 Using the `-f` flag (lowercase) will allow you to specify an awk file which is useful for more complicated instructions. You can also write self-contained awk scripts by beginning your script as follows: `#! /bin/awk -f` or `#! /usr/bin/awk -f` depending on the location of awk on your system.
