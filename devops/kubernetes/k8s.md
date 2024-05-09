@@ -65,6 +65,8 @@ Additionally, most cloud providers offer a managed Kubernetes service which take
 
 `kubectl get secrets` view available secrets
 
+`kubectl logs {pod name}` Get the logs of the specified pod name
+
 `kubectl logs -f -l app={app name}` view app logs. `-l` flag adds labels which is useful when you are running multiple pods.
 
 `kubectl exec -it {pod name} -c {container name} -- /bin/kill -s SIGUSR1 1` Sends the `SIGUSR1` signal to the specified container
