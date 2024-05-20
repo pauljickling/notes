@@ -16,6 +16,13 @@ Every worker node has three processes running:
 
 In addition to pods, a node can also run what is called a *service*. Services provide a fixed IP address as opposed to pods that tend to have more dynamically changing IP addresses (whenever a pod dies and is restarted, which is frequent behavior in Kubernetes, a new IP address is generated). Services thus can also act as a load balancer for your application(s).
 
+### Multi-Container Pods
+
+As mentioned earlier, a pod is not limited to running a single container. There are a variety of possible configurations that allow for multi-container pod deployments.
+
+1. Init Containers: Under the `spec` of your k8s config you can have an `initContainers` field that contains the `name`, `image`, `command`, etc. of a container that must run and complete before the other containers deployed.
+2. Sidecars: Sidecar containers run alongside the container with your primary applications. There isn't anything special you need to do with deploying a sidecar, it is just defined under the `containers` field the same way you would your main application's container. The sidecar will have the same lifecycle as the other containers.
+
 ## Kube Flavors
 
 There are lots of tools for setting up a Kubernetes environment. Here are a few:
