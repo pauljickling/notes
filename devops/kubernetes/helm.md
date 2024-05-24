@@ -36,6 +36,20 @@ metadata:
 
 The dot `.` within the brackets signals a namespace object, and each dot separates these objects. The first dot is the top-most namespace for the scope.
 
+### Built-In Objects
+
+`.Release` is a built-in object. An object can have a single value, or multiple values delineated by the dot notation. Some properties of `.Release`:
+
+- `.Release.Name`
+- `.Release.Namespace`
+- `.Release.Service`
+
+Some other built-in objects include:
+
+- `.Values` which are passed into the template with a user defined `values.yaml` config
+- `.Chart` which contains the contents of the `Chart.yaml` config.
+- `.Files` provides access to non-special files in a chart and contains a number of helpful methods like `.Files.Get` `.Files.Lines`, and `.Files.AsSecrets`
+
 ### Testing a Template Config
 
 You can pass the parameters `--debug --dry-run` when running `helm install` to test your template rendering without actually commiting to the install. Note that this is not a guarantee that you have generated a valid Kubernetes configuration, it is just for sanity checks to make sure your template is rendering as intended.
