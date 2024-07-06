@@ -33,3 +33,10 @@ Instructions on changing MIDI channels.
 3. The highlighted page will be in yellow, and the highlighted value will be in green
 4. Press step and the key number for the channel number you want
 5. Press SHIFT + RESET + SET END + STEP 8 to exit setup mode
+
+# Korg Volca Keys
+
+1. The Volca keys must initially be powered off
+2. Turn on the Volca keys while holding down the MEMORY button
+3. Press one of the corresponding 16 white keys to assign it to that particular MIDI channel.
+4. Power the Volca back off to exit the MIDI channel setup
