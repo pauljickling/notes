@@ -190,6 +190,8 @@
 
 ## Misc
 
+`stty -a` get a list of current settings for your terminal's stdout, including a list of available ctrl codes for your terminal
+
 `ctrl + w` delete word
 
 `ctrl + u` clear line
