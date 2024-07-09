@@ -25,3 +25,25 @@ Here is sample HTMX:
 ```
 
 This sends a GET request to `/contacts/1` and replaces the target element with the content received from the GET request.
+
+## Chapter 3: Components of a Hypermedia System
+
+A hypermedia system includes the following components: a hypermedia format like HTML, a network protocol (HTTP), a server that presents a hypermedia API respnding to network requests and responses, and a client that interprets the responses.
+
+A discussion of network requests and response codes ensues. Caching strategies are discussed, and an [article on caching](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching) is included.
+
+### REST
+
+REST is discussed as a network architecture that contains the following properties:
+1. It is a client-server architecture
+2. It is stateless
+3. It allows caching
+4. It contains a uniform interface
+5. It is a layered system
+6. It may allow for code-on-demand (i.e. scripts)
+
+Note that session cookies, which are ubiquitous in the current internet environment, violate the stateless property of a RESTful architecture when they are used as a key lookup for information.
+
+Layered systems means that multiple servers can act as intermediaries between a client and a server that acts as a source of truth. Thus we have architectures such as a load balancer that serves client requests to multiple servers, CDNs, etc.
+
+Including JavaScript in an HTML page does not in and of itself violate RESTful properties as laid out here, however when JavaScript is used to replace this hypermedia model it certainly does.
