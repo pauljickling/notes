@@ -47,3 +47,55 @@ Note that session cookies, which are ubiquitous in the current internet environm
 Layered systems means that multiple servers can act as intermediaries between a client and a server that acts as a source of truth. Thus we have architectures such as a load balancer that serves client requests to multiple servers, CDNs, etc.
 
 Including JavaScript in an HTML page does not in and of itself violate RESTful properties as laid out here, however when JavaScript is used to replace this hypermedia model it certainly does.
+
+## Chapter 4: A Web 1.0 Application
+
+To demonstrate the advantage of hypermedia architecture consider the hypothetical of building out a contact management web app that has CRUD capabilities called Contact.app.
+
+### Tech Stack
+
+Backend written in Python using the Flask framework and Jinja2 templating. Using this stack the goal will be for the server side to render HTML to return to clients instead of JSON.
+
+### Intro to Flask
+
+Flask consists of routes tied to functions that execute HTTP requests. It utilizes Python decorators to achieve this. A basic hello world page looks like this:
+
+```python
+@app.route("/")
+def index():
+    return "hello world"
+```
+
+Sometimes you want to redirect the root of a web page, which is easier to type in as a URL, to the actual application. The above code can be rewritten that way.
+
+```python
+@app.route("/")
+def index():
+    return redirect("/contacts")
+```
+
+### Contact.app Functionality
+
+- Allows users to view a list of contacts
+- Search the contacts
+- Add a new contact
+- View the details of a contact
+- Edit the details of a contact
+- Delete a contact
+
+The "contacts/" route should show a searchable list of contacts. It will also handle a case of a search term that filters the contact list.
+
+```python
+@app.route("/contacts")
+def contacts():
+    search = request.args.get("q")
+    if search is not None:
+        contacts_set = Contact.search(search)
+    else:
+        contacts_set = Contact.all()
+    return render_template("index.html", contacts=contacts_set)
+```
+
+The `search` variable checks the request's arguments to see if there is a query (i.e. `"q"`). If there is, it assigns a variable `contacts_set` to a `Contact` object that uses the `search` method, and uses the `search` variable (e.g. the params) as it's arguments. Otherwise it uses the `Contact` object's `all` method to retrieve all objects.
+
+The route returns a template that uses the index.html file, and uses a `contacts` param assigned to the `contacts_set` variable.
