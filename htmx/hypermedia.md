@@ -99,3 +99,232 @@ def contacts():
 The `search` variable checks the request's arguments to see if there is a query (i.e. `"q"`). If there is, it assigns a variable `contacts_set` to a `Contact` object that uses the `search` method, and uses the `search` variable (e.g. the params) as it's arguments. Otherwise it uses the `Contact` object's `all` method to retrieve all objects.
 
 The route returns a template that uses the index.html file, and uses a `contacts` param assigned to the `contacts_set` variable.
+
+This means that now an html template will be needed to handle this request. First lets build out the search form.
+
+```
+{% extends 'layout.html' %}
+
+{% block content %}
+
+  <form action="/contacts" method="get" class="tool-bar">
+    <label for="search">Search Term</label>
+    <input id="search" type="search" name="q"
+      value="{{ request.args.get('q') or '' }}" />
+    <input type="submit" value="Search"/>
+  </form>
+```
+
+Next comes the contact table.
+
+```
+<table>
+  <thead>
+  <tr>
+    <th>First <th>Last <th>Phone <th>Email <th/>
+  </tr>
+  </thead>
+  <tbody>
+  {% for contact in contacts %}
+    <tr>
+      <td>{{ contact.first }}</td>
+      <td>{{ contact.last }}</td>
+      <td>{{ contact.phone }}</td>
+      <td>{{ contact.email }}</td>
+      <td><a href="/contacts/{{ contact.id }}/edit">Edit</a>
+        <a href="/contacts/{{ contact.id }}">View</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+```
+
+Our contact table provides routes for other features of our contact app: viewing and editing contacts. We also need to provide the ability to add a new contact.
+
+```
+<p>
+    <a href="/contacts/new">Add Contact</a>
+  </p>
+
+{% endblock %}
+```
+
+Now we need to build out the functionality for these additional features. Starting with adding a contact.
+
+```python
+@app.route("/contacts/new", methods=['GET'])
+def contacts_new_get():
+    return render_template("new.html", contact=Contact())
+```
+
+Once again, we need an additional template.
+
+```
+<form action="/contacts/new" method="post">
+  <fieldset>
+    <legend>Contact Values</legend>
+    <p>
+      <label for="email">Email</label>
+      <input name="email" id="email" 
+        type="email" placeholder="Email"
+        value="{{ contact.email or '' }}">
+      <span class="error">
+        {{ contact.errors['email'] }}
+      </span>
+    </p>
+    <p>
+      <label for="first_name">First Name</label>
+      <input name="first_name" id="first_name" type="text"
+        placeholder="First Name" value="{{ contact.first or '' }}">
+      <span class="error">{{ contact.errors['first'] }}</span>
+    </p>
+    <p>
+      <label for="last_name">Last Name</label>
+      <input name="last_name" id="last_name" type="text"
+        placeholder="Last Name" value="{{ contact.last or '' }}">
+      <span class="error">{{ contact.errors['last'] }}</span>
+    </p>
+    <p>
+      <label for="phone">Phone</label>
+      <input name="phone" id="phone" type="text" placeholder="Phone"
+        value="{{ contact.phone or '' }}">
+      <span class="error">{{ contact.errors['phone'] }}</span>
+    </p>
+
+    <button>Save</button>
+  </fieldset>
+</form>
+
+<p>
+  <a href="/contacts">Back</a>
+</p>
+```
+
+Now that we have a form for creating a new contact, we need a route that can handle the POST request.
+
+```python
+@app.route("/contacts/new", methods=['POST'])
+def contacts_new():
+    c = Contact(
+      None,
+      request.form['first_name'],
+      request.form['last_name'],
+      request.form['phone'],
+      request.form['email'])
+    if c.save():
+        flash("Created New Contact!")
+        return redirect("/contacts")
+    else:
+        return render_template("new.html", contact=c)
+```
+
+This defines a contact variable `c`, using the `Contact` object, and either saves it and redirects to `contacts/` or else it returns to the `new.html` contact page.
+
+Contacts will have some sort of ID value associated with them, so that the URL routes for viewing them will be something like `/contact/42` or some other integer. This requires additional routing.
+
+```python
+@app.route("/contacts/<contact_id>")
+def contacts_view(contact_id=0):
+    contact = Contact.find(contact_id)
+    return render_template("show.html", contact=contact)
+```
+
+The show.html page can look like this:
+
+```
+<h1>{{contact.first}} {{contact.last}}</h1>
+
+<div>
+  <div>Phone: {{contact.phone}}</div>
+  <div>Email: {{contact.email}}</div>
+</div>
+
+<p>
+  <a href="/contacts/{{contact.id}}/edit">Edit</a>
+  <a href="/contacts">Back</a>
+</p>
+```
+
+From here we can edit a contact.
+
+```python
+@app.route("/contacts/<contact_id>/edit", methods=["GET"])
+def contacts_edit_get(contact_id=0):
+    contact = Contact.find(contact_id)
+    return render_template("edit.html", contact=contact)
+```
+
+And now the edit template.
+
+```
+<form action="/contacts/{{ contact.id }}/edit" method="post">
+  <fieldset>
+    <legend>Contact Values</legend>
+    <p>
+      <label for="email">Email</label>
+      <input name="email" id="email" type="text"
+        placeholder="Email" value="{{ contact.email }}">
+      <span class="error">{{ contact.errors['email'] }}</span>
+    </p>
+
+    <p>
+      <label for="first_name">First Name</label>
+      <input name="first_name" id="first_name" type="text"
+        placeholder="First Name" value="{{ contact.first }}">
+      <span class="error">{{ contact.errors['first'] }}</span>
+    </p>
+    <p>
+      <label for="last_name">Last Name</label>
+      <input name="last_name" id="last_name" type="text"
+        placeholder="Last Name" value="{{ contact.last }}">
+      <span class="error">{{ contact.errors['last'] }}</span>
+    </p>
+    <p>
+      <label for="phone">Phone</label>
+      <input name="phone" id="phone" type="text"
+        placeholder="Phone" value="{{ contact.phone }}">
+      <span class="error">{{ contact.errors['phone'] }}</span>
+    </p>
+    <button>Save</button>
+  </fieldset>
+</form>
+
+<form action="/contacts/{{ contact.id }}/delete" method="post">
+  <button>Delete Contact</button>
+</form>
+
+<p>
+  <a href="/contacts/">Back</a>
+</p>
+```
+
+Now we need to handle the POST request.
+
+```python
+@app.route("/contacts/<contact_id>/edit", methods=["POST"])
+def contacts_edit_post(contact_id=0):
+    c = Contact.find(contact_id)
+    c.update(
+      request.form['first_name'],
+      request.form['last_name'],
+      request.form['phone'],
+      request.form['email'])
+    if c.save():
+        flash("Updated Contact!")
+        return redirect("/contacts/" + str(contact_id))
+    else:
+        return render_template("edit.html", contact=c)
+```
+
+This is, of course, essentially the same logic as our POST request to add a new contact, only now it is looking up an ID and updating it in-place.
+
+Finally, it is time to handle deleting a contact.
+
+```python
+@app.route("/contacts/<contact_id>/delete", methods=["POST"])
+def contacts_delete(contact_id=0):
+    contact = Contact.find(contact_id)
+    contact.delete()
+    flash("Deleted Contact!")
+    return redirect("/contacts")
+```
