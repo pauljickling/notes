@@ -2,11 +2,11 @@
 
 Notes on the book that can be found on [hypermedia.systems](hypermedia.systems).
 
-## Chapter 1: Introduction
+## Introduction
 
 A hypermedia system is any system that adheres to a RESTful (Representational State Transfer) network architecture. The author emphasizes that they are not talking about JSON APIs that are often referred to as RESTful APIs since JSON lacks hypermedia controls. Instead it refers to a network where the exchange of hypermedia is built into the system.
 
-## Chapter 2: Reintroduction
+## Chapter 1: Reintroduction
 
 Hypermedia includes non-linear branching from one location in media to another. Hypermedia control is an element that describes an interaction by encoding information about that interaction directly and completely within itself. The most obvious example of this is an html link where it contains an html element contained within the existing piece of media as well as a url that describes the interaction that changes the state of the browser.
 
@@ -26,7 +26,7 @@ Here is sample HTMX:
 
 This sends a GET request to `/contacts/1` and replaces the target element with the content received from the GET request.
 
-## Chapter 3: Components of a Hypermedia System
+## Chapter 2: Components of a Hypermedia System
 
 A hypermedia system includes the following components: a hypermedia format like HTML, a network protocol (HTTP), a server that presents a hypermedia API respnding to network requests and responses, and a client that interprets the responses.
 
@@ -48,7 +48,7 @@ Layered systems means that multiple servers can act as intermediaries between a 
 
 Including JavaScript in an HTML page does not in and of itself violate RESTful properties as laid out here, however when JavaScript is used to replace this hypermedia model it certainly does.
 
-## Chapter 4: A Web 1.0 Application
+## Chapter 3: A Web 1.0 Application
 
 To demonstrate the advantage of hypermedia architecture consider the hypothetical of building out a contact management web app that has CRUD capabilities called Contact.app.
 
