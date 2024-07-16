@@ -56,3 +56,68 @@ This is closer in appearance to how a React developer might write composable bit
 ### Targeting Other Elements
 
 To include partial HTML within an existing HTML document, it necessarily creates the question of where the content should go. By default, it will simply go within the element that triggered the request. This is typically not going to be a desired outcome. A list of contacts within a button element is going to be extremely bizarre. Instead, typically this will be specified with the `hx-target` attribute. Thus, our button will instead look like: `<button hx-get="/contacts" hx-target="#main">` Where `main` is the ID of some element in the DOM where we want this contact to live.
+
+### Swap Styles
+
+When targetting an element, the html fragment will become a child of the targetted element. However, depending on the DOM and CSS structure, it may be preferable to swap out elements. In that case `hx-swap` would be the attribute to use. Unlike `hx-target` however, `hx-swap` has an enumerated set of values that are valid:
+
+- `innerHTML`: default, replacing inner html of target element
+- `outerHTML`: replacing the entire target element with the response
+- `beforebegin`: insert the response before the target element
+- `afterbegin`: insert the response before the first child of the target element
+- `beforeend`: append the response after the last child of the target element
+- `afterend`: append the response after the target element
+- `delete`: deletes the target element regardless of response
+- `none`: no swap performed
+
+### Using Events
+
+Typically buttons are used for events, specifically the click event since that is what buttons are there for, to be clicked on. Like with other parts of HTML that have nice features, in htmx these kinds of properties have been generalized, in this case with the `hx-trigger` attribute. For things like buttons, and forms that already have default events there is no need for `hx-trigger`, but it allows us to extend HTML. You can also use `hx-trigger` to modify event behavior, even if this isn't a particularly good idea. So, for example, you could change the behavior of a button where it triggers when the mouse enters it.
+
+```html
+<button 
+    hx-get="/contacts"
+    hx-target="#main"
+    hx-swap="outerHTML"
+    hx-trigger="mouseenter">
+        Get Contacts
+</button>
+```
+
+More practically, we might extend our app with the keyboard shortcut `ctrl-l` to load contacts. `hx-trigger` supports a comma separated list. So we can include keyboards with `hx-trigger="click, keyup"`. This will listen for any `keyup` event, so now we need a way to filter through `keyup` events. Filters are applied like so: `hx-trigger="click, keyup[ctrlKey && key == 'l]`.
+
+If we applied this `hx-trigger` attribute to our button, it should be noted that only keyup events within the button will trigger the request. This behavior is derived from JavaScript's event bubbling model. `hx-trigger` supports the ability to listen to other elements for events by adding a `from:` modifier that specifies the target element. In the case of a keyboard shortcut, the body element makes the most sense since you will want it to always be listening. So our final trigger attribute looks like `hx-trigger="click, keyup[ctrlKey && key == 'l'] from:body`.
+
+### Passing Request Parameters
+
+HTML forms are powerful, but also have lots of limitations that make them frustrating to work with. htmx adds flexibility by providing the `hx-include` attribute that allows the inclusion of various values within a request. So the search filter for the contacts app could be modified in this way:
+
+```html
+<div id="main">
+  <label for="search">Search Contacts:</label>
+  <input id="search" name="q" type="search" placeholder="Search Contacts">
+  <button hx-post="/contacts" hx-target="#main" hx-include="#search">
+    Search The Contacts
+  </button>
+</div>
+```
+
+`hx-include` takes a CSS selector value, and allows you to specify which values to send along with the request, in this case the input field that is used for the search filter.
+
+Note that most attrbiutes that accept CSS selector values also support relative CSS selectors, e.g. `closest::`, `next::`, `previous::`, `this::`, etc.
+
+### Inline Values
+
+An additional way to include values in an htmx request is the `hx-vals` attribute, which allows for static values in the request. If you have additional information that should be included in a request, you could use this instead of the more traditional hack-y approach of including hidden inputs.
+
+An example would look like this: `<button hx-get="/contacts" hx-vals='{"state":"MD"}'>Get Maryland Contacts</button>`
+
+`hx-vals` accepts a JSON value to generate the following URL param: `/contacts?state=MD`.
+
+In addition to JSON, you could pass JavaScript values with the `js` prefix, e.g.: `<button hx-get="/contacts" hx-vals'js:{"state": getCurrentState}'>Get Selected State Contacts</button>`
+
+### History Support
+
+One advantage htmx applications have over SPAs is that it doesn't break the browser's history API without a lot of extra work on the part of the developers. You probably will need to work with that API, but it will be less burdensome overall.
+
+For example, when using the `hx-target` attribute it will load the content (`contacts/`) but it will not create a new history entry. If we want to add a new history entry, we use the `hx-push-url` attribute, which accepts a boolean value, so you can just set it to `"true"` and the `contacts` page will be added to the user's browser history. Note that one case that still needs to be handled is when a user refreshes their browser, there needs to be a mechanism to handle reloading partial html fragments. This will be covered in a future chapter.
