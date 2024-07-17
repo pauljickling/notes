@@ -23,7 +23,7 @@ To use htmx in your web applications, you simply have to load the library:
 
 Although htmx is a JavaScript library, no knowledge of JavaScript is required to use it. HTML has simply been extended to allow the developer to do things in HTML that previously they would have done using JavaScript.
 
-### Triggering HTTP Requests
+## Triggering HTTP Requests
 
 Any element can issue HTTP requests. They are as follows:
 
@@ -39,7 +39,7 @@ Whenever a user interacts as intended with that element, the following HTTP requ
 <button hx-get="/contacts">Get Contacts</button>
 ```
 
-### HTMX vs HTML Responses
+## HTMX vs HTML Responses
 
 One difference between traditional HTTP requests, and what happens with htmx requests is that with htmx the responses can be partial bits of html instead of a full page. This kind of HTML transfer is referred to as "transclusion", and allows for html to be embedded within existing HTML documents. Thus our button that makes a request for `contacts` can fetch the following content:
 
@@ -53,11 +53,11 @@ One difference between traditional HTTP requests, and what happens with htmx req
 
 This is closer in appearance to how a React developer might write composable bits of UI components instead of having to write an entirely separate HTML page.
 
-### Targeting Other Elements
+## Targeting Other Elements
 
 To include partial HTML within an existing HTML document, it necessarily creates the question of where the content should go. By default, it will simply go within the element that triggered the request. This is typically not going to be a desired outcome. A list of contacts within a button element is going to be extremely bizarre. Instead, typically this will be specified with the `hx-target` attribute. Thus, our button will instead look like: `<button hx-get="/contacts" hx-target="#main">` Where `main` is the ID of some element in the DOM where we want this contact to live.
 
-### Swap Styles
+## Swap Styles
 
 When targetting an element, the html fragment will become a child of the targetted element. However, depending on the DOM and CSS structure, it may be preferable to swap out elements. In that case `hx-swap` would be the attribute to use. Unlike `hx-target` however, `hx-swap` has an enumerated set of values that are valid:
 
@@ -70,7 +70,7 @@ When targetting an element, the html fragment will become a child of the targett
 - `delete`: deletes the target element regardless of response
 - `none`: no swap performed
 
-### Using Events
+## Using Events
 
 Typically buttons are used for events, specifically the click event since that is what buttons are there for, to be clicked on. Like with other parts of HTML that have nice features, in htmx these kinds of properties have been generalized, in this case with the `hx-trigger` attribute. For things like buttons, and forms that already have default events there is no need for `hx-trigger`, but it allows us to extend HTML. You can also use `hx-trigger` to modify event behavior, even if this isn't a particularly good idea. So, for example, you could change the behavior of a button where it triggers when the mouse enters it.
 
@@ -88,7 +88,7 @@ More practically, we might extend our app with the keyboard shortcut `ctrl-l` to
 
 If we applied this `hx-trigger` attribute to our button, it should be noted that only keyup events within the button will trigger the request. This behavior is derived from JavaScript's event bubbling model. `hx-trigger` supports the ability to listen to other elements for events by adding a `from:` modifier that specifies the target element. In the case of a keyboard shortcut, the body element makes the most sense since you will want it to always be listening. So our final trigger attribute looks like `hx-trigger="click, keyup[ctrlKey && key == 'l'] from:body`.
 
-### Passing Request Parameters
+## Passing Request Parameters
 
 HTML forms are powerful, but also have lots of limitations that make them frustrating to work with. htmx adds flexibility by providing the `hx-include` attribute that allows the inclusion of various values within a request. So the search filter for the contacts app could be modified in this way:
 
@@ -106,7 +106,7 @@ HTML forms are powerful, but also have lots of limitations that make them frustr
 
 Note that most attrbiutes that accept CSS selector values also support relative CSS selectors, e.g. `closest::`, `next::`, `previous::`, `this::`, etc.
 
-### Inline Values
+## Inline Values
 
 An additional way to include values in an htmx request is the `hx-vals` attribute, which allows for static values in the request. If you have additional information that should be included in a request, you could use this instead of the more traditional hack-y approach of including hidden inputs.
 
@@ -116,7 +116,7 @@ An example would look like this: `<button hx-get="/contacts" hx-vals='{"state":"
 
 In addition to JSON, you could pass JavaScript values with the `js` prefix, e.g.: `<button hx-get="/contacts" hx-vals'js:{"state": getCurrentState}'>Get Selected State Contacts</button>`
 
-### History Support
+## History Support
 
 One advantage htmx applications have over SPAs is that it doesn't break the browser's history API without a lot of extra work on the part of the developers. You probably will need to work with that API, but it will be less burdensome overall.
 
