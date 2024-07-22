@@ -121,3 +121,15 @@ In addition to JSON, you could pass JavaScript values with the `js` prefix, e.g.
 One advantage htmx applications have over SPAs is that it doesn't break the browser's history API without a lot of extra work on the part of the developers. You probably will need to work with that API, but it will be less burdensome overall.
 
 For example, when using the `hx-target` attribute it will load the content (`contacts/`) but it will not create a new history entry. If we want to add a new history entry, we use the `hx-push-url` attribute, which accepts a boolean value, so you can just set it to `"true"` and the `contacts` page will be added to the user's browser history. Note that one case that still needs to be handled is when a user refreshes their browser, there needs to be a mechanism to handle reloading partial html fragments. This will be covered in a future chapter.
+
+# Chapter 5: HTMX Patterns
+
+## AJAX-ifying the App
+
+Adding the `hx-boost="true"` attribute to anchor and form tags allows them to issue AJAX requests. This helps speed up the app since it will only have to replace `body` content instead of full page reloads that also evaluate `head`, etc. That means it doesn't have to reload CSS and JS content, for example, which tends to be heavier than plain HTML.
+
+Another advantage is this will avoid the issue that crops up with applications where a user makes a change to application state, and they are confronted with a flash of unstyled content from when the content becomes available, but before the rest of the document is available to be rendered appropriately.
+
+## Attribute Inheritance
+
+Adding the `hx-boost="true"` attribute to every single tag is unnecessary. You can apply it to a parent tag and it will apply to all it's children. And if you'd like one link that doesn't inherit this property you can simply overwrite it with `hx-boost="false"`.
