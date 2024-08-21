@@ -30,7 +30,7 @@ Mounting a volume to a directory location (i.e. mount point)
 
 `mount <filesystem name> <path/to/directory>`
 
-Note that this command will not persist between reboots, it's more useful as a quick sanity check to make sure it is configured the way you want. To persist between reboots you will want to edit the `/etc/fstab` file. A mount entry will look like this:
+Note that this command will not persist between reboots. To persist between reboots you will want to edit the `/etc/fstab` file. A mount entry will look like this:
 
 `<filesystem name> <path/to/directory> <filesystem type> defaults 0 2`
 
