@@ -132,4 +132,34 @@ Another advantage is this will avoid the issue that crops up with applications w
 
 ## Attribute Inheritance
 
-Adding the `hx-boost="true"` attribute to every single tag is unnecessary. You can apply it to a parent tag and it will apply to all it's children. And if you'd like one link that doesn't inherit this property you can simply overwrite it with `hx-boost="false"`.
+Adding the `hx-boost="true"` attribute to every single tag is unnecessary. You can apply it to a parent tag and it will apply to all it's children. And if you'd like one link that doesn't inherit this property you can simply overwrite it with `hx-boost="false"`. As such, it typically makes sense to include the `hx-boost` attribute to the `body` tag.
+
+## Progressive Enhancement
+
+`hx-boost` is a progressive enhancement. Your application will still work even if a user has a browser client that doesn't have JavaScript enabled.
+
+## A Note on Modals
+
+Modals are a popular UI element in many web applications, but introduces client-side state that can create difficulties when developing a hypermedia-based apllication.
+
+They are okay when they are used for views that aren't a resource that is altered in the application, so it is okay in the following use-cases:
+- Alerts
+- Confirmation dialogs
+- Forms for creating/updatiing entities
+
+Otherwise they should be avoided, and inline editing or a separate page would be preferable.
+
+Similarly, be careful with the CSS attribute `display: none` as this removes the element from the DOM, which impacts accessibility features. A work around is to include the following `vh` (visually hidden) class that you can attach to your elements:
+
+```css
+.vh {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    block-size: 1px;
+    inline-size: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+```
+
+These CSS attributes should be consistent across different browsers.
