@@ -20,6 +20,8 @@
 
 `docker logs {container}` View the logs for the name of the container
 
+`docker logs {container} --since 24h` Limit log output to specified timeframe, in this case the last 24 hours
+
 `docker push {username}/{repository}:{tag}` Uploads the tagged image to a repository
 
 `docker rename {container}` Renames a container
