@@ -163,3 +163,32 @@ Similarly, be careful with the CSS attribute `display: none` as this removes the
 ```
 
 These CSS attributes should be consistent across different browsers.
+
+# Chapter 6: More HTMX Patterns
+
+## Active Search Pattern
+
+Active Search is when a user types text into a search box, and results are dynamically shown. The first step is to add an HTTP GET request whenever the input element receives a keyup event.
+
+```html
+<form action="/contacts" method="get" class="tool-bar">
+  <label for="search">Search Term</label>
+  <input id="search" type="search" name="q"
+    value="{{ request.args.get('q') or '' }}"
+    hx-get="/contacts"
+    hx-trigger="search, keyup delay:200ms changed"
+    hx-target="tbody"
+    hx-select="tbody tr"/>
+  <input type="submit" value="Search"/>
+</form>
+<table>
+  <tbody>
+  </tbody>
+</table>
+```
+
+This resolves many issues. `hx-get` fetches the html content of the `contacts` route. `hx-trigger` creates a trigger for our search input element that uses a 200ms keyup delay, and targets an empty `tbody` element below. Finally, `hx-select` selects the appropriate row of `contacts` route instead of the entire page. That being said, there are more efficient ways to implement this feature if we make server side changes to only serve the needed HTML content.
+
+## HTTP Request Headers in HTMX
+
+TODO
