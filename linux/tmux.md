@@ -11,3 +11,7 @@
 `ctrl + d` or `exit` close pane
 
 `ctrl + b` then `[` Scroll mode
+
+`ctrl + b` then `q` to query assigned pane numbers
+
+`ctrl + b` then `q + {number}` go to pane number
