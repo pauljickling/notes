@@ -200,9 +200,13 @@
 
 `dmesg` review messages stored in the ring buffer. Useful for understanding processes that are failing without clear stderr messages, among other things.
 
-`pbcopy` copies standard input to the pasteboard. For example, `cat foo.txt | pbcopy` would copy the contents of the foo.txt file to the pasteboard.
+`pbcopy` on macOS copies standard input to the pasteboard. For example, `cat foo.txt | pbcopy` would copy the contents of the foo.txt file to the pasteboard.
 
-`pbpaste` pastes pasteboard content
+`pbpaste` on macOS pastes pasteboard content
+
+`xclip` copies standard input to the pasteboard.
+
+`xclip -o` outputs pasteboard content
 
 `cat /etc/os-release` get information about the OS
 
