@@ -154,6 +154,8 @@
 
 `<<` remove indent block while in normal mode
 
+`ctrl+r = {math expression}` insert the product of a mathematical expression, e.g. `ctrl+r=5*8` will insert `40`
+
 ## Search
 
 `/{expression}` search for expression
