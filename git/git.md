@@ -68,6 +68,12 @@ Git is a version control tool. Git manages versions of a project with a history 
 
 `git fetch --prune origin` Removes references to branches that have been deleted on your remote repo, in this case the origin repo
 
+`git tag` Lists existing tags
+
+`git tag v1.3.2` Creates a tag for version 1.3.2
+
+`git push origin v1.2.3` Pushes version 1.3.2
+
 ## Writing Git Hooks
 
 In any directory where git is being used there will be a `.git/hooks` file which contains a bunch of sample scripts that take place at different times. This is useful if you want to make sure certain tasks always happen when writing or pushing commits.
