@@ -35,3 +35,23 @@ Functions are first-class values in Lua, so they can be assigned as variables.
 Userdata allows arbitrary C data to be stored in Lua variables.
 
 Threads are for coroutines, covered in Ch. 9.
+
+## Chapter 3: Expressions
+
+In addition to standard arithmetic operations, Lua supports exponents using `^`.
+
+Lua supports the standard relational operators `<`, `>`, `==`, `<=`, and `>=` although curiously the not equal operator is `~=` rather than `!=`.
+
+Lua has the logical operators `and`, `or`, and `not`.
+
+Lua can concatenate strings with the `..` operator, e.g. `print("Hello " .. "World")`
+
+Lua uses constructors to create and initialize its tables.
+
+An indexed array can be initialized like so, `pynchon_names = {"Teddy Bloat", "Tyrone Slothrop", "Jessica Swanlake", "Francisco Squalidozzi"}`. Note that indexed arrays are unusually 1-indexed. Using an index value out of range returns a value of `nil`.
+
+Whereas for a hash table structure it would be indexed thus: `a = {x=0, y=0}`
+
+Lua tables can have indexed and associative values. Associative values are not counted in the index. Thus the following `fruits = {"papaya", "banana", x="mango", "kiwi"}` would result in `fruits[3]` -> `kiwi`. Because of this convention, you can work around the 1-indexed array by including a `[0]="foo"` value in your table.
+
+Associative values can be retrieved with square or dot notation, e.g. `fruits["x"]` or `fruits.x`.
