@@ -89,3 +89,69 @@ Lua also has C style `for` loops. `for i=1,10,1 do print(i) end` will print the 
 Lua also has for loops that act as iterator functions, able to iterate through tables for example. `for k in pairs(t) do print(k) end`.
 
 `break` and `return` statements will jump out of an inner block.
+
+## Chapter 5: Functions
+
+Function structure:
+
+```lua
+function add(a)
+  local sum = 0
+  for i,v in ipairs(a) do
+    sum = sum + v
+  end
+  return sum
+end
+```
+
+Functions in Lua may return multiple results. This can be done by including comma separated values.
+
+```lua
+function maximum (a)
+  local mi = 1          -- maximum index
+  local m = a[mi]       -- maximum value
+  for i,val in ipairs(a) do
+    if val > m then
+      mi = i
+      m = val
+    end
+  end
+  return m, mi
+end
+
+print(maximum({8,10,23,12,5}))     --> 23   3
+```
+
+Lua supports functions that have a variable number of arguments. This is done by placing `...` in the function parameters. When the function is called all the arguments will be collected in a single table.
+
+Functions can also have fixed parameters, and a variable number of parameters. e.g. `function g (a, b, ...) end`.
+
+Lua also supports named arguments instead of positional arguments for when it is desirable to have a function that receives arguments in an arbitrary order. The parameter list uses squiggly brackets in this case e.g. `rename{old="temp.lua", new="temp1.lua"}`. This function would be defined in this way:
+
+```lua
+function rename (arg)
+  return os.rename(arg.old, arg.new)
+end
+```
+
+This is naturally especially useful for terminal or GUI interfaces that might accept dozens of optional flags.
+
+## Chapter 6: More About Functions
+
+All functions in Lua are anonymous. Functions have names by having variables assigned to them. This also means that you can assign functions to other variables. Functions can also be passed as arguments to other functions.
+
+Functions in Lua use closure, so a function always contains everything it needs to access values correctly. This is useful for functions calling other functions, and callback functions.
+
+Since functions are first-class, it means that functions can be global or local in scope, just like any other variable. Locally scoping functions typically involves assigning them to table fields. In addition to the standard method to defining the contents of tables, Lua offers a syntax shortcut:
+
+```lua
+Lib = {}
+function Lib.foo (x,y)
+  return x + y
+end
+function Lib.goo (x,y)
+  return x - y
+end
+```
+
+When using functions recursively, by default Lua will try to call a function globally, which will result in undesirable behavior. The solution to this is to declare the local variable outside the scope of the function.
