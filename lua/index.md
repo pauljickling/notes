@@ -155,3 +155,21 @@ end
 ```
 
 When using functions recursively, by default Lua will try to call a function globally, which will result in undesirable behavior. The solution to this is to declare the local variable outside the scope of the function.
+
+## Chapter 7: Iterators and the Generic `for`
+
+Lua supports Python-style iterative `for` loops.
+
+```lua
+for i, v in ipairs(arr) do
+  print(v)
+end
+```
+
+`ipairs` is a built-in iterator that iterates over the elements of a an array. There is also the `pairs` function for iterating over elements in a table, using the `next` function to iterate through a table in arbitrary order. It is also possible to invoke this function directly.
+
+```lua
+for k, v in next, t do
+  // do something
+end
+```
